@@ -1,0 +1,3928 @@
+[
+ {
+  "file": "claude__dottxt_ai_outlines_task_task1655_feature1_feature3.json.gz",
+  "agents": 2,
+  "events": 145,
+  "messages": 13,
+  "line_ref_msgs": 13,
+  "total_line_refs": 54,
+  "stale_refs": 0,
+  "questions": 1,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 1,
+    "ever": 5
+   },
+   "agent_2": {
+    "after_partner_done": 3,
+    "ever": 5
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/outlines/types/__init__.py"
+  ],
+  "id_confusion_msgs": 7,
+  "edits_per_agent": {
+   "agent_1": 1,
+   "agent_2": 2
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__dottxt_ai_outlines_task_task1655_feature1_feature6.json.gz",
+  "agents": 2,
+  "events": 164,
+  "messages": 10,
+  "line_ref_msgs": 10,
+  "total_line_refs": 47,
+  "stale_refs": 2,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 1,
+    "ever": 4
+   },
+   "agent_2": {
+    "after_partner_done": 9,
+    "ever": 10
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/outlines/types/__init__.py"
+  ],
+  "id_confusion_msgs": 6,
+  "edits_per_agent": {
+   "agent_1": 1,
+   "agent_2": 2
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__dottxt_ai_outlines_task_task1655_feature2_feature6.json.gz",
+  "agents": 2,
+  "events": 188,
+  "messages": 16,
+  "line_ref_msgs": 16,
+  "total_line_refs": 39,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 8,
+    "ever": 12
+   },
+   "agent_2": {
+    "after_partner_done": 1,
+    "ever": 5
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/outlines/types/__init__.py"
+  ],
+  "id_confusion_msgs": 10,
+  "edits_per_agent": {
+   "agent_1": 1,
+   "agent_2": 1
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__dottxt_ai_outlines_task_task1655_feature3_feature5.json.gz",
+  "agents": 2,
+  "events": 128,
+  "messages": 13,
+  "line_ref_msgs": 13,
+  "total_line_refs": 50,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 1,
+    "ever": 4
+   },
+   "agent_2": {
+    "after_partner_done": 2,
+    "ever": 4
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/outlines/types/__init__.py"
+  ],
+  "id_confusion_msgs": 5,
+  "edits_per_agent": {
+   "agent_1": 1,
+   "agent_2": 1
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__dottxt_ai_outlines_task_task1655_feature4_feature8.json.gz",
+  "agents": 2,
+  "events": 158,
+  "messages": 12,
+  "line_ref_msgs": 12,
+  "total_line_refs": 42,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 7,
+    "ever": 8
+   },
+   "agent_2": {
+    "after_partner_done": 1,
+    "ever": 8
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/outlines/types/__init__.py"
+  ],
+  "id_confusion_msgs": 2,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 1
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__dottxt_ai_outlines_task_task1655_feature4_feature9.json.gz",
+  "agents": 2,
+  "events": 118,
+  "messages": 8,
+  "line_ref_msgs": 6,
+  "total_line_refs": 18,
+  "stale_refs": 1,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 4,
+    "ever": 5
+   },
+   "agent_2": {
+    "after_partner_done": 4,
+    "ever": 6
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/outlines/types/__init__.py"
+  ],
+  "id_confusion_msgs": 3,
+  "edits_per_agent": {
+   "agent_1": 1,
+   "agent_2": 1
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__dottxt_ai_outlines_task_task1706_feature2_feature3.json.gz",
+  "agents": 2,
+  "events": 161,
+  "messages": 0,
+  "line_ref_msgs": 0,
+  "total_line_refs": 0,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 9,
+    "ever": 12
+   },
+   "agent_2": {
+    "after_partner_done": 1,
+    "ever": 9
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/outlines/backends/xgrammar.py"
+  ],
+  "id_confusion_msgs": 0,
+  "edits_per_agent": {
+   "agent_1": 8,
+   "agent_2": 8
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__dottxt_ai_outlines_task_task1706_feature2_feature5.json.gz",
+  "agents": 2,
+  "events": 190,
+  "messages": 10,
+  "line_ref_msgs": 8,
+  "total_line_refs": 57,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 6
+   },
+   "agent_2": {
+    "after_partner_done": 3,
+    "ever": 4
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/outlines/backends/xgrammar.py"
+  ],
+  "id_confusion_msgs": 7,
+  "edits_per_agent": {
+   "agent_1": 5,
+   "agent_2": 12
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__dottxt_ai_outlines_task_task1706_feature3_feature8.json.gz",
+  "agents": 2,
+  "events": 285,
+  "messages": 16,
+  "line_ref_msgs": 11,
+  "total_line_refs": 75,
+  "stale_refs": 1,
+  "questions": 1,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 14
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 9
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/outlines/backends/xgrammar.py"
+  ],
+  "id_confusion_msgs": 12,
+  "edits_per_agent": {
+   "agent_1": 11,
+   "agent_2": 12
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__dottxt_ai_outlines_task_task1706_feature4_feature8.json.gz",
+  "agents": 2,
+  "events": 156,
+  "messages": 6,
+  "line_ref_msgs": 5,
+  "total_line_refs": 28,
+  "stale_refs": 0,
+  "questions": 1,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 3
+   },
+   "agent_2": {
+    "after_partner_done": 5,
+    "ever": 7
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/outlines/backends/xgrammar.py"
+  ],
+  "id_confusion_msgs": 1,
+  "edits_per_agent": {
+   "agent_1": 8,
+   "agent_2": 10
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__dspy_task_task8563_feature1_feature3.json.gz",
+  "agents": 2,
+  "events": 120,
+  "messages": 5,
+  "line_ref_msgs": 5,
+  "total_line_refs": 24,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 4
+   },
+   "agent_2": {
+    "after_partner_done": 5,
+    "ever": 7
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 2,
+  "co_edited": [
+   "/workspace/dspy/adapters/types/tool.py"
+  ],
+  "id_confusion_msgs": 2,
+  "edits_per_agent": {
+   "agent_1": 4,
+   "agent_2": 5
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__dspy_task_task8587_feature1_feature3.json.gz",
+  "agents": 2,
+  "events": 156,
+  "messages": 14,
+  "line_ref_msgs": 12,
+  "total_line_refs": 65,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 1,
+    "ever": 7
+   },
+   "agent_2": {
+    "after_partner_done": 5,
+    "ever": 10
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/dspy/streaming/messages.py",
+   "/workspace/dspy/streaming/streaming_listener.py"
+  ],
+  "id_confusion_msgs": 6,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 6
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "claude__dspy_task_task8587_feature3_feature4.json.gz",
+  "agents": 2,
+  "events": 134,
+  "messages": 5,
+  "line_ref_msgs": 5,
+  "total_line_refs": 30,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 4,
+    "ever": 9
+   },
+   "agent_2": {
+    "after_partner_done": 1,
+    "ever": 6
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/dspy/streaming/streaming_listener.py"
+  ],
+  "id_confusion_msgs": 5,
+  "edits_per_agent": {
+   "agent_1": 4,
+   "agent_2": 7
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "claude__go_chi_task_task56_feature1_feature5.json.gz",
+  "agents": 2,
+  "events": 246,
+  "messages": 20,
+  "line_ref_msgs": 18,
+  "total_line_refs": 70,
+  "stale_refs": 0,
+  "questions": 1,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 4,
+    "ever": 11
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 12
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/context.go",
+   "/workspace/mux.go",
+   "/workspace/tree.go"
+  ],
+  "id_confusion_msgs": 5,
+  "edits_per_agent": {
+   "agent_1": 9,
+   "agent_2": 5
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "claude__huggingface_datasets_task_task3997_feature1_feature3.json.gz",
+  "agents": 2,
+  "events": 301,
+  "messages": 21,
+  "line_ref_msgs": 17,
+  "total_line_refs": 66,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 3,
+    "ever": 13
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 8
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/datasets/features/features.py"
+  ],
+  "id_confusion_msgs": 17,
+  "edits_per_agent": {
+   "agent_1": 12,
+   "agent_2": 7
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__huggingface_datasets_task_task3997_feature1_feature4.json.gz",
+  "agents": 2,
+  "events": 204,
+  "messages": 16,
+  "line_ref_msgs": 16,
+  "total_line_refs": 65,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 1,
+    "ever": 7
+   },
+   "agent_2": {
+    "after_partner_done": 4,
+    "ever": 12
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/IMPLEMENTATION_SUMMARY.md",
+   "/workspace/src/datasets/features/features.py"
+  ],
+  "id_confusion_msgs": 10,
+  "edits_per_agent": {
+   "agent_1": 7,
+   "agent_2": 4
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__huggingface_datasets_task_task6252_feature1_feature4.json.gz",
+  "agents": 2,
+  "events": 180,
+  "messages": 10,
+  "line_ref_msgs": 10,
+  "total_line_refs": 52,
+  "stale_refs": 0,
+  "questions": 1,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 6
+   },
+   "agent_2": {
+    "after_partner_done": 4,
+    "ever": 8
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/datasets/features/image.py"
+  ],
+  "id_confusion_msgs": 5,
+  "edits_per_agent": {
+   "agent_1": 3,
+   "agent_2": 4
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__huggingface_datasets_task_task6252_feature2_feature6.json.gz",
+  "agents": 2,
+  "events": 162,
+  "messages": 12,
+  "line_ref_msgs": 11,
+  "total_line_refs": 48,
+  "stale_refs": 0,
+  "questions": 2,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 2,
+    "ever": 10
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 5
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/datasets/features/image.py"
+  ],
+  "id_confusion_msgs": 5,
+  "edits_per_agent": {
+   "agent_1": 4,
+   "agent_2": 3
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__huggingface_datasets_task_task6252_feature4_feature5.json.gz",
+  "agents": 2,
+  "events": 234,
+  "messages": 15,
+  "line_ref_msgs": 13,
+  "total_line_refs": 73,
+  "stale_refs": 0,
+  "questions": 1,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 4,
+    "ever": 8
+   },
+   "agent_2": {
+    "after_partner_done": 1,
+    "ever": 10
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/datasets/features/image.py"
+  ],
+  "id_confusion_msgs": 15,
+  "edits_per_agent": {
+   "agent_1": 4,
+   "agent_2": 7
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__llama_index_task_task17244_feature6_feature7.json.gz",
+  "agents": 2,
+  "events": 165,
+  "messages": 11,
+  "line_ref_msgs": 9,
+  "total_line_refs": 51,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 1,
+    "ever": 6
+   },
+   "agent_2": {
+    "after_partner_done": 5,
+    "ever": 6
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/llama-index-core/llama_index/core/base/llms/types.py"
+  ],
+  "id_confusion_msgs": 10,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 3
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__llama_index_task_task18813_feature1_feature5.json.gz",
+  "agents": 2,
+  "events": 210,
+  "messages": 14,
+  "line_ref_msgs": 13,
+  "total_line_refs": 86,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 3,
+    "ever": 13
+   },
+   "agent_2": {
+    "after_partner_done": 5,
+    "ever": 11
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/llama-index-core/llama_index/core/base/llms/types.py"
+  ],
+  "id_confusion_msgs": 12,
+  "edits_per_agent": {
+   "agent_1": 4,
+   "agent_2": 5
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__openai_tiktoken_task_task0_feature2_feature6.json.gz",
+  "agents": 2,
+  "events": 235,
+  "messages": 18,
+  "line_ref_msgs": 15,
+  "total_line_refs": 58,
+  "stale_refs": 0,
+  "questions": 1,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 3,
+    "ever": 5
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 3
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 4,
+  "co_edited": [
+   "/workspace/tiktoken/core.py"
+  ],
+  "id_confusion_msgs": 2,
+  "edits_per_agent": {
+   "agent_1": 3,
+   "agent_2": 3
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__openai_tiktoken_task_task0_feature3_feature4.json.gz",
+  "agents": 2,
+  "events": 253,
+  "messages": 22,
+  "line_ref_msgs": 16,
+  "total_line_refs": 67,
+  "stale_refs": 0,
+  "questions": 2,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 1,
+    "ever": 9
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 7
+   }
+  },
+  "full_suite_runs": 3,
+  "scoped_runs": 5,
+  "co_edited": [
+   "/workspace/tiktoken/core.py"
+  ],
+  "id_confusion_msgs": 21,
+  "edits_per_agent": {
+   "agent_1": 5,
+   "agent_2": 4
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "claude__openai_tiktoken_task_task0_feature3_feature6.json.gz",
+  "agents": 2,
+  "events": 227,
+  "messages": 15,
+  "line_ref_msgs": 10,
+  "total_line_refs": 36,
+  "stale_refs": 0,
+  "questions": 1,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 1,
+    "ever": 9
+   },
+   "agent_2": {
+    "after_partner_done": 1,
+    "ever": 9
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 2,
+  "co_edited": [
+   "/workspace/tiktoken/core.py"
+  ],
+  "id_confusion_msgs": 5,
+  "edits_per_agent": {
+   "agent_1": 5,
+   "agent_2": 7
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "claude__openai_tiktoken_task_task0_feature3_feature9.json.gz",
+  "agents": 2,
+  "events": 234,
+  "messages": 19,
+  "line_ref_msgs": 16,
+  "total_line_refs": 107,
+  "stale_refs": 0,
+  "questions": 2,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 8
+   },
+   "agent_2": {
+    "after_partner_done": 7,
+    "ever": 10
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 1,
+  "co_edited": [
+   "/workspace/tiktoken/core.py"
+  ],
+  "id_confusion_msgs": 15,
+  "edits_per_agent": {
+   "agent_1": 5,
+   "agent_2": 6
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "claude__openai_tiktoken_task_task0_feature5_feature7.json.gz",
+  "agents": 2,
+  "events": 223,
+  "messages": 11,
+  "line_ref_msgs": 11,
+  "total_line_refs": 84,
+  "stale_refs": 0,
+  "questions": 1,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 3,
+    "ever": 6
+   },
+   "agent_2": {
+    "after_partner_done": 3,
+    "ever": 6
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 4,
+  "co_edited": [
+   "/workspace/tiktoken/core.py"
+  ],
+  "id_confusion_msgs": 4,
+  "edits_per_agent": {
+   "agent_1": 7,
+   "agent_2": 5
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": true
+ },
+ {
+  "file": "claude__openai_tiktoken_task_task0_feature6_feature7.json.gz",
+  "agents": 2,
+  "events": 224,
+  "messages": 10,
+  "line_ref_msgs": 7,
+  "total_line_refs": 42,
+  "stale_refs": 1,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 6
+   },
+   "agent_2": {
+    "after_partner_done": 8,
+    "ever": 10
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 5,
+  "co_edited": [
+   "/workspace/tiktoken/core.py"
+  ],
+  "id_confusion_msgs": 8,
+  "edits_per_agent": {
+   "agent_1": 5,
+   "agent_2": 5
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": true
+ },
+ {
+  "file": "claude__pallets_click_task_task2068_feature2_feature9.json.gz",
+  "agents": 2,
+  "events": 288,
+  "messages": 18,
+  "line_ref_msgs": 12,
+  "total_line_refs": 53,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 10,
+    "ever": 15
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 10
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 3,
+  "co_edited": [
+   "/workspace/src/click/_termui_impl.py",
+   "/workspace/src/click/termui.py"
+  ],
+  "id_confusion_msgs": 13,
+  "edits_per_agent": {
+   "agent_1": 9,
+   "agent_2": 8
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_click_task_task2068_feature3_feature6.json.gz",
+  "agents": 2,
+  "events": 276,
+  "messages": 18,
+  "line_ref_msgs": 13,
+  "total_line_refs": 76,
+  "stale_refs": 0,
+  "questions": 2,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 8
+   },
+   "agent_2": {
+    "after_partner_done": 10,
+    "ever": 19
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/click/_termui_impl.py",
+   "/workspace/src/click/termui.py"
+  ],
+  "id_confusion_msgs": 3,
+  "edits_per_agent": {
+   "agent_1": 8,
+   "agent_2": 11
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_click_task_task2800_feature1_feature6.json.gz",
+  "agents": 2,
+  "events": 229,
+  "messages": 10,
+  "line_ref_msgs": 9,
+  "total_line_refs": 30,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 10
+   },
+   "agent_2": {
+    "after_partner_done": 2,
+    "ever": 3
+   }
+  },
+  "full_suite_runs": 3,
+  "scoped_runs": 5,
+  "co_edited": [
+   "/workspace/src/click/shell_completion.py"
+  ],
+  "id_confusion_msgs": 9,
+  "edits_per_agent": {
+   "agent_1": 4,
+   "agent_2": 9
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_click_task_task2800_feature3_feature4.json.gz",
+  "agents": 2,
+  "events": 289,
+  "messages": 14,
+  "line_ref_msgs": 8,
+  "total_line_refs": 52,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 2,
+    "ever": 18
+   },
+   "agent_2": {
+    "after_partner_done": 7,
+    "ever": 16
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/click/core.py"
+  ],
+  "id_confusion_msgs": 6,
+  "edits_per_agent": {
+   "agent_1": 5,
+   "agent_2": 8
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_click_task_task2800_feature4_feature6.json.gz",
+  "agents": 2,
+  "events": 211,
+  "messages": 3,
+  "line_ref_msgs": 3,
+  "total_line_refs": 14,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 15,
+    "ever": 15
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 8
+   }
+  },
+  "full_suite_runs": 5,
+  "scoped_runs": 7,
+  "co_edited": [
+   "/workspace/src/click/core.py"
+  ],
+  "id_confusion_msgs": 3,
+  "edits_per_agent": {
+   "agent_1": 8,
+   "agent_2": 4
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_click_task_task2956_feature1_feature8.json.gz",
+  "agents": 2,
+  "events": 343,
+  "messages": 12,
+  "line_ref_msgs": 11,
+  "total_line_refs": 65,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 5,
+    "ever": 10
+   },
+   "agent_2": {
+    "after_partner_done": 1,
+    "ever": 30
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 9,
+  "co_edited": [
+   "/workspace/src/click/core.py"
+  ],
+  "id_confusion_msgs": 7,
+  "edits_per_agent": {
+   "agent_1": 17,
+   "agent_2": 14
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_click_task_task2956_feature3_feature6.json.gz",
+  "agents": 2,
+  "events": 363,
+  "messages": 20,
+  "line_ref_msgs": 18,
+  "total_line_refs": 85,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 21
+   },
+   "agent_2": {
+    "after_partner_done": 3,
+    "ever": 20
+   }
+  },
+  "full_suite_runs": 4,
+  "scoped_runs": 14,
+  "co_edited": [
+   "/workspace/src/click/core.py"
+  ],
+  "id_confusion_msgs": 4,
+  "edits_per_agent": {
+   "agent_1": 10,
+   "agent_2": 14
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_click_task_task2956_feature4_feature8.json.gz",
+  "agents": 2,
+  "events": 290,
+  "messages": 9,
+  "line_ref_msgs": 8,
+  "total_line_refs": 41,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 13
+   },
+   "agent_2": {
+    "after_partner_done": 7,
+    "ever": 21
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 6,
+  "co_edited": [
+   "/workspace/src/click/core.py"
+  ],
+  "id_confusion_msgs": 7,
+  "edits_per_agent": {
+   "agent_1": 7,
+   "agent_2": 11
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_jinja_task_task1465_feature1_feature2.json.gz",
+  "agents": 2,
+  "events": 252,
+  "messages": 4,
+  "line_ref_msgs": 3,
+  "total_line_refs": 16,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 9
+   },
+   "agent_2": {
+    "after_partner_done": 3,
+    "ever": 7
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 7,
+  "co_edited": [
+   "/workspace/src/jinja2/filters.py"
+  ],
+  "id_confusion_msgs": 0,
+  "edits_per_agent": {
+   "agent_1": 10,
+   "agent_2": 16
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_jinja_task_task1465_feature2_feature5.json.gz",
+  "agents": 2,
+  "events": 246,
+  "messages": 4,
+  "line_ref_msgs": 4,
+  "total_line_refs": 29,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 9
+   },
+   "agent_2": {
+    "after_partner_done": 6,
+    "ever": 6
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 12,
+  "co_edited": [
+   "/workspace/src/jinja2/filters.py"
+  ],
+  "id_confusion_msgs": 2,
+  "edits_per_agent": {
+   "agent_1": 5,
+   "agent_2": 12
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_jinja_task_task1465_feature2_feature7.json.gz",
+  "agents": 2,
+  "events": 282,
+  "messages": 23,
+  "line_ref_msgs": 15,
+  "total_line_refs": 95,
+  "stale_refs": 0,
+  "questions": 4,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 11
+   },
+   "agent_2": {
+    "after_partner_done": 4,
+    "ever": 13
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/jinja2/filters.py"
+  ],
+  "id_confusion_msgs": 15,
+  "edits_per_agent": {
+   "agent_1": 7,
+   "agent_2": 9
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_jinja_task_task1465_feature4_feature9.json.gz",
+  "agents": 2,
+  "events": 328,
+  "messages": 18,
+  "line_ref_msgs": 12,
+  "total_line_refs": 74,
+  "stale_refs": 0,
+  "questions": 1,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 19,
+    "ever": 27
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 14
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/jinja2/filters.py"
+  ],
+  "id_confusion_msgs": 18,
+  "edits_per_agent": {
+   "agent_1": 8,
+   "agent_2": 7
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_jinja_task_task1559_feature2_feature3.json.gz",
+  "agents": 2,
+  "events": 447,
+  "messages": 26,
+  "line_ref_msgs": 22,
+  "total_line_refs": 146,
+  "stale_refs": 4,
+  "questions": 6,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 1,
+    "ever": 34
+   },
+   "agent_2": {
+    "after_partner_done": 5,
+    "ever": 20
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/jinja2/ext.py"
+  ],
+  "id_confusion_msgs": 3,
+  "edits_per_agent": {
+   "agent_1": 17,
+   "agent_2": 9
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_jinja_task_task1559_feature5_feature8.json.gz",
+  "agents": 2,
+  "events": 288,
+  "messages": 8,
+  "line_ref_msgs": 8,
+  "total_line_refs": 28,
+  "stale_refs": 0,
+  "questions": 1,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 11
+   },
+   "agent_2": {
+    "after_partner_done": 9,
+    "ever": 17
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 2,
+  "co_edited": [
+   "/workspace/src/jinja2/ext.py"
+  ],
+  "id_confusion_msgs": 6,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 8
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_jinja_task_task1559_feature8_feature9.json.gz",
+  "agents": 2,
+  "events": 294,
+  "messages": 9,
+  "line_ref_msgs": 9,
+  "total_line_refs": 32,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 9,
+    "ever": 23
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 13
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/jinja2/ext.py"
+  ],
+  "id_confusion_msgs": 3,
+  "edits_per_agent": {
+   "agent_1": 12,
+   "agent_2": 6
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_jinja_task_task1621_feature2_feature8.json.gz",
+  "agents": 2,
+  "events": 324,
+  "messages": 20,
+  "line_ref_msgs": 14,
+  "total_line_refs": 53,
+  "stale_refs": 0,
+  "questions": 1,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 22
+   },
+   "agent_2": {
+    "after_partner_done": 2,
+    "ever": 22
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 1,
+  "co_edited": [
+   "/workspace/src/jinja2/loaders.py"
+  ],
+  "id_confusion_msgs": 9,
+  "edits_per_agent": {
+   "agent_1": 3,
+   "agent_2": 23
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_jinja_task_task1621_feature4_feature10.json.gz",
+  "agents": 2,
+  "events": 233,
+  "messages": 17,
+  "line_ref_msgs": 15,
+  "total_line_refs": 45,
+  "stale_refs": 0,
+  "questions": 2,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 3,
+    "ever": 8
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 10
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 5,
+  "co_edited": [
+   "/workspace/src/jinja2/loaders.py"
+  ],
+  "id_confusion_msgs": 3,
+  "edits_per_agent": {
+   "agent_1": 6,
+   "agent_2": 7
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_jinja_task_task1621_feature4_feature5.json.gz",
+  "agents": 2,
+  "events": 276,
+  "messages": 26,
+  "line_ref_msgs": 23,
+  "total_line_refs": 102,
+  "stale_refs": 1,
+  "questions": 3,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 5,
+    "ever": 19
+   },
+   "agent_2": {
+    "after_partner_done": 18,
+    "ever": 22
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 2,
+  "co_edited": [
+   "/workspace/src/jinja2/loaders.py"
+  ],
+  "id_confusion_msgs": 5,
+  "edits_per_agent": {
+   "agent_1": 4,
+   "agent_2": 3
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_jinja_task_task1621_feature5_feature9.json.gz",
+  "agents": 2,
+  "events": 240,
+  "messages": 26,
+  "line_ref_msgs": 25,
+  "total_line_refs": 169,
+  "stale_refs": 0,
+  "questions": 2,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 2,
+    "ever": 5
+   },
+   "agent_2": {
+    "after_partner_done": 6,
+    "ever": 11
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 2,
+  "co_edited": [
+   "/workspace/src/jinja2/loaders.py"
+  ],
+  "id_confusion_msgs": 23,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 4
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_jinja_task_task1621_feature6_feature7.json.gz",
+  "agents": 2,
+  "events": 260,
+  "messages": 11,
+  "line_ref_msgs": 9,
+  "total_line_refs": 91,
+  "stale_refs": 0,
+  "questions": 1,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 9,
+    "ever": 22
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 6
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 5,
+  "co_edited": [
+   "/workspace/src/jinja2/loaders.py"
+  ],
+  "id_confusion_msgs": 6,
+  "edits_per_agent": {
+   "agent_1": 27,
+   "agent_2": 4
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_jinja_task_task1621_feature7_feature10.json.gz",
+  "agents": 2,
+  "events": 304,
+  "messages": 12,
+  "line_ref_msgs": 11,
+  "total_line_refs": 75,
+  "stale_refs": 1,
+  "questions": 1,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 7
+   },
+   "agent_2": {
+    "after_partner_done": 26,
+    "ever": 36
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 5,
+  "co_edited": [
+   "/workspace/src/jinja2/loaders.py"
+  ],
+  "id_confusion_msgs": 7,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 23
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_jinja_task_task1621_feature7_feature9.json.gz",
+  "agents": 2,
+  "events": 172,
+  "messages": 10,
+  "line_ref_msgs": 10,
+  "total_line_refs": 38,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 2,
+    "ever": 6
+   },
+   "agent_2": {
+    "after_partner_done": 6,
+    "ever": 8
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 7,
+  "co_edited": [
+   "/workspace/src/jinja2/loaders.py"
+  ],
+  "id_confusion_msgs": 8,
+  "edits_per_agent": {
+   "agent_1": 1,
+   "agent_2": 4
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pallets_jinja_task_task1621_feature9_feature10.json.gz",
+  "agents": 2,
+  "events": 222,
+  "messages": 12,
+  "line_ref_msgs": 10,
+  "total_line_refs": 44,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 2,
+    "ever": 7
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 14
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/jinja2/loaders.py"
+  ],
+  "id_confusion_msgs": 5,
+  "edits_per_agent": {
+   "agent_1": 9,
+   "agent_2": 11
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pillow_task_task25_feature2_feature3.json.gz",
+  "agents": 2,
+  "events": 242,
+  "messages": 17,
+  "line_ref_msgs": 16,
+  "total_line_refs": 53,
+  "stale_refs": 0,
+  "questions": 3,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 2,
+    "ever": 17
+   },
+   "agent_2": {
+    "after_partner_done": 2,
+    "ever": 13
+   }
+  },
+  "full_suite_runs": 3,
+  "scoped_runs": 6,
+  "co_edited": [
+   "/workspace/Tests/test_image.py",
+   "/workspace/src/PIL/Image.py"
+  ],
+  "id_confusion_msgs": 2,
+  "edits_per_agent": {
+   "agent_1": 4,
+   "agent_2": 6
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": true
+ },
+ {
+  "file": "claude__pillow_task_task290_feature1_feature2.json.gz",
+  "agents": 2,
+  "events": 236,
+  "messages": 15,
+  "line_ref_msgs": 15,
+  "total_line_refs": 69,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 3,
+    "ever": 10
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 12
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 8,
+  "co_edited": [
+   "/workspace/Tests/test_image_quantize.py",
+   "/workspace/src/PIL/Image.py"
+  ],
+  "id_confusion_msgs": 2,
+  "edits_per_agent": {
+   "agent_1": 5,
+   "agent_2": 5
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__pillow_task_task68_feature2_feature5.json.gz",
+  "agents": 2,
+  "events": 232,
+  "messages": 16,
+  "line_ref_msgs": 9,
+  "total_line_refs": 59,
+  "stale_refs": 0,
+  "questions": 1,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 9
+   },
+   "agent_2": {
+    "after_partner_done": 10,
+    "ever": 17
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 6,
+  "co_edited": [
+   "/workspace/src/PIL/ImageOps.py"
+  ],
+  "id_confusion_msgs": 8,
+  "edits_per_agent": {
+   "agent_1": 7,
+   "agent_2": 5
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "claude__react_hook_form_task_task153_feature2_feature3.json.gz",
+  "agents": 2,
+  "events": 182,
+  "messages": 10,
+  "line_ref_msgs": 9,
+  "total_line_refs": 50,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 8
+   },
+   "agent_2": {
+    "after_partner_done": 1,
+    "ever": 7
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/logic/createFormControl.ts"
+  ],
+  "id_confusion_msgs": 5,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 5
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__react_hook_form_task_task153_feature2_feature4.json.gz",
+  "agents": 2,
+  "events": 208,
+  "messages": 24,
+  "line_ref_msgs": 23,
+  "total_line_refs": 103,
+  "stale_refs": 0,
+  "questions": 4,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 2,
+    "ever": 3
+   },
+   "agent_2": {
+    "after_partner_done": 2,
+    "ever": 5
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [],
+  "id_confusion_msgs": 3,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 2
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__react_hook_form_task_task153_feature4_feature5.json.gz",
+  "agents": 2,
+  "events": 198,
+  "messages": 16,
+  "line_ref_msgs": 15,
+  "total_line_refs": 62,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 1,
+    "ever": 7
+   },
+   "agent_2": {
+    "after_partner_done": 7,
+    "ever": 9
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/logic/createFormControl.ts"
+  ],
+  "id_confusion_msgs": 4,
+  "edits_per_agent": {
+   "agent_1": 4,
+   "agent_2": 1
+  },
+  "model": "claude",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__react_hook_form_task_task85_feature2_feature3.json.gz",
+  "agents": 2,
+  "events": 209,
+  "messages": 20,
+  "line_ref_msgs": 20,
+  "total_line_refs": 119,
+  "stale_refs": 0,
+  "questions": 1,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 0
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 13
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [],
+  "id_confusion_msgs": 6,
+  "edits_per_agent": {
+   "agent_1": 3,
+   "agent_2": 5
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "claude__samuelcolvin_dirty_equals_task_task43_feature4_feature8.json.gz",
+  "agents": 2,
+  "events": 252,
+  "messages": 11,
+  "line_ref_msgs": 8,
+  "total_line_refs": 39,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 18,
+    "ever": 20
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 10
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 1,
+  "co_edited": [
+   "/workspace/dirty_equals/__init__.py",
+   "/workspace/dirty_equals/_other.py"
+  ],
+  "id_confusion_msgs": 11,
+  "edits_per_agent": {
+   "agent_1": 5,
+   "agent_2": 4
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__samuelcolvin_dirty_equals_task_task43_feature5_feature7.json.gz",
+  "agents": 2,
+  "events": 241,
+  "messages": 20,
+  "line_ref_msgs": 15,
+  "total_line_refs": 57,
+  "stale_refs": 0,
+  "questions": 1,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 3
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 12
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/dirty_equals/__init__.py",
+   "/workspace/dirty_equals/_other.py"
+  ],
+  "id_confusion_msgs": 3,
+  "edits_per_agent": {
+   "agent_1": 14,
+   "agent_2": 8
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "claude__samuelcolvin_dirty_equals_task_task43_feature6_feature7.json.gz",
+  "agents": 2,
+  "events": 218,
+  "messages": 12,
+  "line_ref_msgs": 11,
+  "total_line_refs": 57,
+  "stale_refs": 0,
+  "questions": 2,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 13
+   },
+   "agent_2": {
+    "after_partner_done": 7,
+    "ever": 9
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/dirty_equals/__init__.py",
+   "/workspace/dirty_equals/_other.py"
+  ],
+  "id_confusion_msgs": 12,
+  "edits_per_agent": {
+   "agent_1": 4,
+   "agent_2": 3
+  },
+  "model": "claude",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__dottxt_ai_outlines_task_task1371_feature1_feature4.json.gz",
+  "agents": 2,
+  "events": 157,
+  "messages": 7,
+  "line_ref_msgs": 7,
+  "total_line_refs": 39,
+  "stale_refs": 7,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 0
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 1
+   }
+  },
+  "full_suite_runs": 3,
+  "scoped_runs": 1,
+  "co_edited": [],
+  "id_confusion_msgs": 3,
+  "edits_per_agent": {
+   "agent_1": 7,
+   "agent_2": 4
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__dottxt_ai_outlines_task_task1655_feature1_feature9.json.gz",
+  "agents": 2,
+  "events": 184,
+  "messages": 14,
+  "line_ref_msgs": 12,
+  "total_line_refs": 31,
+  "stale_refs": 4,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 4
+   },
+   "agent_2": {
+    "after_partner_done": 2,
+    "ever": 5
+   }
+  },
+  "full_suite_runs": 4,
+  "scoped_runs": 3,
+  "co_edited": [
+   "/workspace/outlines/types/__init__.py"
+  ],
+  "id_confusion_msgs": 1,
+  "edits_per_agent": {
+   "agent_1": 1,
+   "agent_2": 1
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__dottxt_ai_outlines_task_task1655_feature2_feature6.json.gz",
+  "agents": 2,
+  "events": 115,
+  "messages": 6,
+  "line_ref_msgs": 5,
+  "total_line_refs": 20,
+  "stale_refs": 2,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 3,
+    "ever": 4
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 2
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/outlines/types/__init__.py"
+  ],
+  "id_confusion_msgs": 6,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 1
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__dottxt_ai_outlines_task_task1655_feature5_feature10.json.gz",
+  "agents": 2,
+  "events": 152,
+  "messages": 11,
+  "line_ref_msgs": 10,
+  "total_line_refs": 26,
+  "stale_refs": 7,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 1,
+    "ever": 2
+   },
+   "agent_2": {
+    "after_partner_done": 2,
+    "ever": 7
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/outlines/types/__init__.py"
+  ],
+  "id_confusion_msgs": 2,
+  "edits_per_agent": {
+   "agent_1": 1,
+   "agent_2": 5
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__dottxt_ai_outlines_task_task1655_feature8_feature10.json.gz",
+  "agents": 2,
+  "events": 144,
+  "messages": 8,
+  "line_ref_msgs": 7,
+  "total_line_refs": 23,
+  "stale_refs": 6,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 1
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 2
+   }
+  },
+  "full_suite_runs": 3,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/outlines/types/__init__.py"
+  ],
+  "id_confusion_msgs": 3,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 4
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__dottxt_ai_outlines_task_task1655_feature8_feature9.json.gz",
+  "agents": 2,
+  "events": 125,
+  "messages": 8,
+  "line_ref_msgs": 8,
+  "total_line_refs": 28,
+  "stale_refs": 5,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 2
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 4
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/outlines/types/__init__.py"
+  ],
+  "id_confusion_msgs": 2,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 1
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "gpt5__dottxt_ai_outlines_task_task1706_feature1_feature4.json.gz",
+  "agents": 2,
+  "events": 186,
+  "messages": 12,
+  "line_ref_msgs": 9,
+  "total_line_refs": 25,
+  "stale_refs": 5,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 4,
+    "ever": 4
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 4
+   }
+  },
+  "full_suite_runs": 3,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/outlines/backends/xgrammar.py"
+  ],
+  "id_confusion_msgs": 3,
+  "edits_per_agent": {
+   "agent_1": 3,
+   "agent_2": 6
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "gpt5__dottxt_ai_outlines_task_task1706_feature2_feature7.json.gz",
+  "agents": 2,
+  "events": 223,
+  "messages": 13,
+  "line_ref_msgs": 10,
+  "total_line_refs": 49,
+  "stale_refs": 5,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 6,
+    "ever": 12
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 3
+   }
+  },
+  "full_suite_runs": 3,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/outlines/backends/xgrammar.py"
+  ],
+  "id_confusion_msgs": 1,
+  "edits_per_agent": {
+   "agent_1": 12,
+   "agent_2": 10
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "gpt5__dottxt_ai_outlines_task_task1706_feature3_feature5.json.gz",
+  "agents": 2,
+  "events": 180,
+  "messages": 10,
+  "line_ref_msgs": 10,
+  "total_line_refs": 37,
+  "stale_refs": 9,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 3
+   },
+   "agent_2": {
+    "after_partner_done": 3,
+    "ever": 4
+   }
+  },
+  "full_suite_runs": 4,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/outlines/backends/xgrammar.py"
+  ],
+  "id_confusion_msgs": 3,
+  "edits_per_agent": {
+   "agent_1": 1,
+   "agent_2": 10
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__dottxt_ai_outlines_task_task1706_feature4_feature7.json.gz",
+  "agents": 2,
+  "events": 109,
+  "messages": 11,
+  "line_ref_msgs": 10,
+  "total_line_refs": 38,
+  "stale_refs": 6,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 1,
+    "ever": 3
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 1
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/outlines/backends/xgrammar.py"
+  ],
+  "id_confusion_msgs": 1,
+  "edits_per_agent": {
+   "agent_1": 4,
+   "agent_2": 4
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "gpt5__dspy_task_task8563_feature1_feature2.json.gz",
+  "agents": 2,
+  "events": 160,
+  "messages": 9,
+  "line_ref_msgs": 8,
+  "total_line_refs": 30,
+  "stale_refs": 3,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 1,
+    "ever": 7
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 0
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/dspy/adapters/types/tool.py"
+  ],
+  "id_confusion_msgs": 0,
+  "edits_per_agent": {
+   "agent_1": 4,
+   "agent_2": 3
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__dspy_task_task8563_feature3_feature4.json.gz",
+  "agents": 2,
+  "events": 159,
+  "messages": 9,
+  "line_ref_msgs": 7,
+  "total_line_refs": 33,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 3,
+    "ever": 4
+   },
+   "agent_2": {
+    "after_partner_done": 1,
+    "ever": 4
+   }
+  },
+  "full_suite_runs": 4,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/dspy/adapters/types/tool.py"
+  ],
+  "id_confusion_msgs": 2,
+  "edits_per_agent": {
+   "agent_1": 3,
+   "agent_2": 3
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__dspy_task_task8587_feature1_feature6.json.gz",
+  "agents": 2,
+  "events": 144,
+  "messages": 10,
+  "line_ref_msgs": 10,
+  "total_line_refs": 35,
+  "stale_refs": 6,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 1
+   },
+   "agent_2": {
+    "after_partner_done": 4,
+    "ever": 4
+   }
+  },
+  "full_suite_runs": 4,
+  "scoped_runs": 1,
+  "co_edited": [
+   "/workspace/dspy/streaming/streaming_listener.py"
+  ],
+  "id_confusion_msgs": 2,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 4
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__dspy_task_task8635_feature1_feature2.json.gz",
+  "agents": 2,
+  "events": 148,
+  "messages": 8,
+  "line_ref_msgs": 8,
+  "total_line_refs": 52,
+  "stale_refs": 1,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 6,
+    "ever": 9
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 6
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/dspy/propose/grounded_proposer.py"
+  ],
+  "id_confusion_msgs": 1,
+  "edits_per_agent": {
+   "agent_1": 11,
+   "agent_2": 4
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__dspy_task_task8635_feature1_feature6.json.gz",
+  "agents": 2,
+  "events": 219,
+  "messages": 7,
+  "line_ref_msgs": 6,
+  "total_line_refs": 23,
+  "stale_refs": 3,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 9,
+    "ever": 14
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 27
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/dspy/propose/grounded_proposer.py"
+  ],
+  "id_confusion_msgs": 1,
+  "edits_per_agent": {
+   "agent_1": 10,
+   "agent_2": 21
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": null
+ },
+ {
+  "file": "gpt5__huggingface_datasets_task_task6252_feature1_feature5.json.gz",
+  "agents": 2,
+  "events": 75,
+  "messages": 0,
+  "line_ref_msgs": 0,
+  "total_line_refs": 0,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 3,
+    "ever": 4
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 3
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/datasets/features/image.py"
+  ],
+  "id_confusion_msgs": 0,
+  "edits_per_agent": {
+   "agent_1": 1,
+   "agent_2": 6
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__huggingface_datasets_task_task6252_feature3_feature4.json.gz",
+  "agents": 2,
+  "events": 227,
+  "messages": 21,
+  "line_ref_msgs": 21,
+  "total_line_refs": 84,
+  "stale_refs": 15,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 5,
+    "ever": 7
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 6
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/datasets/features/image.py"
+  ],
+  "id_confusion_msgs": 9,
+  "edits_per_agent": {
+   "agent_1": 11,
+   "agent_2": 6
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": true
+ },
+ {
+  "file": "gpt5__huggingface_datasets_task_task6252_feature4_feature6.json.gz",
+  "agents": 2,
+  "events": 118,
+  "messages": 9,
+  "line_ref_msgs": 9,
+  "total_line_refs": 49,
+  "stale_refs": 4,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 6,
+    "ever": 7
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 5
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/datasets/features/image.py"
+  ],
+  "id_confusion_msgs": 9,
+  "edits_per_agent": {
+   "agent_1": 3,
+   "agent_2": 1
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__llama_index_task_task17244_feature2_feature5.json.gz",
+  "agents": 2,
+  "events": 112,
+  "messages": 9,
+  "line_ref_msgs": 8,
+  "total_line_refs": 31,
+  "stale_refs": 4,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 4,
+    "ever": 5
+   },
+   "agent_2": {
+    "after_partner_done": 2,
+    "ever": 3
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/llama-index-core/llama_index/core/base/llms/types.py"
+  ],
+  "id_confusion_msgs": 5,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 1
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__llama_index_task_task17244_feature2_feature6.json.gz",
+  "agents": 2,
+  "events": 134,
+  "messages": 11,
+  "line_ref_msgs": 10,
+  "total_line_refs": 29,
+  "stale_refs": 4,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 2,
+    "ever": 3
+   },
+   "agent_2": {
+    "after_partner_done": 2,
+    "ever": 4
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/llama-index-core/llama_index/core/base/llms/types.py"
+  ],
+  "id_confusion_msgs": 1,
+  "edits_per_agent": {
+   "agent_1": 1,
+   "agent_2": 3
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__llama_index_task_task18813_feature1_feature5.json.gz",
+  "agents": 2,
+  "events": 132,
+  "messages": 8,
+  "line_ref_msgs": 8,
+  "total_line_refs": 29,
+  "stale_refs": 5,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 4
+   },
+   "agent_2": {
+    "after_partner_done": 4,
+    "ever": 5
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/llama-index-core/llama_index/core/base/llms/types.py"
+  ],
+  "id_confusion_msgs": 2,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 4
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__openai_tiktoken_task_task0_feature3_feature10.json.gz",
+  "agents": 2,
+  "events": 10,
+  "messages": 0,
+  "line_ref_msgs": 0,
+  "total_line_refs": 0,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": null,
+   "agent_2": null
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [],
+  "id_confusion_msgs": 0,
+  "edits_per_agent": {
+   "agent_1": 0,
+   "agent_2": 0
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__openai_tiktoken_task_task0_feature3_feature8.json.gz",
+  "agents": 2,
+  "events": 222,
+  "messages": 15,
+  "line_ref_msgs": 14,
+  "total_line_refs": 74,
+  "stale_refs": 9,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 3
+   },
+   "agent_2": {
+    "after_partner_done": 14,
+    "ever": 17
+   }
+  },
+  "full_suite_runs": 3,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/tiktoken/core.py"
+  ],
+  "id_confusion_msgs": 4,
+  "edits_per_agent": {
+   "agent_1": 8,
+   "agent_2": 8
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__openai_tiktoken_task_task0_feature5_feature6.json.gz",
+  "agents": 2,
+  "events": 126,
+  "messages": 3,
+  "line_ref_msgs": 3,
+  "total_line_refs": 10,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 2,
+    "ever": 3
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 2
+   }
+  },
+  "full_suite_runs": 3,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/tiktoken/core.py"
+  ],
+  "id_confusion_msgs": 1,
+  "edits_per_agent": {
+   "agent_1": 6,
+   "agent_2": 3
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_click_task_task2068_feature1_feature3.json.gz",
+  "agents": 2,
+  "events": 252,
+  "messages": 13,
+  "line_ref_msgs": 11,
+  "total_line_refs": 97,
+  "stale_refs": 10,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 11
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 0
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/click/_termui_impl.py",
+   "/workspace/src/click/termui.py"
+  ],
+  "id_confusion_msgs": 2,
+  "edits_per_agent": {
+   "agent_1": 5,
+   "agent_2": 12
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": true
+ },
+ {
+  "file": "gpt5__pallets_click_task_task2068_feature1_feature7.json.gz",
+  "agents": 2,
+  "events": 223,
+  "messages": 13,
+  "line_ref_msgs": 13,
+  "total_line_refs": 49,
+  "stale_refs": 11,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 15,
+    "ever": 26
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 16
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/click/_termui_impl.py",
+   "/workspace/src/click/termui.py"
+  ],
+  "id_confusion_msgs": 1,
+  "edits_per_agent": {
+   "agent_1": 12,
+   "agent_2": 7
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_click_task_task2068_feature2_feature5.json.gz",
+  "agents": 2,
+  "events": 150,
+  "messages": 9,
+  "line_ref_msgs": 9,
+  "total_line_refs": 31,
+  "stale_refs": 7,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 4,
+    "ever": 9
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 5
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/click/_termui_impl.py"
+  ],
+  "id_confusion_msgs": 1,
+  "edits_per_agent": {
+   "agent_1": 3,
+   "agent_2": 2
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_click_task_task2068_feature3_feature11.json.gz",
+  "agents": 2,
+  "events": 221,
+  "messages": 13,
+  "line_ref_msgs": 13,
+  "total_line_refs": 63,
+  "stale_refs": 7,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 6,
+    "ever": 19
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 1
+   }
+  },
+  "full_suite_runs": 3,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/click/_termui_impl.py"
+  ],
+  "id_confusion_msgs": 3,
+  "edits_per_agent": {
+   "agent_1": 4,
+   "agent_2": 7
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "gpt5__pallets_click_task_task2068_feature3_feature6.json.gz",
+  "agents": 2,
+  "events": 257,
+  "messages": 15,
+  "line_ref_msgs": 14,
+  "total_line_refs": 72,
+  "stale_refs": 8,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 21,
+    "ever": 31
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 10
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/click/_termui_impl.py"
+  ],
+  "id_confusion_msgs": 4,
+  "edits_per_agent": {
+   "agent_1": 8,
+   "agent_2": 9
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "gpt5__pallets_click_task_task2068_feature3_feature7.json.gz",
+  "agents": 2,
+  "events": 134,
+  "messages": 7,
+  "line_ref_msgs": 7,
+  "total_line_refs": 42,
+  "stale_refs": 6,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 3,
+    "ever": 7
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 3
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/click/_termui_impl.py"
+  ],
+  "id_confusion_msgs": 0,
+  "edits_per_agent": {
+   "agent_1": 7,
+   "agent_2": 3
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_click_task_task2068_feature4_feature9.json.gz",
+  "agents": 2,
+  "events": 197,
+  "messages": 13,
+  "line_ref_msgs": 12,
+  "total_line_refs": 58,
+  "stale_refs": 11,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 1,
+    "ever": 9
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 10
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/click/_termui_impl.py",
+   "/workspace/src/click/termui.py"
+  ],
+  "id_confusion_msgs": 6,
+  "edits_per_agent": {
+   "agent_1": 4,
+   "agent_2": 6
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "gpt5__pallets_click_task_task2068_feature5_feature7.json.gz",
+  "agents": 2,
+  "events": 220,
+  "messages": 11,
+  "line_ref_msgs": 11,
+  "total_line_refs": 35,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 2,
+    "ever": 2
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 1
+   }
+  },
+  "full_suite_runs": 3,
+  "scoped_runs": 0,
+  "co_edited": [],
+  "id_confusion_msgs": 3,
+  "edits_per_agent": {
+   "agent_1": 10,
+   "agent_2": 5
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_click_task_task2068_feature5_feature9.json.gz",
+  "agents": 2,
+  "events": 275,
+  "messages": 12,
+  "line_ref_msgs": 12,
+  "total_line_refs": 74,
+  "stale_refs": 11,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 1,
+    "ever": 6
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 6
+   }
+  },
+  "full_suite_runs": 4,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/click/_termui_impl.py"
+  ],
+  "id_confusion_msgs": 5,
+  "edits_per_agent": {
+   "agent_1": 5,
+   "agent_2": 16
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "gpt5__pallets_click_task_task2068_feature6_feature9.json.gz",
+  "agents": 2,
+  "events": 102,
+  "messages": 5,
+  "line_ref_msgs": 4,
+  "total_line_refs": 18,
+  "stale_refs": 3,
+  "questions": 0,
+  "recheck": {
+   "agent_1": null,
+   "agent_2": {
+    "after_partner_done": 1,
+    "ever": 1
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [],
+  "id_confusion_msgs": 2,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 0
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_click_task_task2068_feature7_feature10.json.gz",
+  "agents": 2,
+  "events": 220,
+  "messages": 15,
+  "line_ref_msgs": 13,
+  "total_line_refs": 74,
+  "stale_refs": 16,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 3
+   },
+   "agent_2": {
+    "after_partner_done": 10,
+    "ever": 19
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/click/_termui_impl.py",
+   "/workspace/src/click/termui.py"
+  ],
+  "id_confusion_msgs": 0,
+  "edits_per_agent": {
+   "agent_1": 11,
+   "agent_2": 5
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "gpt5__pallets_click_task_task2800_feature2_feature3.json.gz",
+  "agents": 2,
+  "events": 188,
+  "messages": 10,
+  "line_ref_msgs": 10,
+  "total_line_refs": 44,
+  "stale_refs": 7,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 7,
+    "ever": 21
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 4
+   }
+  },
+  "full_suite_runs": 5,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/click/core.py"
+  ],
+  "id_confusion_msgs": 1,
+  "edits_per_agent": {
+   "agent_1": 8,
+   "agent_2": 3
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_click_task_task2800_feature2_feature5.json.gz",
+  "agents": 2,
+  "events": 205,
+  "messages": 10,
+  "line_ref_msgs": 10,
+  "total_line_refs": 51,
+  "stale_refs": 6,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 1,
+    "ever": 5
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 23
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/click/core.py"
+  ],
+  "id_confusion_msgs": 7,
+  "edits_per_agent": {
+   "agent_1": 4,
+   "agent_2": 7
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_click_task_task2956_feature1_feature5.json.gz",
+  "agents": 2,
+  "events": 264,
+  "messages": 12,
+  "line_ref_msgs": 9,
+  "total_line_refs": 46,
+  "stale_refs": 4,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 20,
+    "ever": 44
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 21
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/click/core.py"
+  ],
+  "id_confusion_msgs": 2,
+  "edits_per_agent": {
+   "agent_1": 10,
+   "agent_2": 9
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1465_feature1_feature10.json.gz",
+  "agents": 2,
+  "events": 110,
+  "messages": 5,
+  "line_ref_msgs": 5,
+  "total_line_refs": 12,
+  "stale_refs": 1,
+  "questions": 0,
+  "recheck": {
+   "agent_1": null,
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 5
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [],
+  "id_confusion_msgs": 1,
+  "edits_per_agent": {
+   "agent_1": 3,
+   "agent_2": 0
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1465_feature1_feature2.json.gz",
+  "agents": 2,
+  "events": 91,
+  "messages": 7,
+  "line_ref_msgs": 7,
+  "total_line_refs": 31,
+  "stale_refs": 1,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 3
+   },
+   "agent_2": {
+    "after_partner_done": 1,
+    "ever": 6
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/jinja2/filters.py"
+  ],
+  "id_confusion_msgs": 0,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 5
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1465_feature1_feature4.json.gz",
+  "agents": 2,
+  "events": 168,
+  "messages": 12,
+  "line_ref_msgs": 11,
+  "total_line_refs": 22,
+  "stale_refs": 3,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 11
+   },
+   "agent_2": {
+    "after_partner_done": 8,
+    "ever": 14
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/jinja2/filters.py"
+  ],
+  "id_confusion_msgs": 5,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 1
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1465_feature3_feature8.json.gz",
+  "agents": 2,
+  "events": 185,
+  "messages": 10,
+  "line_ref_msgs": 10,
+  "total_line_refs": 38,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 1
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 0
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 1,
+  "co_edited": [
+   "/workspace/src/jinja2/filters.py"
+  ],
+  "id_confusion_msgs": 3,
+  "edits_per_agent": {
+   "agent_1": 3,
+   "agent_2": 5
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1465_feature3_feature9.json.gz",
+  "agents": 2,
+  "events": 106,
+  "messages": 5,
+  "line_ref_msgs": 5,
+  "total_line_refs": 20,
+  "stale_refs": 3,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 0
+   },
+   "agent_2": null
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 0,
+  "co_edited": [],
+  "id_confusion_msgs": 4,
+  "edits_per_agent": {
+   "agent_1": 0,
+   "agent_2": 3
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1465_feature6_feature10.json.gz",
+  "agents": 2,
+  "events": 236,
+  "messages": 11,
+  "line_ref_msgs": 9,
+  "total_line_refs": 41,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 6
+   },
+   "agent_2": {
+    "after_partner_done": 2,
+    "ever": 3
+   }
+  },
+  "full_suite_runs": 5,
+  "scoped_runs": 4,
+  "co_edited": [
+   "/workspace/src/jinja2/filters.py"
+  ],
+  "id_confusion_msgs": 5,
+  "edits_per_agent": {
+   "agent_1": 1,
+   "agent_2": 10
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1465_feature7_feature10.json.gz",
+  "agents": 2,
+  "events": 224,
+  "messages": 13,
+  "line_ref_msgs": 13,
+  "total_line_refs": 49,
+  "stale_refs": 7,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 19,
+    "ever": 27
+   },
+   "agent_2": {
+    "after_partner_done": 7,
+    "ever": 16
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/jinja2/filters.py"
+  ],
+  "id_confusion_msgs": 2,
+  "edits_per_agent": {
+   "agent_1": 12,
+   "agent_2": 1
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1559_feature1_feature10.json.gz",
+  "agents": 2,
+  "events": 76,
+  "messages": 0,
+  "line_ref_msgs": 0,
+  "total_line_refs": 0,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": null,
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 0
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 0,
+  "co_edited": [],
+  "id_confusion_msgs": 0,
+  "edits_per_agent": {
+   "agent_1": 3,
+   "agent_2": 0
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1559_feature1_feature7.json.gz",
+  "agents": 2,
+  "events": 81,
+  "messages": 4,
+  "line_ref_msgs": 2,
+  "total_line_refs": 10,
+  "stale_refs": 1,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 4
+   },
+   "agent_2": null
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [],
+  "id_confusion_msgs": 0,
+  "edits_per_agent": {
+   "agent_1": 0,
+   "agent_2": 5
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1559_feature1_feature9.json.gz",
+  "agents": 2,
+  "events": 144,
+  "messages": 5,
+  "line_ref_msgs": 5,
+  "total_line_refs": 17,
+  "stale_refs": 3,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 1
+   },
+   "agent_2": null
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [],
+  "id_confusion_msgs": 2,
+  "edits_per_agent": {
+   "agent_1": 0,
+   "agent_2": 5
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1559_feature2_feature7.json.gz",
+  "agents": 2,
+  "events": 213,
+  "messages": 10,
+  "line_ref_msgs": 10,
+  "total_line_refs": 49,
+  "stale_refs": 6,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 15
+   },
+   "agent_2": {
+    "after_partner_done": 2,
+    "ever": 2
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/jinja2/ext.py"
+  ],
+  "id_confusion_msgs": 1,
+  "edits_per_agent": {
+   "agent_1": 7,
+   "agent_2": 7
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1559_feature3_feature9.json.gz",
+  "agents": 2,
+  "events": 357,
+  "messages": 15,
+  "line_ref_msgs": 14,
+  "total_line_refs": 37,
+  "stale_refs": 10,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 29,
+    "ever": 37
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 14
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/jinja2/ext.py"
+  ],
+  "id_confusion_msgs": 1,
+  "edits_per_agent": {
+   "agent_1": 46,
+   "agent_2": 3
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1559_feature4_feature9.json.gz",
+  "agents": 2,
+  "events": 140,
+  "messages": 5,
+  "line_ref_msgs": 5,
+  "total_line_refs": 17,
+  "stale_refs": 2,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 3
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 8
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/jinja2/ext.py"
+  ],
+  "id_confusion_msgs": 3,
+  "edits_per_agent": {
+   "agent_1": 9,
+   "agent_2": 2
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1559_feature8_feature9.json.gz",
+  "agents": 2,
+  "events": 360,
+  "messages": 22,
+  "line_ref_msgs": 22,
+  "total_line_refs": 72,
+  "stale_refs": 19,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 8,
+    "ever": 18
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 31
+   }
+  },
+  "full_suite_runs": 0,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/jinja2/ext.py"
+  ],
+  "id_confusion_msgs": 9,
+  "edits_per_agent": {
+   "agent_1": 10,
+   "agent_2": 9
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": true
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1621_feature3_feature4.json.gz",
+  "agents": 2,
+  "events": 153,
+  "messages": 10,
+  "line_ref_msgs": 8,
+  "total_line_refs": 18,
+  "stale_refs": 5,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 2,
+    "ever": 3
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 2
+   }
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/jinja2/loaders.py"
+  ],
+  "id_confusion_msgs": 3,
+  "edits_per_agent": {
+   "agent_1": 6,
+   "agent_2": 2
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1621_feature3_feature9.json.gz",
+  "agents": 2,
+  "events": 141,
+  "messages": 11,
+  "line_ref_msgs": 11,
+  "total_line_refs": 40,
+  "stale_refs": 3,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 3
+   },
+   "agent_2": {
+    "after_partner_done": 5,
+    "ever": 7
+   }
+  },
+  "full_suite_runs": 4,
+  "scoped_runs": 1,
+  "co_edited": [
+   "/workspace/src/jinja2/loaders.py"
+  ],
+  "id_confusion_msgs": 4,
+  "edits_per_agent": {
+   "agent_1": 3,
+   "agent_2": 4
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1621_feature4_feature7.json.gz",
+  "agents": 2,
+  "events": 128,
+  "messages": 5,
+  "line_ref_msgs": 5,
+  "total_line_refs": 36,
+  "stale_refs": 2,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 1
+   },
+   "agent_2": {
+    "after_partner_done": 5,
+    "ever": 5
+   }
+  },
+  "full_suite_runs": 4,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/jinja2/loaders.py"
+  ],
+  "id_confusion_msgs": 2,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 2
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": true
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1621_feature5_feature10.json.gz",
+  "agents": 2,
+  "events": 165,
+  "messages": 10,
+  "line_ref_msgs": 10,
+  "total_line_refs": 59,
+  "stale_refs": 6,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 2
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 1
+   }
+  },
+  "full_suite_runs": 4,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/src/jinja2/loaders.py"
+  ],
+  "id_confusion_msgs": 4,
+  "edits_per_agent": {
+   "agent_1": 2,
+   "agent_2": 9
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1621_feature5_feature9.json.gz",
+  "agents": 2,
+  "events": 188,
+  "messages": 8,
+  "line_ref_msgs": 8,
+  "total_line_refs": 41,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 2
+   },
+   "agent_2": {
+    "after_partner_done": 14,
+    "ever": 15
+   }
+  },
+  "full_suite_runs": 3,
+  "scoped_runs": 1,
+  "co_edited": [
+   "/workspace/src/jinja2/loaders.py"
+  ],
+  "id_confusion_msgs": 1,
+  "edits_per_agent": {
+   "agent_1": 1,
+   "agent_2": 13
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pallets_jinja_task_task1621_feature7_feature9.json.gz",
+  "agents": 2,
+  "events": 114,
+  "messages": 4,
+  "line_ref_msgs": 4,
+  "total_line_refs": 28,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 0
+   },
+   "agent_2": null
+  },
+  "full_suite_runs": 1,
+  "scoped_runs": 1,
+  "co_edited": [],
+  "id_confusion_msgs": 1,
+  "edits_per_agent": {
+   "agent_1": 0,
+   "agent_2": 14
+  },
+  "model": "gpt5",
+  "passed": true,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__pillow_task_task290_feature2_feature5.json.gz",
+  "agents": 2,
+  "events": 153,
+  "messages": 5,
+  "line_ref_msgs": 4,
+  "total_line_refs": 11,
+  "stale_refs": 0,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 0
+   },
+   "agent_2": {
+    "after_partner_done": 0,
+    "ever": 0
+   }
+  },
+  "full_suite_runs": 2,
+  "scoped_runs": 4,
+  "co_edited": [
+   "/workspace/Tests/test_image_quantize.py",
+   "/workspace/src/PIL/Image.py"
+  ],
+  "id_confusion_msgs": 1,
+  "edits_per_agent": {
+   "agent_1": 4,
+   "agent_2": 8
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": false
+ },
+ {
+  "file": "gpt5__samuelcolvin_dirty_equals_task_task43_feature5_feature9.json.gz",
+  "agents": 2,
+  "events": 157,
+  "messages": 12,
+  "line_ref_msgs": 12,
+  "total_line_refs": 62,
+  "stale_refs": 17,
+  "questions": 0,
+  "recheck": {
+   "agent_1": {
+    "after_partner_done": 0,
+    "ever": 3
+   },
+   "agent_2": {
+    "after_partner_done": 3,
+    "ever": 6
+   }
+  },
+  "full_suite_runs": 5,
+  "scoped_runs": 0,
+  "co_edited": [
+   "/workspace/dirty_equals/__init__.py",
+   "/workspace/dirty_equals/_other.py"
+  ],
+  "id_confusion_msgs": 0,
+  "edits_per_agent": {
+   "agent_1": 4,
+   "agent_2": 4
+  },
+  "model": "gpt5",
+  "passed": false,
+  "hasConflict": true
+ }
+]

@@ -1,0 +1,724 @@
+[
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/dottxt_ai_outlines_task/1706/f4_f6",
+  "repo": "dottxt_ai_outlines_task",
+  "task_id": 1706,
+  "feature1": 4,
+  "feature2": 6,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/dottxt_ai_outlines_task/1706/f4_f6/agent4.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/dottxt_ai_outlines_task/1706/f4_f6/agent6.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "resolved": true,
+  "steps": 12,
+  "feature1_passed": true,
+  "feature2_passed": true,
+  "conflicted_files": [
+   "outlines/backends/xgrammar.py"
+  ],
+  "touched_test_files": [],
+  "merged_patch": "diff --git a/outlines/backends/xgrammar.py b/outlines/backends/xgrammar.py\nindex fcb1672d..50892d06 100644\n--- a/outlines/backends/xgrammar.py\n+++ b/outlines/backends/xgrammar.py\n@@ -1,6 +1,6 @@\n \"\"\"Backend class for XGrammar.\"\"\"\n \n-from typing import TYPE_CHECKING\n+from typing import TYPE_CHECKING, Callable, Optional\n \n from outlines.backends.base import BaseBackend\n from outlines.models import SteerableModel\n@@ -22,18 +22,25 @@ class XGrammarLogitsProcessor(OutlinesLogitsProcessor):\n \n     \"\"\"\n \n-    def __init__(self, compiled_grammar: str):\n+    def __init__(\n+        self,\n+        compiled_grammar: str,\n+        max_batch_size: Optional[int] = None,\n+    ):\n         \"\"\"\n         Parameters\n         ----------\n         compiled_grammar: str\n             The compiled grammar to use to create the logits processor.\n+        max_batch_size: Optional[int]\n+            The maximum batch size accepted by the logits processor.\n \n         \"\"\"\n         import xgrammar as xgr\n \n         self.xgr = xgr\n         self.compiled_grammar = compiled_grammar\n+        self.max_batch_size = max_batch_size\n         self.xgrammar_logits_processor = None\n         super().__init__(\"torch\")\n \n@@ -44,6 +51,12 @@ class XGrammarLogitsProcessor(OutlinesLogitsProcessor):\n     def process_logits(self, input_ids: TensorType, logits: TensorType) -> TensorType:\n         \"\"\"Bias the logits.\"\"\"\n         if self.xgrammar_logits_processor is None:\n+            batch_size = self.tensor_adapter.shape(logits)[0]\n+            if self.max_batch_size is not None and batch_size > self.max_batch_size:\n+                raise ValueError(\n+                    f\"Batch size {batch_size} exceeds maximum allowed batch size \"\n+                    f\"{self.max_batch_size}\"\n+                )\n             self.xgrammar_logits_processor = self.xgr.contrib.hf.LogitsProcessor(\n                 self.compiled_grammar\n             )\n@@ -79,7 +92,9 @@ class XGrammarBackend(BaseBackend):\n         self.grammar_compiler = xgr.GrammarCompiler(tokenizer_info)\n \n     def get_json_schema_logits_processor(\n-        self, json_schema: str\n+        self,\n+        json_schema: str,\n+        validate_grammar: Optional[Callable[[str], None]] = None,\n     ) -> \"LogitsProcessor\":\n         \"\"\"Create a logits processor from a JSON schema.\n \n@@ -87,6 +102,9 @@ class XGrammarBackend(BaseBackend):\n         ----------\n         json_schema: str\n             The JSON schema to create a logits processor from.\n+        validate_grammar: Optional[Callable[[str], None]]\n+            Optional callable to validate the grammar before compilation.\n+            It should raise an exception if validation fails.\n \n         Returns\n         -------\n@@ -94,18 +112,28 @@ class XGrammarBackend(BaseBackend):\n             The logits processor to use to constrain the generation.\n \n         \"\"\"\n+        if validate_grammar is not None:\n+            validate_grammar(json_schema)\n+\n         compiled_grammar = self.grammar_compiler.compile_json_schema(\n             json_schema\n         )\n         return XGrammarLogitsProcessor(compiled_grammar)\n \n-    def get_regex_logits_processor(self, regex: str) -> \"LogitsProcessor\":\n+    def get_regex_logits_processor(\n+        self,\n+        regex: str,\n+        validate_grammar: Optional[Callable[[str], None]] = None,\n+    ) -> \"LogitsProcessor\":\n         \"\"\"Create a logits processor from a regex.\n \n         Parameters\n         ----------\n         regex: str\n             The regex to create a logits processor from.\n+        validate_grammar: Optional[Callable[[str], None]]\n+            Optional callable to validate the grammar before compilation.\n+            It should raise an exception if validation fails.\n \n         Returns\n         -------\n@@ -113,16 +141,26 @@ class XGrammarBackend(BaseBackend):\n             The logits processor to use to constrain the generation.\n \n         \"\"\"\n+        if validate_grammar is not None:\n+            validate_grammar(regex)\n+\n         compiled_grammar = self.grammar_compiler.compile_regex(regex)\n         return XGrammarLogitsProcessor(compiled_grammar)\n \n-    def get_cfg_logits_processor(self, grammar: str) -> \"LogitsProcessor\":\n+    def get_cfg_logits_processor(\n+        self,\n+        grammar: str,\n+        validate_grammar: Optional[Callable[[str], None]] = None,\n+    ) -> \"LogitsProcessor\":\n         \"\"\"Create a logits processor from a context-free grammar.\n \n         Parameters\n         ----------\n         grammar: str\n             The context-free grammar to create a logits processor from.\n+        validate_grammar: Optional[Callable[[str], None]]\n+            Optional callable to validate the grammar before compilation.\n+            It should raise an exception if validation fails.\n \n         Returns\n         -------\n@@ -130,5 +168,8 @@ class XGrammarBackend(BaseBackend):\n             The logits processor to use to constrain the generation.\n \n         \"\"\"\n+        if validate_grammar is not None:\n+            validate_grammar(grammar)\n+\n         compiled_grammar = self.grammar_compiler.compile_grammar(grammar)\n         return XGrammarLogitsProcessor(compiled_grammar)\n",
+  "added_lines_final": 29,
+  "added_lines_novel": 0,
+  "novel_fraction": 0.0,
+  "dropped_agent_lines": 7,
+  "agent_lines_total": 36,
+  "novel_sample": [],
+  "f1_identifiers": 1,
+  "f1_identifiers_kept": 1,
+  "f1_clobbered": [],
+  "f2_identifiers": 3,
+  "f2_identifiers_kept": 3,
+  "f2_clobbered": [],
+  "tests": {
+   "f1": [
+    9,
+    0
+   ],
+   "f2": [
+    11,
+    0
+   ]
+  },
+  "both_passed": true
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f3_f6",
+  "repo": "openai_tiktoken_task",
+  "task_id": 0,
+  "feature1": 3,
+  "feature2": 6,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f3_f6/agent3.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f3_f6/agent6.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "resolved": true,
+  "steps": 19,
+  "feature1_passed": true,
+  "feature2_passed": true,
+  "conflicted_files": [
+   "tiktoken/core.py"
+  ],
+  "touched_test_files": [],
+  "merged_patch": "diff --git a/tiktoken/core.py b/tiktoken/core.py\nindex 6bc9736..5182391 100644\n--- a/tiktoken/core.py\n+++ b/tiktoken/core.py\n@@ -2,7 +2,7 @@ from __future__ import annotations\n \n import functools\n from concurrent.futures import ThreadPoolExecutor\n-from typing import TYPE_CHECKING, AbstractSet, Collection, Literal, NoReturn, Sequence\n+from typing import TYPE_CHECKING, AbstractSet, Callable, Collection, Literal, NoReturn, Sequence\n \n import regex\n \n@@ -80,9 +80,11 @@ class Encoding:\n         self,\n         text: str,\n         *,\n+        analyze_frequency: bool = False,\n         allowed_special: Literal[\"all\"] | AbstractSet[str] = set(),  # noqa: B006\n         disallowed_special: Literal[\"all\"] | Collection[str] = \"all\",\n-    ) -> list[int]:\n+        transformers: Callable[[str], str] | Sequence[Callable[[str], str]] | None = None,\n+    ) -> list[int] | tuple[list[int], dict[int, int]]:\n         \"\"\"Encodes a string into tokens.\n \n         Special tokens are artificial tokens used to unlock capabilities from a model,\n@@ -96,6 +98,11 @@ class Encoding:\n           cause all text corresponding to special tokens to be encoded as natural text.\n         - Setting `allowed_special` to \"all\" will cause this function to treat all text\n           corresponding to special tokens to be encoded as special tokens.\n+        - Setting `analyze_frequency` to `True` returns `(tokens, frequencies)`, where\n+          `frequencies` maps each token ID to its occurrence count.\n+\n+        Text can optionally be transformed before encoding by passing one callable or a\n+        sequence of callables in `transformers`. Transformers are applied in order.\n \n         ```\n         >>> enc.encode(\"hello world\")\n@@ -110,6 +117,17 @@ class Encoding:\n         [27, 91, 437, 1659, 5239, 91, 29]\n         ```\n         \"\"\"\n+        text = _apply_transformers(text, transformers)\n+        if analyze_frequency:\n+            tokens = self.encode(\n+                text,\n+                allowed_special=allowed_special,\n+                disallowed_special=disallowed_special,\n+            )\n+            frequencies: dict[int, int] = {}\n+            for token in tokens:\n+                frequencies[token] = frequencies.get(token, 0) + 1\n+            return tokens, frequencies\n         if allowed_special == \"all\":\n             allowed_special = self.special_tokens_set\n         if disallowed_special == \"all\":\n@@ -422,6 +440,23 @@ class Encoding:\n         self.__init__(**value)\n \n \n+def _apply_transformers(\n+    text: str,\n+    transformers: Callable[[str], str] | Sequence[Callable[[str], str]] | None,\n+) -> str:\n+    if transformers is None:\n+        return text\n+    if callable(transformers):\n+        transformers = (transformers,)\n+    for transformer in transformers:\n+        if not callable(transformer):\n+            raise TypeError(\"Each transformer must be callable\")\n+        text = transformer(text)\n+        if not isinstance(text, str):\n+            raise TypeError(\"Each transformer must return a string\")\n+    return text\n+\n+\n @functools.lru_cache(maxsize=128)\n def _special_token_regex(tokens: frozenset[str]) -> \"regex.Pattern[str]\":\n     inner = \"|\".join(regex.escape(token) for token in tokens)\n",
+  "added_lines_final": 33,
+  "added_lines_novel": 0,
+  "novel_fraction": 0.0,
+  "dropped_agent_lines": 2,
+  "agent_lines_total": 35,
+  "novel_sample": [],
+  "f1_identifiers": 0,
+  "f1_identifiers_kept": 0,
+  "f1_clobbered": [],
+  "f2_identifiers": 1,
+  "f2_identifiers_kept": 1,
+  "f2_clobbered": [],
+  "tests": {
+   "f1": [
+    1,
+    0
+   ],
+   "f2": [
+    1,
+    0
+   ]
+  },
+  "both_passed": true
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f2_f9",
+  "repo": "openai_tiktoken_task",
+  "task_id": 0,
+  "feature1": 2,
+  "feature2": 9,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f2_f9/agent2.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f2_f9/agent9.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "resolved": true,
+  "steps": 9,
+  "feature1_passed": true,
+  "feature2_passed": false,
+  "conflicted_files": [
+   "tiktoken/core.py"
+  ],
+  "touched_test_files": [],
+  "merged_patch": "diff --git a/tiktoken/core.py b/tiktoken/core.py\nindex 6bc9736..efbc650 100644\n--- a/tiktoken/core.py\n+++ b/tiktoken/core.py\n@@ -82,7 +82,9 @@ class Encoding:\n         *,\n         allowed_special: Literal[\"all\"] | AbstractSet[str] = set(),  # noqa: B006\n         disallowed_special: Literal[\"all\"] | Collection[str] = \"all\",\n-    ) -> list[int]:\n+        return_positions: bool = False,\n+        compress: bool = False,\n+    ) -> list[int] | tuple[list[int], list[int]]:\n         \"\"\"Encodes a string into tokens.\n \n         Special tokens are artificial tokens used to unlock capabilities from a model,\n@@ -120,8 +122,16 @@ class Encoding:\n             if match := _special_token_regex(disallowed_special).search(text):\n                 raise_disallowed_special_token(match.group())\n \n+        if return_positions:\n+            tokens, positions = self._encode_with_positions(text, allowed_special)\n+            if compress:\n+                keep = [i == 0 or token != tokens[i - 1] for i, token in enumerate(tokens)]\n+                tokens = [token for token, include in zip(tokens, keep) if include]\n+                positions = [position for position, include in zip(positions, keep) if include]\n+            return tokens, positions\n+\n         try:\n-            return self._core_bpe.encode(text, allowed_special)\n+            tokens = self._core_bpe.encode(text, allowed_special)\n         except UnicodeEncodeError:\n             # BPE operates on bytes, but the regex operates on unicode. If we pass a str that is\n             # invalid UTF-8 to Rust, it will rightfully complain. Here we do a quick and dirty\n@@ -130,7 +140,87 @@ class Encoding:\n             # string, but given that this is input we want to support, maybe that's okay.\n             # Also we use errors=\"replace\" to handle weird things like lone surrogates.\n             text = text.encode(\"utf-16\", \"surrogatepass\").decode(\"utf-16\", \"replace\")\n-            return self._core_bpe.encode(text, allowed_special)\n+            tokens = self._core_bpe.encode(text, allowed_special)\n+\n+        if compress:\n+            tokens = [token for i, token in enumerate(tokens) if i == 0 or token != tokens[i - 1]]\n+        return tokens\n+\n+    def _encode_with_positions(self, text: str, allowed_special: AbstractSet[str]) -> tuple[list[int], list[int]]:\n+        tokens: list[int] = []\n+        positions: list[int] = []\n+        special_matches = (\n+            _special_token_regex(frozenset(allowed_special)).finditer(text) if allowed_special else ()\n+        )\n+        cursor = 0\n+        for special_match in special_matches:\n+            self._encode_ordinary_with_positions(text[cursor : special_match.start()], cursor, tokens, positions)\n+            token_text = special_match.group()\n+            tokens.append(self._special_tokens[token_text])\n+            positions.append(special_match.start())\n+            cursor = special_match.end()\n+        self._encode_ordinary_with_positions(text[cursor:], cursor, tokens, positions)\n+        return tokens, positions\n+\n+    def _encode_ordinary_with_positions(\n+        self, text: str, base_position: int, tokens: list[int], positions: list[int]\n+    ) -> None:\n+        for match in regex.finditer(self._pat_str, text):\n+            piece = match.group()\n+            piece_tokens = self.encode_ordinary(piece)\n+            piece_bytes = piece.encode(\"utf-8\")\n+            byte_position = 0\n+            for token in piece_tokens:\n+                tokens.append(token)\n+                positions.append(\n+                    base_position\n+                    + match.start()\n+                    + len(piece_bytes[:byte_position].decode(\"utf-8\", \"ignore\"))\n+                )\n+                byte_position += len(self.decode_bytes([token]))\n+\n+    def _encode_with_positions(\n+        self, text: str, allowed_special: AbstractSet[str]\n+    ) -> tuple[list[int], list[int]]:\n+        \"\"\"Encode text and return each token's starting Python character index.\"\"\"\n+        tokens: list[int] = []\n+        positions: list[int] = []\n+\n+        # Split around allowed special tokens first. Otherwise a regex match can consume\n+        # text on both sides of a special token and obscure its source position.\n+        special_matches = (\n+            _special_token_regex(frozenset(allowed_special)).finditer(text)\n+            if allowed_special\n+            else ()\n+        )\n+        cursor = 0\n+        for special_match in special_matches:\n+            self._encode_ordinary_with_positions(text[cursor : special_match.start()], cursor, tokens, positions)\n+            token_text = special_match.group()\n+            tokens.append(self._special_tokens[token_text])\n+            positions.append(special_match.start())\n+            cursor = special_match.end()\n+        self._encode_ordinary_with_positions(text[cursor:], cursor, tokens, positions)\n+        return tokens, positions\n+\n+    def _encode_ordinary_with_positions(\n+        self, text: str, base_position: int, tokens: list[int], positions: list[int]\n+    ) -> None:\n+        for match in regex.finditer(self._pat_str, text):\n+            piece = match.group()\n+            piece_tokens = self.encode_ordinary(piece)\n+            piece_bytes = piece.encode(\"utf-8\")\n+            byte_position = 0\n+            for token in piece_tokens:\n+                tokens.append(token)\n+                # Token boundaries are byte boundaries. Ignoring an incomplete final\n+                # UTF-8 sequence maps continuation-byte starts to their character start.\n+                positions.append(\n+                    base_position\n+                    + match.start()\n+                    + len(piece_bytes[:byte_position].decode(\"utf-8\", \"ignore\"))\n+                )\n+                byte_position += len(self.decode_bytes([token]))\n \n     def encode_to_numpy(\n         self,\n",
+  "added_lines_final": 53,
+  "added_lines_novel": 0,
+  "novel_fraction": 0.0,
+  "dropped_agent_lines": 1,
+  "agent_lines_total": 54,
+  "novel_sample": [],
+  "f1_identifiers": 2,
+  "f1_identifiers_kept": 2,
+  "f1_clobbered": [],
+  "f2_identifiers": 2,
+  "f2_identifiers_kept": 2,
+  "f2_clobbered": [],
+  "tests": {
+   "f1": [
+    1,
+    0
+   ],
+   "f2": [
+    0,
+    1
+   ]
+  },
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f6_f8",
+  "repo": "openai_tiktoken_task",
+  "task_id": 0,
+  "feature1": 6,
+  "feature2": 8,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f6_f8/agent6.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f6_f8/agent8.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "resolved": true,
+  "steps": 9,
+  "feature1_passed": true,
+  "feature2_passed": true,
+  "conflicted_files": [
+   "tiktoken/core.py"
+  ],
+  "touched_test_files": [],
+  "merged_patch": "diff --git a/tiktoken/core.py b/tiktoken/core.py\nindex 6bc9736..edc2d77 100644\n--- a/tiktoken/core.py\n+++ b/tiktoken/core.py\n@@ -1,8 +1,9 @@\n from __future__ import annotations\n \n import functools\n+from collections import Counter\n from concurrent.futures import ThreadPoolExecutor\n-from typing import TYPE_CHECKING, AbstractSet, Collection, Literal, NoReturn, Sequence\n+from typing import TYPE_CHECKING, AbstractSet, Callable, Collection, Literal, NoReturn, Sequence\n \n import regex\n \n@@ -80,9 +81,11 @@ class Encoding:\n         self,\n         text: str,\n         *,\n+        return_repeated_pattern: bool = False,\n         allowed_special: Literal[\"all\"] | AbstractSet[str] = set(),  # noqa: B006\n         disallowed_special: Literal[\"all\"] | Collection[str] = \"all\",\n-    ) -> list[int]:\n+        transformers: Callable[[str], str] | Sequence[Callable[[str], str]] | None = None,\n+    ) -> list[int] | tuple[list[int], dict[tuple[int, int], int]]:\n         \"\"\"Encodes a string into tokens.\n \n         Special tokens are artificial tokens used to unlock capabilities from a model,\n@@ -110,6 +113,12 @@ class Encoding:\n         [27, 91, 437, 1659, 5239, 91, 29]\n         ```\n         \"\"\"\n+        if transformers is not None:\n+            if callable(transformers):\n+                transformers = (transformers,)\n+            for transformer in transformers:\n+                text = transformer(text)\n+\n         if allowed_special == \"all\":\n             allowed_special = self.special_tokens_set\n         if disallowed_special == \"all\":\n@@ -121,7 +130,7 @@ class Encoding:\n                 raise_disallowed_special_token(match.group())\n \n         try:\n-            return self._core_bpe.encode(text, allowed_special)\n+            tokens = self._core_bpe.encode(text, allowed_special)\n         except UnicodeEncodeError:\n             # BPE operates on bytes, but the regex operates on unicode. If we pass a str that is\n             # invalid UTF-8 to Rust, it will rightfully complain. Here we do a quick and dirty\n@@ -130,7 +139,12 @@ class Encoding:\n             # string, but given that this is input we want to support, maybe that's okay.\n             # Also we use errors=\"replace\" to handle weird things like lone surrogates.\n             text = text.encode(\"utf-16\", \"surrogatepass\").decode(\"utf-16\", \"replace\")\n-            return self._core_bpe.encode(text, allowed_special)\n+            tokens = self._core_bpe.encode(text, allowed_special)\n+\n+        if not return_repeated_pattern:\n+            return tokens\n+        patterns = Counter(zip(tokens, tokens[1:]))\n+        return tokens, dict(patterns.most_common(3))\n \n     def encode_to_numpy(\n         self,\n",
+  "added_lines_final": 15,
+  "added_lines_novel": 0,
+  "novel_fraction": 0.0,
+  "dropped_agent_lines": 0,
+  "agent_lines_total": 15,
+  "novel_sample": [],
+  "f1_identifiers": 0,
+  "f1_identifiers_kept": 0,
+  "f1_clobbered": [],
+  "f2_identifiers": 0,
+  "f2_identifiers_kept": 0,
+  "f2_clobbered": [],
+  "tests": {
+   "f1": [
+    1,
+    0
+   ],
+   "f2": [
+    1,
+    0
+   ]
+  },
+  "both_passed": true
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2068/f5_f7",
+  "repo": "pallets_click_task",
+  "task_id": 2068,
+  "feature1": 5,
+  "feature2": 7,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2068/f5_f7/agent5.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2068/f5_f7/agent7.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "resolved": true,
+  "steps": 13,
+  "feature1_passed": false,
+  "feature2_passed": true,
+  "conflicted_files": [
+   "src/click/_termui_impl.py",
+   "src/click/termui.py"
+  ],
+  "touched_test_files": [],
+  "merged_patch": "diff --git a/src/click/_termui_impl.py b/src/click/_termui_impl.py\nindex 7b97bfb..63325de 100644\n--- a/src/click/_termui_impl.py\n+++ b/src/click/_termui_impl.py\n@@ -8,6 +8,7 @@ from __future__ import annotations\n \n import collections.abc as cabc\n import contextlib\n+import datetime\n import math\n import os\n import sys\n@@ -485,11 +486,51 @@ class Editor:\n         env: cabc.Mapping[str, str] | None = None,\n         require_save: bool = True,\n         extension: str = \".txt\",\n+        escape_shell: bool = False,\n+        lock_files: bool = False,\n     ) -> None:\n         self.editor = editor\n         self.env = env\n         self.require_save = require_save\n         self.extension = extension\n+        self.escape_shell = escape_shell\n+        self.lock_files = lock_files\n+\n+    def _get_lock_filename(self, filename: str) -> str:\n+        \"\"\"Return the lock file name for *filename*.\"\"\"\n+        directory, basename = os.path.split(filename)\n+        return os.path.join(directory, f\".{basename}.lock\")\n+\n+    def _create_lock_file(self, filename: str) -> str:\n+        \"\"\"Atomically create and return the lock file for *filename*.\"\"\"\n+        lock_filename = self._get_lock_filename(filename)\n+        content = (\n+            f\"PID: {os.getpid()}\\n\"\n+            f\"Time: {datetime.datetime.now().isoformat()}\\n\"\n+        ).encode(\"utf-8\")\n+\n+        try:\n+            fd = os.open(lock_filename, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o644)\n+        except FileExistsError as e:\n+            raise ClickException(\n+                _(\"File is already being edited: {filename}\").format(filename=filename)\n+            ) from e\n+\n+        try:\n+            with os.fdopen(fd, \"wb\") as f:\n+                f.write(content)\n+        except BaseException:\n+            self._remove_lock_file(lock_filename)\n+            raise\n+\n+        return lock_filename\n+\n+    def _remove_lock_file(self, lock_filename: str) -> None:\n+        \"\"\"Remove a lock file, ignoring a lock that is already gone.\"\"\"\n+        try:\n+            os.unlink(lock_filename)\n+        except FileNotFoundError:\n+            pass\n \n     def get_editor(self) -> str:\n         if self.editor is not None:\n@@ -506,6 +547,7 @@ class Editor:\n         return \"vi\"\n \n     def edit_file(self, filename: str) -> None:\n+        import shlex\n         import subprocess\n \n         editor = self.get_editor()\n@@ -515,17 +557,31 @@ class Editor:\n             environ = os.environ.copy()\n             environ.update(self.env)\n \n+        if self.escape_shell:\n+            editor = shlex.join(shlex.split(editor))\n+            command = f\"{editor} {shlex.quote(filename)}\"\n+        else:\n+            command = f'{editor} \"{filename}\"'\n+\n+        lock_filename: str | None = None\n+        if self.lock_files:\n+            lock_filename = self._create_lock_file(filename)\n+\n         try:\n-            c = subprocess.Popen(f'{editor} \"{filename}\"', env=environ, shell=True)\n-            exit_code = c.wait()\n-            if exit_code != 0:\n+            try:\n+                c = subprocess.Popen(command, env=environ, shell=True)\n+                exit_code = c.wait()\n+                if exit_code != 0:\n+                    raise ClickException(\n+                        _(\"{editor}: Editing failed\").format(editor=editor)\n+                    )\n+            except OSError as e:\n                 raise ClickException(\n-                    _(\"{editor}: Editing failed\").format(editor=editor)\n-                )\n-        except OSError as e:\n-            raise ClickException(\n-                _(\"{editor}: Editing failed: {e}\").format(editor=editor, e=e)\n-            ) from e\n+                    _(\"{editor}: Editing failed: {e}\").format(editor=editor, e=e)\n+                ) from e\n+        finally:\n+            if lock_filename is not None:\n+                self._remove_lock_file(lock_filename)\n \n     def edit(self, text: t.AnyStr | None) -> t.AnyStr | None:\n         import tempfile\ndiff --git a/src/click/termui.py b/src/click/termui.py\nindex e14e670..36d11b1 100644\n--- a/src/click/termui.py\n+++ b/src/click/termui.py\n@@ -650,6 +650,8 @@ def edit(\n     require_save: bool = True,\n     extension: str = \".txt\",\n     filename: str | None = None,\n+    escape_shell: bool = False,\n+    lock_files: bool = False,\n ) -> t.AnyStr | None:\n     r\"\"\"Edits the given text in the defined editor.  If an editor is given\n     (should be the full path to the executable but the regular operating\n@@ -677,10 +679,21 @@ def edit(\n     :param filename: if provided it will edit this file instead of the\n                      provided text contents.  It will not use a temporary\n                      file as an indirection in that case.\n+    :param escape_shell: if set to `True`, shell special characters in the\n+                          editor and filename are escaped.\n+    :param lock_files: if true, create a lock file while the editor is\n+                       running to prevent concurrent edits.\n     \"\"\"\n     from ._termui_impl import Editor\n \n-    ed = Editor(editor=editor, env=env, require_save=require_save, extension=extension)\n+    ed = Editor(\n+        editor=editor,\n+        env=env,\n+        require_save=require_save,\n+        extension=extension,\n+        escape_shell=escape_shell,\n+        lock_files=lock_files,\n+    )\n \n     if filename is None:\n         return ed.edit(text)\n",
+  "added_lines_final": 62,
+  "added_lines_novel": 0,
+  "novel_fraction": 0.0,
+  "dropped_agent_lines": 4,
+  "agent_lines_total": 66,
+  "novel_sample": [],
+  "f1_identifiers": 3,
+  "f1_identifiers_kept": 3,
+  "f1_clobbered": [],
+  "f2_identifiers": 0,
+  "f2_identifiers_kept": 0,
+  "f2_clobbered": [],
+  "tests": {
+   "f1": [
+    68,
+    1
+   ],
+   "f2": [
+    65,
+    0
+   ]
+  },
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/dspy_task/8394/f3_f5",
+  "repo": "dspy_task",
+  "task_id": 8394,
+  "feature1": 3,
+  "feature2": 5,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/dspy_task/8394/f3_f5/agent3.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/dspy_task/8394/f3_f5/agent5.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "resolved": true,
+  "steps": 15,
+  "feature1_passed": true,
+  "feature2_passed": false,
+  "conflicted_files": [
+   "dspy/clients/cache.py"
+  ],
+  "touched_test_files": [],
+  "merged_patch": "diff --git a/dspy/clients/__init__.py b/dspy/clients/__init__.py\nindex 52be745ab..51a4289db 100644\n--- a/dspy/clients/__init__.py\n+++ b/dspy/clients/__init__.py\n@@ -1,7 +1,7 @@\n import logging\n import os\n from pathlib import Path\n-from typing import Optional\n+from typing import Literal, Optional\n \n import litellm\n from litellm.caching.caching import Cache as LitellmCache\n@@ -33,6 +33,10 @@ def configure_cache(\n     disk_size_limit_bytes: Optional[int] = DISK_CACHE_LIMIT,\n     memory_max_entries: Optional[int] = 1000000,\n     enable_litellm_cache: bool = False,\n+    compress: Optional[Literal[\"gzip\", \"zlib\"]] = None,\n+    cull_limit: Optional[int] = None,\n+    eviction_policy: Optional[str] = None,\n+    ttl: Optional[float] = None,\n ):\n     \"\"\"Configure the cache for DSPy.\n \n@@ -43,6 +47,10 @@ def configure_cache(\n         disk_size_limit_bytes: The size limit of the on-disk cache.\n         memory_max_entries: The maximum number of entries in the in-memory cache.\n         enable_litellm_cache: Whether to enable LiteLLM cache.\n+        compress: Optional disk compression codec (\"gzip\", \"zlib\", or None).\n+        cull_limit: Maximum number of items to cull when the disk cache is full.\n+        eviction_policy: Disk cache eviction policy.\n+        ttl: Optional lifetime in seconds for cache entries.\n     \"\"\"\n     if enable_disk_cache and enable_litellm_cache:\n         raise ValueError(\n@@ -72,9 +80,30 @@ def configure_cache(\n         disk_cache_dir,\n         disk_size_limit_bytes,\n         memory_max_entries,\n+        compress=compress,\n+        cull_limit=cull_limit,\n+        eviction_policy=eviction_policy,\n+        ttl=ttl,\n     )\n \n \n+\n+def set_ttl(seconds: Optional[float]) -> None:\n+    \"\"\"Set the lifetime for entries written to the active DSPy cache.\n+\n+    This updates the active cache without recreating it or changing its directory.\n+    Existing disk entries retain their original timestamps; subsequent writes use\n+    the new lifetime.\n+    \"\"\"\n+    import dspy\n+\n+    if seconds is not None and seconds <= 0:\n+        raise ValueError(\"ttl must be positive or None\")\n+    dspy.cache.ttl = seconds\n+    if hasattr(dspy.cache, \"memory_cache\") and hasattr(dspy.cache, \"_set_memory_cache\"):\n+        dspy.cache._set_memory_cache()\n+\n+\n litellm.telemetry = False\n litellm.cache = None  # By default we disable litellm cache and use DSPy on-disk cache.\n \n@@ -112,4 +141,5 @@ __all__ = [\n     \"enable_litellm_logging\",\n     \"disable_litellm_logging\",\n     \"configure_cache\",\n+    \"set_ttl\",\n ]\ndiff --git a/dspy/clients/cache.py b/dspy/clients/cache.py\nindex bfa7dbde8..1c3d57d57 100644\n--- a/dspy/clients/cache.py\n+++ b/dspy/clients/cache.py\n@@ -1,4 +1,6 @@\n import copy\n+import gzip\n+import zlib\n import inspect\n import logging\n import threading\n@@ -9,11 +11,18 @@ from typing import Any, Dict, Optional\n import cloudpickle\n import pydantic\n import ujson\n-from cachetools import LRUCache\n+from cachetools import LRUCache, TTLCache\n from diskcache import FanoutCache\n \n logger = logging.getLogger(__name__)\n \n+_CACHE_MAGIC = b\"DSPC\"\n+_CODEC_NONE = 0x00\n+_CODEC_GZIP = 0x01\n+_CODEC_ZLIB = 0x02\n+_CODEC_BY_NAME = {\"gzip\": _CODEC_GZIP, \"zlib\": _CODEC_ZLIB}\n+\n+\n \n class Cache:\n     \"\"\"DSPy Cache\n@@ -30,7 +39,10 @@ class Cache:\n         disk_cache_dir: str,\n         disk_size_limit_bytes: Optional[int] = 1024 * 1024 * 10,\n         memory_max_entries: Optional[int] = 1000000,\n-\n+        ttl: Optional[float] = None,\n+        compress: Optional[str] = None,\n+        cull_limit: Optional[int] = None,\n+        eviction_policy: Optional[str] = None,\n     ):\n         \"\"\"\n         Args:\n@@ -39,26 +51,74 @@ class Cache:\n             disk_cache_dir: The directory where the disk cache is stored.\n             disk_size_limit_bytes: The maximum size of the disk cache (in bytes).\n             memory_max_entries: The maximum size of the in-memory cache (in number of items).\n+            ttl: Optional time-to-live for cache entries, in seconds.\n+            compress: Optional compression algorithm for disk cache values.\n         \"\"\"\n \n         self.enable_disk_cache = enable_disk_cache\n         self.enable_memory_cache = enable_memory_cache\n+        if ttl is not None and ttl <= 0:\n+            raise ValueError(\"ttl must be positive or None\")\n+        if compress not in (None, \"gzip\", \"zlib\"):\n+            raise ValueError(\"compress must be one of 'gzip', 'zlib', or None\")\n+        self.ttl = ttl\n+        self.compression = compress\n+        self.cull_limit = cull_limit\n+        self.eviction_policy = eviction_policy\n         if self.enable_memory_cache:\n-            self.memory_cache = LRUCache(maxsize=memory_max_entries)\n+            self.memory_cache = (\n+                TTLCache(maxsize=memory_max_entries, ttl=ttl) if ttl is not None else LRUCache(maxsize=memory_max_entries)\n+            )\n         else:\n             self.memory_cache = {}\n         if self.enable_disk_cache:\n-            self.disk_cache = FanoutCache(\n-                shards=16,\n-                timeout=10,\n-                directory=disk_cache_dir,\n-                size_limit=disk_size_limit_bytes,\n-            )\n+            disk_settings = {\n+                \"directory\": disk_cache_dir,\n+                \"size_limit\": disk_size_limit_bytes,\n+            }\n+            if cull_limit is not None:\n+                disk_settings[\"cull_limit\"] = cull_limit\n+            if eviction_policy is not None:\n+                disk_settings[\"eviction_policy\"] = eviction_policy\n+            self.disk_cache = FanoutCache(shards=16, timeout=10, **disk_settings)\n         else:\n             self.disk_cache = {}\n \n         self._lock = threading.RLock()\n \n+    def _serialize_disk_value(self, value: Any) -> bytes:\n+        \"\"\"Serialize a value into the DSPy disk blob format.\"\"\"\n+        payload = cloudpickle.dumps(value)\n+        codec = _CODEC_BY_NAME.get(getattr(self, \"compression\", None), _CODEC_NONE)\n+        if codec == _CODEC_GZIP:\n+            payload = gzip.compress(payload)\n+        elif codec == _CODEC_ZLIB:\n+            payload = zlib.compress(payload)\n+        return _CACHE_MAGIC + bytes([codec]) + payload\n+\n+    @staticmethod\n+    def _deserialize_disk_value(value: Any) -> Any:\n+        # DiskCache may return an already-deserialized legacy object.\n+        if not isinstance(value, bytes) or not value.startswith(_CACHE_MAGIC):\n+            return value\n+        if len(value) < 5:\n+            raise ValueError(\"Invalid DSPy cache blob\")\n+        codec = value[4]\n+        payload = value[5:]\n+        if codec == _CODEC_GZIP:\n+            payload = gzip.decompress(payload)\n+        elif codec == _CODEC_ZLIB:\n+            payload = zlib.decompress(payload)\n+        elif codec != _CODEC_NONE:\n+            raise ValueError(\"Unknown DSPy cache codec: %d\" % codec)\n+        return cloudpickle.loads(payload)\n+\n+    def set_compression(self, codec: Optional[str]) -> None:\n+        \"\"\"Change compression for values written subsequently to disk.\"\"\"\n+        if codec not in (None, \"gzip\", \"zlib\"):\n+            raise ValueError(\"compress must be one of 'gzip', 'zlib', or None\")\n+        self.compression = codec\n+\n     def __contains__(self, key: str) -> bool:\n         \"\"\"Check if a key is in the cache.\"\"\"\n         return key in self.memory_cache or key in self.disk_cache\n@@ -108,11 +168,13 @@ class Cache:\n                 response = self.memory_cache[key]\n         elif self.enable_disk_cache and key in self.disk_cache:\n             # Found on disk but not in memory cache, add to memory cache\n-            response = self.disk_cache[key]\n+            response = self._deserialize_disk_value(self.disk_cache[key])\n             if self.enable_memory_cache:\n                 with self._lock:\n                     self.memory_cache[key] = response\n         else:\n+            if self.ttl is not None and self.enable_disk_cache:\n+                self.disk_cache.expire()\n             return None\n \n         response = copy.deepcopy(response)\n@@ -140,11 +202,33 @@ class Cache:\n \n         if self.enable_disk_cache:\n             try:\n-                self.disk_cache[key] = value\n+                self._set_disk_cache(key, value)\n             except Exception as e:\n                 # Disk cache writing can fail for different reasons, e.g. disk full or the `value` is not picklable.\n                 logger.debug(f\"Failed to put value in disk cache: {value}, {e}\")\n \n+    def _set_memory_cache(self) -> None:\n+        \"\"\"Rebuild the memory cache using the current TTL configuration.\"\"\"\n+        if not self.enable_memory_cache:\n+            return\n+        old_values = dict(self.memory_cache)\n+        maxsize = getattr(self.memory_cache, \"maxsize\", 1000000)\n+        if self.ttl is not None:\n+            self.memory_cache = TTLCache(maxsize=maxsize, ttl=self.ttl)\n+        else:\n+            self.memory_cache = LRUCache(maxsize=maxsize)\n+        self.memory_cache.update(old_values)\n+\n+    def _set_disk_cache(self, key: str, value: Any) -> None:\n+        \"\"\"Store a value on disk, applying the configured TTL when present.\"\"\"\n+        serialize = getattr(self, \"_serialize_disk_value\", None)\n+        if serialize is not None:\n+            value = serialize(value)\n+        if self.ttl is not None:\n+            self.disk_cache.set(key, value, expire=self.ttl)\n+        else:\n+            self.disk_cache[key] = value\n+\n     def reset_memory_cache(self) -> None:\n         if not self.enable_memory_cache:\n             return\n",
+  "added_lines_final": 105,
+  "added_lines_novel": 13,
+  "novel_fraction": 0.124,
+  "dropped_agent_lines": 2,
+  "agent_lines_total": 94,
+  "novel_sample": [
+   "\"directory\": disk_cache_dir,",
+   "\"size_limit\": disk_size_limit_bytes,",
+   "disk_settings = {",
+   "disk_settings[\"cull_limit\"] = cull_limit",
+   "disk_settings[\"eviction_policy\"] = eviction_policy",
+   "if compress not in (None, \"gzip\", \"zlib\"):",
+   "if cull_limit is not None:",
+   "if eviction_policy is not None:"
+  ],
+  "f1_identifiers": 2,
+  "f1_identifiers_kept": 2,
+  "f1_clobbered": [],
+  "f2_identifiers": 4,
+  "f2_identifiers_kept": 4,
+  "f2_clobbered": [],
+  "tests": {
+   "f1": [
+    10,
+    0
+   ],
+   "f2": [
+    14,
+    1
+   ]
+  },
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2068/f7_f10",
+  "repo": "pallets_click_task",
+  "task_id": 2068,
+  "feature1": 7,
+  "feature2": 10,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2068/f7_f10/agent7.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2068/f7_f10/agent10.patch",
+  "original_status": "conflicts",
+  "original_both_passed": true,
+  "resolved": true,
+  "steps": 11,
+  "feature1_passed": true,
+  "feature2_passed": true,
+  "conflicted_files": [
+   "src/click/termui.py"
+  ],
+  "touched_test_files": [],
+  "merged_patch": "diff --git a/src/click/_termui_impl.py b/src/click/_termui_impl.py\nindex 7b97bfb..a8438fd 100644\n--- a/src/click/_termui_impl.py\n+++ b/src/click/_termui_impl.py\n@@ -485,11 +485,15 @@ class Editor:\n         env: cabc.Mapping[str, str] | None = None,\n         require_save: bool = True,\n         extension: str = \".txt\",\n+        escape_shell: bool = False,\n+        working_dir: str | None = None,\n     ) -> None:\n         self.editor = editor\n         self.env = env\n         self.require_save = require_save\n         self.extension = extension\n+        self.escape_shell = escape_shell\n+        self.working_dir = working_dir\n \n     def get_editor(self) -> str:\n         if self.editor is not None:\n@@ -509,6 +513,12 @@ class Editor:\n         import subprocess\n \n         editor = self.get_editor()\n+        command = f'{editor} \"{filename}\"'\n+        if self.escape_shell:\n+            import shlex\n+\n+            editor = \" \".join(shlex.quote(arg) for arg in shlex.split(editor))\n+            command = f\"{editor} {shlex.quote(filename)}\"\n         environ: dict[str, str] | None = None\n \n         if self.env:\n@@ -516,7 +526,12 @@ class Editor:\n             environ.update(self.env)\n \n         try:\n-            c = subprocess.Popen(f'{editor} \"{filename}\"', env=environ, shell=True)\n+            c = subprocess.Popen(\n+                command,\n+                env=environ,\n+                shell=True,\n+                cwd=self.working_dir,\n+            )\n             exit_code = c.wait()\n             if exit_code != 0:\n                 raise ClickException(\ndiff --git a/src/click/termui.py b/src/click/termui.py\nindex e14e670..c899905 100644\n--- a/src/click/termui.py\n+++ b/src/click/termui.py\n@@ -650,6 +650,8 @@ def edit(\n     require_save: bool = True,\n     extension: str = \".txt\",\n     filename: str | None = None,\n+    escape_shell: bool = False,\n+    working_dir: str | None = None,\n ) -> t.AnyStr | None:\n     r\"\"\"Edits the given text in the defined editor.  If an editor is given\n     (should be the full path to the executable but the regular operating\n@@ -677,10 +679,20 @@ def edit(\n     :param filename: if provided it will edit this file instead of the\n                      provided text contents.  It will not use a temporary\n                      file as an indirection in that case.\n+    :param escape_shell: if this is true, shell-sensitive characters in the\n+                          editor command and filename will be escaped.\n+    :param working_dir: the directory in which to launch the editor process.\n     \"\"\"\n     from ._termui_impl import Editor\n \n-    ed = Editor(editor=editor, env=env, require_save=require_save, extension=extension)\n+    ed = Editor(\n+        editor=editor,\n+        env=env,\n+        require_save=require_save,\n+        extension=extension,\n+        escape_shell=escape_shell,\n+        working_dir=working_dir,\n+    )\n \n     if filename is None:\n         return ed.edit(text)\n",
+  "added_lines_final": 25,
+  "added_lines_novel": 2,
+  "novel_fraction": 0.08,
+  "dropped_agent_lines": 5,
+  "agent_lines_total": 28,
+  "novel_sample": [
+   ":param escape_shell: if this is true, shell-sensitive characters in the",
+   "editor command and filename will be escaped."
+  ],
+  "f1_identifiers": 0,
+  "f1_identifiers_kept": 0,
+  "f1_clobbered": [],
+  "f2_identifiers": 0,
+  "f2_identifiers_kept": 0,
+  "f2_clobbered": [],
+  "tests": {
+   "f1": [
+    65,
+    0
+   ],
+   "f2": [
+    65,
+    0
+   ]
+  },
+  "both_passed": true
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2800/f2_f7",
+  "repo": "pallets_click_task",
+  "task_id": 2800,
+  "feature1": 2,
+  "feature2": 7,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2800/f2_f7/agent2.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2800/f2_f7/agent7.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "resolved": true,
+  "steps": 16,
+  "feature1_passed": true,
+  "feature2_passed": true,
+  "conflicted_files": [
+   "src/click/core.py"
+  ],
+  "touched_test_files": [],
+  "merged_patch": "diff --git a/src/click/core.py b/src/click/core.py\nindex 666ad68..21452f0 100644\n--- a/src/click/core.py\n+++ b/src/click/core.py\n@@ -280,9 +280,19 @@ class Context:\n         token_normalize_func: t.Callable[[str], str] | None = None,\n         color: bool | None = None,\n         show_default: bool | None = None,\n+        validate_nesting: bool = False,\n+        on_exit: t.Callable[[Context], t.Any] | None = None,\n     ) -> None:\n         #: the parent context or `None` if none exists.\n         self.parent = parent\n+        #: Whether to validate that child contexts are closed before this\n+        #: context. Child contexts inherit this setting from their parent.\n+        self.validate_nesting = (\n+            parent.validate_nesting if parent is not None else validate_nesting\n+        )\n+        self._children: set[Context] = set()\n+        if self.validate_nesting and parent is not None:\n+            parent._children.add(self)\n         #: the :class:`Command` for this context.\n         self.command = command\n         #: the descriptive information name\n@@ -427,6 +437,9 @@ class Context:\n         #: Show option default values when formatting help text.\n         self.show_default: bool | None = show_default\n \n+        #: An optional callback invoked when this context is cleaned up.\n+        self.on_exit = on_exit\n+\n         self._close_callbacks: list[t.Callable[[], t.Any]] = []\n         self._depth = 0\n         self._parameter_source: dict[str, ParameterSource] = {}\n@@ -606,10 +619,32 @@ class Context:\n         \"\"\"Invoke all close callbacks registered with\n         :meth:`call_on_close`, and exit all context managers entered\n         with :meth:`with_resource`.\n+\n+        If nesting validation is enabled, a context cannot be closed while\n+        any of its child contexts are still open.\n         \"\"\"\n-        self._exit_stack.close()\n-        # In case the context is reused, create a new exit stack.\n-        self._exit_stack = ExitStack()\n+        if self.validate_nesting and self._children:\n+            children = \", \".join(child.command_path for child in self._children)\n+            raise RuntimeError(\n+                f\"Cannot close context {self.command_path!r} while child \"\n+                f\"contexts are still open: {children}\"\n+            )\n+\n+\n+        try:\n+            self._exit_stack.close()\n+        finally:\n+            # In case the context is reused, create a new exit stack.\n+            self._exit_stack = ExitStack()\n+            if self.validate_nesting and self.parent is not None:\n+                self.parent._children.discard(self)\n+\n+            if self.on_exit is not None:\n+                try:\n+                    self.on_exit(self)\n+                except Exception:\n+                    # Cleanup hooks must not interfere with context cleanup.\n+                    pass\n \n     @property\n     def command_path(self) -> str:\n@@ -728,7 +763,12 @@ class Context:\n \n         :meta private:\n         \"\"\"\n-        return type(self)(command, info_name=command.name, parent=self)\n+        return type(self)(\n+            command,\n+            info_name=command.name,\n+            parent=self,\n+            validate_nesting=self.validate_nesting,\n+        )\n \n     @t.overload\n     def invoke(\n@@ -1123,6 +1163,7 @@ class Command:\n         info_name: str | None,\n         args: list[str],\n         parent: Context | None = None,\n+        on_exit: t.Callable[[Context], t.Any] | None = None,\n         **extra: t.Any,\n     ) -> Context:\n         \"\"\"This function when given an info name and arguments will kick\n@@ -1139,6 +1180,7 @@ class Command:\n                           the name of the command.\n         :param args: the arguments to parse as list of strings.\n         :param parent: the parent context if available.\n+        :param on_exit: an optional callback invoked when the context exits.\n         :param extra: extra keyword arguments forwarded to the context\n                       constructor.\n \n@@ -1149,6 +1191,9 @@ class Command:\n             if key not in extra:\n                 extra[key] = value\n \n+        if on_exit is not None:\n+            extra[\"on_exit\"] = on_exit\n+\n         ctx = self.context_class(self, info_name=info_name, parent=parent, **extra)\n \n         with ctx.scope(cleanup=False):\ndiff --git a/src/click/shell_completion.py b/src/click/shell_completion.py\nindex 6fd9e54..25bdcad 100644\n--- a/src/click/shell_completion.py\n+++ b/src/click/shell_completion.py\n@@ -544,6 +544,7 @@ def _resolve_context(\n     :param args: List of complete args before the incomplete value.\n     \"\"\"\n     ctx_args[\"resilient_parsing\"] = True\n+    ctx_args[\"validate_nesting\"] = False\n     ctx = cli.make_context(prog_name, args.copy(), **ctx_args)\n     args = ctx._protected_args + ctx.args\n \n@@ -557,7 +558,13 @@ def _resolve_context(\n                 if cmd is None:\n                     return ctx\n \n-                ctx = cmd.make_context(name, args, parent=ctx, resilient_parsing=True)\n+                ctx = cmd.make_context(\n+                    name,\n+                    args,\n+                    parent=ctx,\n+                    resilient_parsing=True,\n+                    validate_nesting=False,\n+                )\n                 args = ctx._protected_args + ctx.args\n             else:\n                 sub_ctx = ctx\n@@ -575,6 +582,7 @@ def _resolve_context(\n                         allow_extra_args=True,\n                         allow_interspersed_args=False,\n                         resilient_parsing=True,\n+                        validate_nesting=False,\n                     )\n                     args = sub_ctx.args\n \n",
+  "added_lines_final": 46,
+  "added_lines_novel": 0,
+  "novel_fraction": 0.0,
+  "dropped_agent_lines": 0,
+  "agent_lines_total": 46,
+  "novel_sample": [],
+  "f1_identifiers": 0,
+  "f1_identifiers_kept": 0,
+  "f1_clobbered": [],
+  "f2_identifiers": 0,
+  "f2_identifiers_kept": 0,
+  "f2_clobbered": [],
+  "tests": {
+   "f1": [
+    76,
+    0
+   ],
+   "f2": [
+    72,
+    0
+   ]
+  },
+  "both_passed": true
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_jinja_task/1465/f2_f3",
+  "repo": "pallets_jinja_task",
+  "task_id": 1465,
+  "feature1": 2,
+  "feature2": 3,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_jinja_task/1465/f2_f3/agent2.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_jinja_task/1465/f2_f3/agent3.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "resolved": true,
+  "steps": 9,
+  "feature1_passed": true,
+  "feature2_passed": true,
+  "conflicted_files": [
+   "src/jinja2/filters.py"
+  ],
+  "touched_test_files": [],
+  "merged_patch": "diff --git a/src/jinja2/filters.py b/src/jinja2/filters.py\nindex 80ea6504..687207d0 100644\n--- a/src/jinja2/filters.py\n+++ b/src/jinja2/filters.py\n@@ -57,13 +57,14 @@ def make_attrgetter(\n     attribute: t.Optional[t.Union[str, int]],\n     postprocess: t.Optional[t.Callable[[t.Any], t.Any]] = None,\n     default: t.Optional[t.Any] = None,\n+    separator: str = \".\",\n ) -> t.Callable[[t.Any], t.Any]:\n     \"\"\"Returns a callable that looks up the given attribute from a\n     passed object with the rules of the environment.  Dots are allowed\n     to access attributes of attributes.  Integer parts in paths are\n     looked up as integers.\n     \"\"\"\n-    parts = _prepare_attribute_parts(attribute)\n+    parts = _prepare_attribute_parts(attribute, separator)\n \n     def attrgetter(item: t.Any) -> t.Any:\n         for part in parts:\n@@ -122,13 +123,13 @@ def make_multi_attrgetter(\n \n \n def _prepare_attribute_parts(\n-    attr: t.Optional[t.Union[str, int]]\n+    attr: t.Optional[t.Union[str, int]], separator: str = \".\"\n ) -> t.List[t.Union[str, int]]:\n     if attr is None:\n         return []\n \n     if isinstance(attr, str):\n-        return [int(x) if x.isdigit() else x for x in attr.split(\".\")]\n+        return [int(x) if x.isdigit() else x for x in attr.split(separator)]\n \n     return [attr]\n \n@@ -1163,10 +1164,14 @@ def sync_do_groupby(\n     value: \"t.Iterable[V]\",\n     attribute: t.Union[str, int],\n     default: t.Optional[t.Any] = None,\n+    separator: str = \".\",\n+    reverse: bool = False,\n ) -> \"t.List[t.Tuple[t.Any, t.List[V]]]\":\n     \"\"\"Group a sequence of objects by an attribute using Python's\n     :func:`itertools.groupby`. The attribute can use dot notation for\n-    nested access, like ``\"address.city\"``. Unlike Python's ``groupby``,\n+    nested access, like ``\"address.city\"``. The ``separator`` parameter\n+    can be used to customize the separator, such as ``\"__\"`` for Django-style\n+    lookups. Unlike Python's ``groupby``,\n     the values are sorted first so only one group is returned for each\n     unique value.\n \n@@ -1203,16 +1208,22 @@ def sync_do_groupby(\n           <li>{{ city }}: {{ items|map(attribute=\"name\")|join(\", \") }}</li>\n         {% endfor %}</ul>\n \n+    .. versionchanged:: 3.1\n+        Added the ``reverse`` parameter.\n+\n     .. versionchanged:: 3.0\n         Added the ``default`` parameter.\n \n+    .. versionchanged:: 3.2\n+        Added the ``separator`` parameter.\n+\n     .. versionchanged:: 2.6\n         The attribute supports dot notation for nested access.\n     \"\"\"\n-    expr = make_attrgetter(environment, attribute, default=default)\n+    expr = make_attrgetter(environment, attribute, default=default, separator=separator)\n     return [\n         _GroupTuple(key, list(values))\n-        for key, values in groupby(sorted(value, key=expr), expr)\n+        for key, values in groupby(sorted(value, key=expr, reverse=reverse), expr)\n     ]\n \n \n@@ -1222,11 +1233,13 @@ async def do_groupby(\n     value: \"t.Union[t.AsyncIterable[V], t.Iterable[V]]\",\n     attribute: t.Union[str, int],\n     default: t.Optional[t.Any] = None,\n+    separator: str = \".\",\n+    reverse: bool = False,\n ) -> \"t.List[t.Tuple[t.Any, t.List[V]]]\":\n-    expr = make_attrgetter(environment, attribute, default=default)\n+    expr = make_attrgetter(environment, attribute, default=default, separator=separator)\n     return [\n         _GroupTuple(key, await auto_to_list(values))\n-        for key, values in groupby(sorted(await auto_to_list(value), key=expr), expr)\n+        for key, values in groupby(sorted(await auto_to_list(value), key=expr, reverse=reverse), expr)\n     ]\n \n \n",
+  "added_lines_final": 15,
+  "added_lines_novel": 0,
+  "novel_fraction": 0.0,
+  "dropped_agent_lines": 0,
+  "agent_lines_total": 15,
+  "novel_sample": [],
+  "f1_identifiers": 0,
+  "f1_identifiers_kept": 0,
+  "f1_clobbered": [],
+  "f2_identifiers": 0,
+  "f2_identifiers_kept": 0,
+  "f2_clobbered": [],
+  "tests": {
+   "f1": [
+    171,
+    0
+   ],
+   "f2": [
+    168,
+    0
+   ]
+  },
+  "both_passed": true
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/samuelcolvin_dirty_equals_task/43/f2_f3",
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task_id": 43,
+  "feature1": 2,
+  "feature2": 3,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/samuelcolvin_dirty_equals_task/43/f2_f3/agent2.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/samuelcolvin_dirty_equals_task/43/f2_f3/agent3.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "resolved": true,
+  "steps": 11,
+  "feature1_passed": true,
+  "feature2_passed": false,
+  "conflicted_files": [
+   "dirty_equals/__init__.py"
+  ],
+  "touched_test_files": [],
+  "merged_patch": "diff --git a/dirty_equals/__init__.py b/dirty_equals/__init__.py\nindex ba8214e..a925e9c 100644\n--- a/dirty_equals/__init__.py\n+++ b/dirty_equals/__init__.py\n@@ -18,7 +18,7 @@ from ._numeric import (\n     IsPositiveFloat,\n     IsPositiveInt,\n )\n-from ._other import FunctionCheck, IsJson, IsUUID\n+from ._other import FunctionCheck, IsJson, IsUUID, IsEmail, IsMac\n from ._sequence import Contains, HasLen, IsList, IsListOrTuple, IsTuple\n from ._strings import IsAnyStr, IsBytes, IsStr\n \n@@ -66,9 +66,11 @@ __all__ = (\n     'HasRepr',\n     'IsInstance',\n     # other\n+    'IsMac',\n     'FunctionCheck',\n     'IsJson',\n     'IsUUID',\n+    'IsEmail',\n     # strings\n     'IsStr',\n     'IsBytes',\ndiff --git a/dirty_equals/_other.py b/dirty_equals/_other.py\nindex b2b8379..46b9a06 100644\n--- a/dirty_equals/_other.py\n+++ b/dirty_equals/_other.py\n@@ -1,5 +1,6 @@\n import json\n-from typing import Any, Callable, TypeVar, overload\n+import re\n+from typing import Any, Callable, Optional, TypeVar, overload\n from uuid import UUID\n \n from ._base import DirtyEquals\n@@ -11,6 +12,43 @@ except ImportError:\n     from typing_extensions import Literal  # type: ignore[misc]\n \n \n+class IsMac(DirtyEquals[str]):\n+    \"\"\"\n+    A class that checks if a value is a valid MAC address.\n+\n+    The accepted formats are ``colon`` (``00:1B:44:11:3A:B7``), ``hyphen``\n+    (``00-1B-44-11-3A-B7``), ``dot`` (``001B.4411.3AB7``), and ``compact``\n+    (``001B44113AB7``). Without a format, all four representations are\n+    accepted.\n+    \"\"\"\n+\n+    _patterns = {\n+        'colon': r'[0-9a-f]{2}(?::[0-9a-f]{2}){5}',\n+        'hyphen': r'[0-9a-f]{2}(?:-[0-9a-f]{2}){5}',\n+        'dot': r'[0-9a-f]{4}(?:\\.[0-9a-f]{4}){2}',\n+        'compact': r'[0-9a-f]{12}',\n+    }\n+\n+    def __init__(self, format: Optional[str] = None):\n+        \"\"\"\n+        Args:\n+            format: Optional expected representation: ``colon``, ``hyphen``,\n+                ``dot``, or ``compact``. If omitted, any supported format\n+                is accepted.\n+        \"\"\"\n+        if format is not None and format not in self._patterns:\n+            raise ValueError(f'Unknown MAC address format: {format!r}')\n+        self.format = format\n+        super().__init__(plain_repr('*') if format is None else format)\n+\n+    def equals(self, other: Any) -> bool:\n+        if not isinstance(other, str):\n+            return False\n+        if self.format is None:\n+            return any(re.fullmatch(pattern, other, re.IGNORECASE) for pattern in self._patterns.values())\n+        return re.fullmatch(self._patterns[self.format], other, re.IGNORECASE) is not None\n+\n+\n class IsUUID(DirtyEquals[UUID]):\n     \"\"\"\n     A class that checks if a value is a valid UUID, optionally checking UUID version.\n@@ -145,3 +183,35 @@ class FunctionCheck(DirtyEquals[Any]):\n \n     def equals(self, other: Any) -> bool:\n         return self.func(other)\n+\n+\n+_EMAIL_RE = re.compile(\n+    r\"[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@\"\n+    r\"[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\"\n+    r\"(?:\\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)+\"\n+)\n+\n+\n+class IsEmail(DirtyEquals[str]):\n+    \"\"\"Checks whether a value is a valid email address, optionally for a given domain.\"\"\"\n+\n+    def __init__(self, domain: Optional[str] = None):\n+        \"\"\"\n+        Args:\n+            domain: If provided, the email's domain must match this value exactly.\n+\n+        ```py title=\"IsEmail\"\n+        from dirty_equals import IsEmail\n+\n+        assert 'user@example.com' == IsEmail\n+        assert 'user@example.com' == IsEmail(domain='example.com')\n+        assert 'user@other.com' != IsEmail(domain='example.com')\n+        ```\n+        \"\"\"\n+        self.domain = domain\n+        super().__init__(plain_repr('*') if domain is None else domain)\n+\n+    def equals(self, other: Any) -> bool:\n+        if not isinstance(other, str) or _EMAIL_RE.fullmatch(other) is None:\n+            return False\n+        return self.domain is None or other.rsplit('@', 1)[1] == self.domain\n",
+  "added_lines_final": 52,
+  "added_lines_novel": 1,
+  "novel_fraction": 0.019,
+  "dropped_agent_lines": 2,
+  "agent_lines_total": 53,
+  "novel_sample": [
+   "from ._other import FunctionCheck, IsJson, IsUUID, IsEmail, IsMac"
+  ],
+  "f1_identifiers": 4,
+  "f1_identifiers_kept": 4,
+  "f1_clobbered": [],
+  "f2_identifiers": 3,
+  "f2_identifiers_kept": 3,
+  "f2_clobbered": [],
+  "tests": {
+   "f1": [
+    78,
+    0
+   ],
+   "f2": [
+    59,
+    1
+   ]
+  },
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/samuelcolvin_dirty_equals_task/43/f3_f7",
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task_id": 43,
+  "feature1": 3,
+  "feature2": 7,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/samuelcolvin_dirty_equals_task/43/f3_f7/agent3.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/samuelcolvin_dirty_equals_task/43/f3_f7/agent7.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "resolved": true,
+  "steps": 11,
+  "feature1_passed": false,
+  "feature2_passed": true,
+  "conflicted_files": [
+   "dirty_equals/_other.py"
+  ],
+  "touched_test_files": [],
+  "merged_patch": "diff --git a/dirty_equals/__init__.py b/dirty_equals/__init__.py\nindex ba8214e..57b16c5 100644\n--- a/dirty_equals/__init__.py\n+++ b/dirty_equals/__init__.py\n@@ -18,7 +18,7 @@ from ._numeric import (\n     IsPositiveFloat,\n     IsPositiveInt,\n )\n-from ._other import FunctionCheck, IsJson, IsUUID\n+from ._other import FunctionCheck, IsEmail, IsHash, IsJson, IsUUID\n from ._sequence import Contains, HasLen, IsList, IsListOrTuple, IsTuple\n from ._strings import IsAnyStr, IsBytes, IsStr\n \n@@ -67,6 +67,8 @@ __all__ = (\n     'IsInstance',\n     # other\n     'FunctionCheck',\n+    'IsEmail',\n+    'IsHash',\n     'IsJson',\n     'IsUUID',\n     # strings\ndiff --git a/dirty_equals/_other.py b/dirty_equals/_other.py\nindex b2b8379..6ab5d1d 100644\n--- a/dirty_equals/_other.py\n+++ b/dirty_equals/_other.py\n@@ -1,5 +1,6 @@\n import json\n-from typing import Any, Callable, TypeVar, overload\n+import re\n+from typing import Any, Callable, Optional, TypeVar, overload\n from uuid import UUID\n \n from ._base import DirtyEquals\n@@ -11,6 +12,79 @@ except ImportError:\n     from typing_extensions import Literal  # type: ignore[misc]\n \n \n+class IsHash(DirtyEquals[str]):\n+    \"\"\"\n+    A class that checks if a value is a hexadecimal digest for a hash algorithm.\n+\n+    The algorithm name is case-insensitive, while its original spelling is retained\n+    in the validator representation.\n+    \"\"\"\n+\n+    _HASH_LENGTHS = {\n+        'md5': 32,\n+        'sha1': 40,\n+        'sha224': 56,\n+        'sha256': 64,\n+        'sha384': 96,\n+        'sha512': 128,\n+    }\n+\n+    def __init__(self, algorithm: str):\n+        \"\"\"\n+        Args:\n+            algorithm: Hash algorithm whose hexadecimal digest format is expected.\n+        \"\"\"\n+        if not isinstance(algorithm, str):\n+            raise TypeError('algorithm must be a string')\n+\n+        normalized_algorithm = algorithm.lower()\n+        if normalized_algorithm not in self._HASH_LENGTHS:\n+            supported = ', '.join(self._HASH_LENGTHS)\n+            raise ValueError(\n+                f'unsupported hash algorithm {algorithm!r}; supported algorithms: {supported}'\n+            )\n+\n+        self.algorithm = algorithm\n+        self._hash_length = self._HASH_LENGTHS[normalized_algorithm]\n+        super().__init__(algorithm)\n+\n+    def equals(self, other: Any) -> bool:\n+        return (\n+            isinstance(other, str)\n+            and len(other) == self._hash_length\n+            and all(c in '0123456789abcdefABCDEF' for c in other)\n+        )\n+\n+\n+class IsEmail(DirtyEquals[str]):\n+    \"\"\"\n+    A class that checks if a value is a valid email address, optionally restricted to a domain.\n+\n+    The domain restriction is matched exactly and is case-sensitive.\n+    \"\"\"\n+\n+    _email_regex = re.compile(\n+        r\"^[^\\s@]+@[^\\s@.](?:[^\\s@]*[^\\s@.])?(?:\\.[^\\s@.]+)+$\"\n+    )\n+\n+    def __init__(self, domain: Optional[str] = None):\n+        \"\"\"\n+        Args:\n+            domain: Optional domain that the email must belong to.\n+        \"\"\"\n+        self.domain = domain\n+        super().__init__(plain_repr('*') if domain is None else domain)\n+\n+    def equals(self, other: Any) -> bool:\n+        if not isinstance(other, str) or not self._email_regex.fullmatch(other):\n+            return False\n+\n+        if self.domain is None:\n+            return True\n+        return other.rsplit('@', 1)[1] == self.domain\n+\n+\n+\n class IsUUID(DirtyEquals[UUID]):\n     \"\"\"\n     A class that checks if a value is a valid UUID, optionally checking UUID version.\n",
+  "added_lines_final": 51,
+  "added_lines_novel": 2,
+  "novel_fraction": 0.039,
+  "dropped_agent_lines": 11,
+  "agent_lines_total": 60,
+  "novel_sample": [
+   "f'unsupported hash algorithm {algorithm!r}; supported algorithms: {supported}'",
+   "raise ValueError("
+  ],
+  "f1_identifiers": 4,
+  "f1_identifiers_kept": 4,
+  "f1_clobbered": [],
+  "f2_identifiers": 4,
+  "f2_identifiers_kept": 4,
+  "f2_clobbered": [],
+  "tests": {
+   "f1": [
+    59,
+    1
+   ],
+   "f2": [
+    71,
+    0
+   ]
+  },
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_jinja_task/1621/f1_f6",
+  "repo": "pallets_jinja_task",
+  "task_id": 1621,
+  "feature1": 1,
+  "feature2": 6,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_jinja_task/1621/f1_f6/agent1.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_jinja_task/1621/f1_f6/agent6.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "resolved": true,
+  "steps": 20,
+  "feature1_passed": true,
+  "feature2_passed": true,
+  "conflicted_files": [
+   "src/jinja2/loaders.py"
+  ],
+  "touched_test_files": [],
+  "merged_patch": "diff --git a/src/jinja2/loaders.py b/src/jinja2/loaders.py\nindex d7d9bd04..45a7a714 100644\n--- a/src/jinja2/loaders.py\n+++ b/src/jinja2/loaders.py\n@@ -70,6 +70,12 @@ class BaseLoader:\n     #:\n     #: .. versionadded:: 2.4\n     has_source_access = True\n+    path_transform: t.Optional[t.Callable[[str], str]] = None\n+\n+    def _transform_path(self, template: str) -> str:\n+        if self.path_transform is not None:\n+            return self.path_transform(template)\n+        return template\n \n     def get_source(\n         self, environment: \"Environment\", template: str\n@@ -170,6 +176,8 @@ class FileSystemLoader(BaseLoader):\n     :param encoding: Use this encoding to read the text from template\n         files.\n     :param followlinks: Follow symbolic links in the path.\n+    :param fallback_searchpath: A path, or list of paths, to search if the\n+        template is not found in ``searchpath``.\n \n     .. versionchanged:: 2.8\n         Added the ``followlinks`` parameter.\n@@ -180,19 +188,36 @@ class FileSystemLoader(BaseLoader):\n         searchpath: t.Union[str, os.PathLike, t.Sequence[t.Union[str, os.PathLike]]],\n         encoding: str = \"utf-8\",\n         followlinks: bool = False,\n+        path_transform: t.Optional[t.Callable[[str], str]] = None,\n+        fallback_searchpath: t.Optional[\n+            t.Union[str, os.PathLike, t.Sequence[t.Union[str, os.PathLike]]]\n+        ] = None,\n     ) -> None:\n         if not isinstance(searchpath, abc.Iterable) or isinstance(searchpath, str):\n             searchpath = [searchpath]\n \n         self.searchpath = [os.fspath(p) for p in searchpath]\n+\n+        if fallback_searchpath is None:\n+            self.fallback_searchpath = []\n+        else:\n+            if not isinstance(fallback_searchpath, abc.Iterable) or isinstance(\n+                fallback_searchpath, str\n+            ):\n+                fallback_searchpath = [fallback_searchpath]\n+            self.fallback_searchpath = [os.fspath(p) for p in fallback_searchpath]\n+\n         self.encoding = encoding\n         self.followlinks = followlinks\n+        self.path_transform = path_transform\n \n     def get_source(\n         self, environment: \"Environment\", template: str\n     ) -> t.Tuple[str, str, t.Callable[[], bool]]:\n+        original_template = template\n+        template = self._transform_path(template)\n         pieces = split_template_path(template)\n-        for searchpath in self.searchpath:\n+        for searchpath in self.searchpath + self.fallback_searchpath:\n             filename = os.path.join(searchpath, *pieces)\n             f = open_if_exists(filename)\n             if f is None:\n@@ -211,11 +236,11 @@ class FileSystemLoader(BaseLoader):\n                     return False\n \n             return contents, filename, uptodate\n-        raise TemplateNotFound(template)\n+        raise TemplateNotFound(original_template)\n \n     def list_templates(self) -> t.List[str]:\n         found = set()\n-        for searchpath in self.searchpath:\n+        for searchpath in self.searchpath + self.fallback_searchpath:\n             walk_dir = os.walk(searchpath, followlinks=self.followlinks)\n             for dirpath, _, filenames in walk_dir:\n                 for filename in filenames:\n@@ -269,6 +294,7 @@ class PackageLoader(BaseLoader):\n         package_name: str,\n         package_path: \"str\" = \"templates\",\n         encoding: str = \"utf-8\",\n+        path_transform: t.Optional[t.Callable[[str], str]] = None,\n     ) -> None:\n         package_path = os.path.normpath(package_path).rstrip(os.path.sep)\n \n@@ -281,6 +307,7 @@ class PackageLoader(BaseLoader):\n         self.package_path = package_path\n         self.package_name = package_name\n         self.encoding = encoding\n+        self.path_transform = path_transform\n \n         # Make sure the package exists. This also makes namespace\n         # packages work, otherwise get_loader returns None.\n@@ -326,13 +353,15 @@ class PackageLoader(BaseLoader):\n     def get_source(\n         self, environment: \"Environment\", template: str\n     ) -> t.Tuple[str, str, t.Optional[t.Callable[[], bool]]]:\n+        original_template = template\n+        template = self._transform_path(template)\n         p = os.path.join(self._template_root, *split_template_path(template))\n         up_to_date: t.Optional[t.Callable[[], bool]]\n \n         if self._archive is None:\n             # Package is a directory.\n             if not os.path.isfile(p):\n-                raise TemplateNotFound(template)\n+                raise TemplateNotFound(original_template)\n \n             with open(p, \"rb\") as f:\n                 source = f.read()\n@@ -347,7 +376,7 @@ class PackageLoader(BaseLoader):\n             try:\n                 source = self._loader.get_data(p)  # type: ignore\n             except OSError as e:\n-                raise TemplateNotFound(template) from e\n+                raise TemplateNotFound(original_template) from e\n \n             # Could use the zip's mtime for all template mtimes, but\n             # would need to safely reload the module if it's out of\n@@ -401,16 +430,19 @@ class DictLoader(BaseLoader):\n     Because auto reloading is rarely useful this is disabled per default.\n     \"\"\"\n \n-    def __init__(self, mapping: t.Mapping[str, str]) -> None:\n+    def __init__(self, mapping: t.Mapping[str, str], path_transform: t.Optional[t.Callable[[str], str]] = None) -> None:\n         self.mapping = mapping\n+        self.path_transform = path_transform\n \n     def get_source(\n         self, environment: \"Environment\", template: str\n     ) -> t.Tuple[str, None, t.Callable[[], bool]]:\n+        original_template = template\n+        template = self._transform_path(template)\n         if template in self.mapping:\n             source = self.mapping[template]\n             return source, None, lambda: source == self.mapping.get(template)\n-        raise TemplateNotFound(template)\n+        raise TemplateNotFound(original_template)\n \n     def list_templates(self) -> t.List[str]:\n         return sorted(self.mapping)\n@@ -444,16 +476,20 @@ class FunctionLoader(BaseLoader):\n                 ]\n             ],\n         ],\n+        path_transform: t.Optional[t.Callable[[str], str]] = None,\n     ) -> None:\n         self.load_func = load_func\n+        self.path_transform = path_transform\n \n     def get_source(\n         self, environment: \"Environment\", template: str\n     ) -> t.Tuple[str, t.Optional[str], t.Optional[t.Callable[[], bool]]]:\n+        original_template = template\n+        template = self._transform_path(template)\n         rv = self.load_func(template)\n \n         if rv is None:\n-            raise TemplateNotFound(template)\n+            raise TemplateNotFound(original_template)\n \n         if isinstance(rv, str):\n             return rv, None, None\n@@ -477,10 +513,12 @@ class PrefixLoader(BaseLoader):\n     \"\"\"\n \n     def __init__(\n-        self, mapping: t.Mapping[str, BaseLoader], delimiter: str = \"/\"\n+        self, mapping: t.Mapping[str, BaseLoader], delimiter: str = \"/\",\n+        path_transform: t.Optional[t.Callable[[str], str]] = None,\n     ) -> None:\n         self.mapping = mapping\n         self.delimiter = delimiter\n+        self.path_transform = path_transform\n \n     def get_loader(self, template: str) -> t.Tuple[BaseLoader, str]:\n         try:\n@@ -493,13 +531,15 @@ class PrefixLoader(BaseLoader):\n     def get_source(\n         self, environment: \"Environment\", template: str\n     ) -> t.Tuple[str, t.Optional[str], t.Optional[t.Callable[[], bool]]]:\n-        loader, name = self.get_loader(template)\n+        original_template = template\n+        template = self._transform_path(template)\n         try:\n+            loader, name = self.get_loader(template)\n             return loader.get_source(environment, name)\n         except TemplateNotFound as e:\n             # re-raise the exception with the correct filename here.\n             # (the one that includes the prefix)\n-            raise TemplateNotFound(template) from e\n+            raise TemplateNotFound(original_template) from e\n \n     @internalcode\n     def load(\n@@ -508,13 +548,15 @@ class PrefixLoader(BaseLoader):\n         name: str,\n         globals: t.Optional[t.MutableMapping[str, t.Any]] = None,\n     ) -> \"Template\":\n-        loader, local_name = self.get_loader(name)\n+        original_name = name\n+        name = self._transform_path(name)\n         try:\n+            loader, local_name = self.get_loader(name)\n             return loader.load(environment, local_name, globals)\n         except TemplateNotFound as e:\n             # re-raise the exception with the correct filename here.\n             # (the one that includes the prefix)\n-            raise TemplateNotFound(name) from e\n+            raise TemplateNotFound(original_name) from e\n \n     def list_templates(self) -> t.List[str]:\n         result = []\n@@ -538,18 +580,21 @@ class ChoiceLoader(BaseLoader):\n     from a different location.\n     \"\"\"\n \n-    def __init__(self, loaders: t.Sequence[BaseLoader]) -> None:\n+    def __init__(self, loaders: t.Sequence[BaseLoader],\n+                 path_transform: t.Optional[t.Callable[[str], str]] = None) -> None:\n         self.loaders = loaders\n+        self.path_transform = path_transform\n \n     def get_source(\n         self, environment: \"Environment\", template: str\n     ) -> t.Tuple[str, t.Optional[str], t.Optional[t.Callable[[], bool]]]:\n+        template = self._transform_path(template)\n         for loader in self.loaders:\n             try:\n                 return loader.get_source(environment, template)\n             except TemplateNotFound:\n                 pass\n-        raise TemplateNotFound(template)\n+        raise TemplateNotFound(original_template)\n \n     @internalcode\n     def load(\n@@ -558,6 +603,7 @@ class ChoiceLoader(BaseLoader):\n         name: str,\n         globals: t.Optional[t.MutableMapping[str, t.Any]] = None,\n     ) -> \"Template\":\n+        name = self._transform_path(name)\n         for loader in self.loaders:\n             try:\n                 return loader.load(environment, name, globals)\n@@ -592,8 +638,10 @@ class ModuleLoader(BaseLoader):\n     has_source_access = False\n \n     def __init__(\n-        self, path: t.Union[str, os.PathLike, t.Sequence[t.Union[str, os.PathLike]]]\n+        self, path: t.Union[str, os.PathLike, t.Sequence[t.Union[str, os.PathLike]]],\n+        path_transform: t.Optional[t.Callable[[str], str]] = None,\n     ) -> None:\n+        self.path_transform = path_transform\n         package_name = f\"_jinja2_module_templates_{id(self):x}\"\n \n         # create a fake module that looks for the templates in the\n@@ -630,6 +678,7 @@ class ModuleLoader(BaseLoader):\n         name: str,\n         globals: t.Optional[t.MutableMapping[str, t.Any]] = None,\n     ) -> \"Template\":\n+        name = self._transform_path(name)\n         key = self.get_template_key(name)\n         module = f\"{self.package_name}.{key}\"\n         mod = getattr(self.module, module, None)\n",
+  "added_lines_final": 35,
+  "added_lines_novel": 2,
+  "novel_fraction": 0.057,
+  "dropped_agent_lines": 0,
+  "agent_lines_total": 33,
+  "novel_sample": [
+   "loader, local_name = self.get_loader(name)",
+   "loader, name = self.get_loader(template)"
+  ],
+  "f1_identifiers": 0,
+  "f1_identifiers_kept": 0,
+  "f1_clobbered": [],
+  "f2_identifiers": 2,
+  "f2_identifiers_kept": 2,
+  "f2_clobbered": [],
+  "tests": {
+   "f1": [
+    47,
+    0
+   ],
+   "f2": [
+    49,
+    0
+   ]
+  },
+  "both_passed": true
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pillow_task/290/f4_f5",
+  "repo": "pillow_task",
+  "task_id": 290,
+  "feature1": 4,
+  "feature2": 5,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pillow_task/290/f4_f5/agent4.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pillow_task/290/f4_f5/agent5.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "resolved": true,
+  "steps": 12,
+  "feature1_passed": false,
+  "feature2_passed": true,
+  "conflicted_files": [
+   "src/PIL/Image.py"
+  ],
+  "touched_test_files": [],
+  "merged_patch": "diff --git a/src/PIL/Image.py b/src/PIL/Image.py\nindex 0fca3fa5c..7c906234e 100644\n--- a/src/PIL/Image.py\n+++ b/src/PIL/Image.py\n@@ -1048,7 +1048,32 @@ class Image:\n                 new_im.info[\"transparency\"] = trns\n         return new_im\n \n-    def quantize(self, colors=256, method=None, kmeans=0, palette=None, dither=1):\n+    def _adjust_palette_lightness(self, lightness_factor):\n+        \"\"\"Adjust the lightness of this palette image's colors.\"\"\"\n+        if lightness_factor == 1.0:\n+            return\n+\n+        palette = self.palette.palette\n+        channels = len(self.palette.mode)\n+        adjusted = bytearray(palette)\n+        for index in range(0, len(adjusted), channels):\n+            for channel in range(min(3, channels)):\n+                adjusted[index + channel] = min(\n+                    255, int(adjusted[index + channel] * lightness_factor)\n+                )\n+        self.palette.palette = adjusted\n+        self.palette.dirty = 1\n+\n+    def quantize(\n+        self,\n+        colors=256,\n+        method=None,\n+        kmeans=0,\n+        palette=None,\n+        dither=1,\n+        lightness_factor=1.0,\n+        error_threshold=None,\n+    ):\n         \"\"\"\n         Convert the image to 'P' mode with the specified number\n         of colors.\n@@ -1069,14 +1094,29 @@ class Image:\n         :param kmeans: Integer\n         :param palette: Quantize to the palette of given\n                         :py:class:`PIL.Image.Image`.\n+        :param lightness_factor: Factor by which to adjust palette lightness.\n+        :param error_threshold: Maximum acceptable mean square error between\n+           the original and quantized image. The smallest number of colors\n+           up to ``colors`` that meets this threshold is used.\n         :param dither: Dithering method, used when converting from\n            mode \"RGB\" to \"P\" or from \"RGB\" or \"L\" to \"1\".\n            Available methods are :data:`NONE` or :data:`FLOYDSTEINBERG` (default).\n            Default: 1 (legacy setting)\n+        :param lightness_factor: A positive factor used to adjust the brightness\n+           of palette colors after quantization. Values are clamped to 0-255.\n+           Default: 1.0 (no adjustment)\n         :returns: A new image\n \n         \"\"\"\n \n+        if lightness_factor <= 0:\n+            raise ValueError(\"lightness_factor must be greater than 0\")\n+        if error_threshold is not None:\n+            if not isinstance(error_threshold, numbers.Real):\n+                raise TypeError(\"error_threshold must be a number\")\n+            if error_threshold < 0 or math.isnan(error_threshold):\n+                raise ValueError(\"error_threshold must be non-negative\")\n+\n         self.load()\n \n         if method is None:\n@@ -1104,14 +1144,49 @@ class Image:\n             im = self.im.convert(\"P\", dither, palette.im)\n             new_im = self._new(im)\n             new_im.palette = palette.palette.copy()\n+            new_im._adjust_palette_lightness(lightness_factor)\n             return new_im\n \n-        im = self._new(self.im.quantize(colors, method, kmeans))\n+        if error_threshold is None:\n+            im = self._new(self.im.quantize(colors, method, kmeans))\n+        else:\n+            # Find the fewest colors that satisfy the requested error. The\n+            # core quantizer's error is effectively monotonic as colors are\n+            # added, so binary search avoids repeatedly quantizing at every\n+            # possible palette size.\n+            from . import ImageChops, ImageStat\n+\n+            source = self.convert(\"RGBA\" if self.mode == \"RGBA\" else \"RGB\")\n+\n+            def quantize_with_error(color_count):\n+                candidate = self._new(\n+                    self.im.quantize(color_count, method, kmeans)\n+                )\n+                candidate_rgb = candidate.convert(source.mode)\n+                difference = ImageChops.difference(source, candidate_rgb)\n+                rms = ImageStat.Stat(difference).rms\n+                mse = sum(channel * channel for channel in rms) / len(rms)\n+                return candidate, mse\n+\n+            low, high = 1, colors\n+            selected = None\n+            while low <= high:\n+                count = (low + high) // 2\n+                candidate, mse = quantize_with_error(count)\n+                if mse <= error_threshold:\n+                    selected = candidate\n+                    high = count - 1\n+                else:\n+                    low = count + 1\n+            if selected is None:\n+                selected, _ = quantize_with_error(colors)\n+            im = selected\n \n         from . import ImagePalette\n \n         mode = im.im.getpalettemode()\n         im.palette = ImagePalette.ImagePalette(mode, im.im.getpalette(mode, mode))\n+        im._adjust_palette_lightness(lightness_factor)\n \n         return im\n \n",
+  "added_lines_final": 69,
+  "added_lines_novel": 0,
+  "novel_fraction": 0.0,
+  "dropped_agent_lines": 2,
+  "agent_lines_total": 71,
+  "novel_sample": [],
+  "f1_identifiers": 2,
+  "f1_identifiers_kept": 2,
+  "f1_clobbered": [],
+  "f2_identifiers": 2,
+  "f2_identifiers_kept": 2,
+  "f2_clobbered": [],
+  "tests": {
+   "f1": [
+    7,
+    1
+   ],
+   "f2": [
+    9,
+    0
+   ]
+  },
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f1_f9",
+  "repo": "typst_task",
+  "task_id": 6554,
+  "feature1": 1,
+  "feature2": 9,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f1_f9/agent1.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f1_f9/agent9.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "resolved": true,
+  "steps": 5,
+  "feature1_passed": true,
+  "feature2_passed": true,
+  "conflicted_files": [
+   "crates/typst/src/foundations/str.rs"
+  ],
+  "touched_test_files": [],
+  "merged_patch": "diff --git a/crates/typst/src/foundations/str.rs b/crates/typst/src/foundations/str.rs\nindex d90b6f206..81ddc9a9a 100644\n--- a/crates/typst/src/foundations/str.rs\n+++ b/crates/typst/src/foundations/str.rs\n@@ -177,24 +177,48 @@ impl Str {\n     }\n \n     /// Extracts the first grapheme cluster of the string.\n-    /// Fails with an error if the string is empty.\n+    /// Fails with an error if the string is empty and no default was specified.\n     #[func]\n-    pub fn first(&self) -> StrResult<Str> {\n-        self.0\n-            .graphemes(true)\n+    pub fn first(\n+        &self,\n+        /// Characters to remove from the start before extracting the grapheme.\n+        #[named]\n+        strip: Option<Str>,\n+        /// A default value to return if the string is empty.\n+        #[named]\n+        default: Option<Str>,\n+    ) -> StrResult<Str> {\n+        let s = match strip {\n+            Some(strip) => self.0.trim_start_matches(|c| strip.as_str().contains(c)),\n+            None => self.as_str(),\n+        };\n+        s.graphemes(true)\n             .next()\n             .map(Into::into)\n+            .or(default)\n             .ok_or_else(string_is_empty)\n     }\n \n     /// Extracts the last grapheme cluster of the string.\n-    /// Fails with an error if the string is empty.\n+    /// Fails with an error if the string is empty and no default was specified.\n     #[func]\n-    pub fn last(&self) -> StrResult<Str> {\n-        self.0\n-            .graphemes(true)\n+    pub fn last(\n+        &self,\n+        /// Characters to remove from the end before extracting the grapheme.\n+        #[named]\n+        strip: Option<Str>,\n+        /// A default value to return if the string is empty.\n+        #[named]\n+        default: Option<Str>,\n+    ) -> StrResult<Str> {\n+        let s = match strip {\n+            Some(strip) => self.0.trim_end_matches(|c| strip.as_str().contains(c)),\n+            None => self.as_str(),\n+        };\n+        s.graphemes(true)\n             .next_back()\n             .map(Into::into)\n+            .or(default)\n             .ok_or_else(string_is_empty)\n     }\n \n",
+  "added_lines_final": 18,
+  "added_lines_novel": 0,
+  "novel_fraction": 0.0,
+  "dropped_agent_lines": 0,
+  "agent_lines_total": 18,
+  "novel_sample": [],
+  "f1_identifiers": 2,
+  "f1_identifiers_kept": 2,
+  "f1_clobbered": [],
+  "f2_identifiers": 2,
+  "f2_identifiers_kept": 2,
+  "f2_clobbered": [],
+  "tests": {
+   "f1": [
+    2354,
+    0
+   ],
+   "f2": [
+    1,
+    0
+   ]
+  },
+  "both_passed": true
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f4_f9",
+  "repo": "typst_task",
+  "task_id": 6554,
+  "feature1": 4,
+  "feature2": 9,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f4_f9/agent4.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f4_f9/agent9.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "resolved": true,
+  "steps": 11,
+  "feature1_passed": true,
+  "feature2_passed": true,
+  "conflicted_files": [
+   "crates/typst/src/foundations/str.rs"
+  ],
+  "touched_test_files": [],
+  "merged_patch": "diff --git a/crates/typst/src/foundations/str.rs b/crates/typst/src/foundations/str.rs\nindex d90b6f206..e7dcf785c 100644\n--- a/crates/typst/src/foundations/str.rs\n+++ b/crates/typst/src/foundations/str.rs\n@@ -176,26 +176,54 @@ impl Str {\n         self.0.len()\n     }\n \n-    /// Extracts the first grapheme cluster of the string.\n-    /// Fails with an error if the string is empty.\n+    /// Extracts the first grapheme clusters of the string.\n+    /// Fails with an error if the string does not contain enough clusters.\n     #[func]\n-    pub fn first(&self) -> StrResult<Str> {\n-        self.0\n-            .graphemes(true)\n-            .next()\n-            .map(Into::into)\n-            .ok_or_else(string_is_empty)\n+    pub fn first(\n+        &self,\n+        /// Characters to remove from the start before extracting.\n+        #[named]\n+        strip: Option<Str>,\n+        /// Number of grapheme clusters to extract.\n+        #[named]\n+        #[default(1)]\n+        repeat: usize,\n+    ) -> StrResult<Str> {\n+        let s = strip.as_ref().map_or(self.as_str(), |strip| {\n+            self.as_str().trim_start_matches(|c| strip.as_str().contains(c))\n+        });\n+        if repeat == 0 {\n+            return Err(eco_format!(\"repeat must be at least 1\"));\n+        }\n+        if s.is_empty() {\n+            return Err(string_is_empty());\n+        }\n+        extract_graphemes(s, repeat, false)\n     }\n \n-    /// Extracts the last grapheme cluster of the string.\n-    /// Fails with an error if the string is empty.\n+    /// Extracts the last grapheme clusters of the string.\n+    /// Fails with an error if the string does not contain enough clusters.\n     #[func]\n-    pub fn last(&self) -> StrResult<Str> {\n-        self.0\n-            .graphemes(true)\n-            .next_back()\n-            .map(Into::into)\n-            .ok_or_else(string_is_empty)\n+    pub fn last(\n+        &self,\n+        /// Characters to remove from the end before extracting.\n+        #[named]\n+        strip: Option<Str>,\n+        /// Number of grapheme clusters to extract.\n+        #[named]\n+        #[default(1)]\n+        repeat: usize,\n+    ) -> StrResult<Str> {\n+        let s = strip.as_ref().map_or(self.as_str(), |strip| {\n+            self.as_str().trim_end_matches(|c| strip.as_str().contains(c))\n+        });\n+        if repeat == 0 {\n+            return Err(eco_format!(\"repeat must be at least 1\"));\n+        }\n+        if s.is_empty() {\n+            return Err(string_is_empty());\n+        }\n+        extract_graphemes(s, repeat, true)\n     }\n \n     /// Extracts the first grapheme cluster after the specified index. Returns\n@@ -835,6 +863,28 @@ fn string_is_empty() -> EcoString {\n     \"string is empty\".into()\n }\n \n+/// Extract grapheme clusters from either end of a string.\n+#[cold]\n+fn extract_graphemes(string: &str, repeat: usize, from_end: bool) -> StrResult<Str> {\n+    if repeat == 0 {\n+        return Err(eco_format!(\"repeat must be at least 1\"));\n+    }\n+\n+    let graphemes: Vec<&str> = string.graphemes(true).collect();\n+    if repeat > graphemes.len() {\n+        return Err(eco_format!(\n+            \"not enough characters (requested {}, but string only has {})\",\n+            repeat,\n+            graphemes.len()\n+        ));\n+    }\n+\n+    let start = if from_end { graphemes.len() - repeat } else { 0 };\n+    let end = if from_end { graphemes.len() } else { repeat };\n+    Ok(graphemes[start..end].concat().into())\n+}\n+\n+\n /// A regular expression.\n ///\n /// Can be used as a [show rule selector]($styling/#show-rules) and with\n",
+  "added_lines_final": 38,
+  "added_lines_novel": 10,
+  "novel_fraction": 0.263,
+  "dropped_agent_lines": 11,
+  "agent_lines_total": 39,
+  "novel_sample": [
+   "#[cold]",
+   "extract_graphemes(s, repeat, false)",
+   "extract_graphemes(s, repeat, true)",
+   "fn extract_graphemes(string: &str, repeat: usize, from_end: bool) -> StrResult<Str> {",
+   "if s.is_empty() {",
+   "let graphemes: Vec<&str> = string.graphemes(true).collect();",
+   "let s = strip.as_ref().map_or(self.as_str(), |strip| {",
+   "return Err(string_is_empty());"
+  ],
+  "f1_identifiers": 3,
+  "f1_identifiers_kept": 3,
+  "f1_clobbered": [],
+  "f2_identifiers": 2,
+  "f2_identifiers_kept": 2,
+  "f2_clobbered": [],
+  "tests": {
+   "f1": [
+    1,
+    0
+   ],
+   "f2": [
+    1,
+    0
+   ]
+  },
+  "both_passed": true
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f5_f9",
+  "repo": "typst_task",
+  "task_id": 6554,
+  "feature1": 5,
+  "feature2": 9,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f5_f9/agent5.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f5_f9/agent9.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "resolved": true,
+  "steps": 10,
+  "feature1_passed": true,
+  "feature2_passed": true,
+  "conflicted_files": [
+   "crates/typst/src/foundations/str.rs"
+  ],
+  "touched_test_files": [],
+  "merged_patch": "diff --git a/crates/typst/src/foundations/str.rs b/crates/typst/src/foundations/str.rs\nindex d90b6f206..6879b1211 100644\n--- a/crates/typst/src/foundations/str.rs\n+++ b/crates/typst/src/foundations/str.rs\n@@ -176,26 +176,89 @@ impl Str {\n         self.0.len()\n     }\n \n-    /// Extracts the first grapheme cluster of the string.\n-    /// Fails with an error if the string is empty.\n+    /// Extracts the first grapheme cluster of the string, or the first `count`\n+    /// grapheme clusters as an array. Fails with an error if the string is\n+    /// empty or does not contain enough grapheme clusters.\n     #[func]\n-    pub fn first(&self) -> StrResult<Str> {\n-        self.0\n-            .graphemes(true)\n-            .next()\n-            .map(Into::into)\n-            .ok_or_else(string_is_empty)\n+    pub fn first(\n+        &self,\n+        /// Characters to remove from the start before extracting.\n+        #[named]\n+        strip: Option<Str>,\n+        /// Number of characters to return as an array. If omitted, returns a\n+        /// single string.\n+        #[named]\n+        count: Option<usize>,\n+    ) -> StrResult<Value> {\n+        let text = strip.map_or_else(|| self.as_str(), |strip| {\n+            self.0.trim_start_matches(|c| strip.as_str().contains(c))\n+        });\n+        let Some(count) = count else {\n+            return text\n+                .graphemes(true)\n+                .next()\n+                .map(|s| s.into_value())\n+                .ok_or_else(string_is_empty);\n+        };\n+        if count == 0 {\n+            return Err(\"count must be at least 1\".into());\n+        }\n+        let graphemes: Vec<_> = text.graphemes(true).take(count).collect();\n+        if graphemes.len() < count {\n+            return Err(eco_format!(\n+                \"not enough characters (requested {}, but string only has {})\",\n+                count,\n+                graphemes.len()\n+            ));\n+        }\n+        Ok(graphemes\n+            .into_iter()\n+            .map(|s| Value::Str(s.into()))\n+            .collect::<Array>()\n+            .into_value())\n     }\n \n-    /// Extracts the last grapheme cluster of the string.\n-    /// Fails with an error if the string is empty.\n+    /// Extracts the last grapheme cluster of the string, or the last `count`\n+    /// grapheme clusters as an array. Fails with an error if the string is\n+    /// empty or does not contain enough grapheme clusters.\n     #[func]\n-    pub fn last(&self) -> StrResult<Str> {\n-        self.0\n-            .graphemes(true)\n-            .next_back()\n-            .map(Into::into)\n-            .ok_or_else(string_is_empty)\n+    pub fn last(\n+        &self,\n+        /// Characters to remove from the end before extracting.\n+        #[named]\n+        strip: Option<Str>,\n+        /// Number of characters to return as an array. If omitted, returns a\n+        /// single string.\n+        #[named]\n+        count: Option<usize>,\n+    ) -> StrResult<Value> {\n+        let text = strip.map_or_else(|| self.as_str(), |strip| {\n+            self.0.trim_end_matches(|c| strip.as_str().contains(c))\n+        });\n+        let Some(count) = count else {\n+            return text\n+                .graphemes(true)\n+                .next_back()\n+                .map(|s| s.into_value())\n+                .ok_or_else(string_is_empty);\n+        };\n+        if count == 0 {\n+            return Err(\"count must be at least 1\".into());\n+        }\n+        let mut graphemes: Vec<_> = text.graphemes(true).rev().take(count).collect();\n+        if graphemes.len() < count {\n+            return Err(eco_format!(\n+                \"not enough characters (requested {}, but string only has {})\",\n+                count,\n+                graphemes.len()\n+            ));\n+        }\n+        graphemes.reverse();\n+        Ok(graphemes\n+            .into_iter()\n+            .map(|s| Value::Str(s.into()))\n+            .collect::<Array>()\n+            .into_value())\n     }\n \n     /// Extracts the first grapheme cluster after the specified index. Returns\n",
+  "added_lines_final": 44,
+  "added_lines_novel": 3,
+  "novel_fraction": 0.068,
+  "dropped_agent_lines": 6,
+  "agent_lines_total": 47,
+  "novel_sample": [
+   "let graphemes: Vec<_> = text.graphemes(true).take(count).collect();",
+   "let mut graphemes: Vec<_> = text.graphemes(true).rev().take(count).collect();",
+   "return text"
+  ],
+  "f1_identifiers": 2,
+  "f1_identifiers_kept": 2,
+  "f1_clobbered": [],
+  "f2_identifiers": 2,
+  "f2_identifiers_kept": 2,
+  "f2_clobbered": [],
+  "tests": {
+   "f1": [
+    1,
+    0
+   ],
+   "f2": [
+    1,
+    0
+   ]
+  },
+  "both_passed": true
+ }
+]

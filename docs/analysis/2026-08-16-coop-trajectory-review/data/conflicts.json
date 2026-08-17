@@ -1,0 +1,455 @@
+[
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f2_f9",
+  "repo": "openai_tiktoken_task",
+  "task_id": 0,
+  "feature1": 2,
+  "feature2": 9,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f2_f9/agent2.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f2_f9/agent9.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "hunks": [
+   {
+    "file": "tiktoken/core.py",
+    "ours": "        compress: bool = False,",
+    "theirs": "",
+    "ours_lines": 1,
+    "theirs_lines": 0
+   },
+   {
+    "file": "tiktoken/core.py",
+    "ours": "            tokens, positions = self._encode_with_positions(text, allowed_special)\n            if compress:\n                keep = [i == 0 or token != tokens[i - 1] for i, token in enumerate(tokens)]\n                tokens = [token for token, include in zip(tokens, keep) if include]\n                positions = [position for position, include in zip(positions, keep) if include]\n            return tokens, positions",
+    "theirs": "            return self._encode_with_positions(text, allowed_special)",
+    "ours_lines": 6,
+    "theirs_lines": 1
+   }
+  ]
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f3_f6",
+  "repo": "openai_tiktoken_task",
+  "task_id": 0,
+  "feature1": 3,
+  "feature2": 6,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f3_f6/agent3.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f3_f6/agent6.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "hunks": [
+   {
+    "file": "tiktoken/core.py",
+    "ours": "        transformers: Callable[[str], str] | Sequence[Callable[[str], str]] | None = None,\n    ) -> list[int]:",
+    "theirs": "    ) -> list[int] | tuple[list[int], dict[int, int]]:",
+    "ours_lines": 2,
+    "theirs_lines": 1
+   },
+   {
+    "file": "tiktoken/core.py",
+    "ours": "        text = _apply_transformers(text, transformers)",
+    "theirs": "        if analyze_frequency:\n            tokens = self.encode(\n                text,\n                allowed_special=allowed_special,\n                disallowed_special=disallowed_special,\n            )\n            # The recursive call explicitly leaves analysis disabled (the default),\n            # ensuring the normal encoding path remains the single source of truth.\n            frequencies: dict[int, int] = {}\n            for token in tokens:\n                frequencies[token] = frequencies.get(token, 0) + 1\n            return tokens, frequencies\n",
+    "ours_lines": 1,
+    "theirs_lines": 13
+   }
+  ]
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/dspy_task/8394/f3_f5",
+  "repo": "dspy_task",
+  "task_id": 8394,
+  "feature1": 3,
+  "feature2": 5,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/dspy_task/8394/f3_f5/agent3.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/dspy_task/8394/f3_f5/agent5.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "hunks": [
+   {
+    "file": "dspy/clients/cache.py",
+    "ours": "                self.disk_cache[key] = self._serialize_disk_value(value)",
+    "theirs": "                self._set_disk_cache(key, value)",
+    "ours_lines": 1,
+    "theirs_lines": 1
+   }
+  ]
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/dottxt_ai_outlines_task/1706/f4_f6",
+  "repo": "dottxt_ai_outlines_task",
+  "task_id": 1706,
+  "feature1": 4,
+  "feature2": 6,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/dottxt_ai_outlines_task/1706/f4_f6/agent4.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/dottxt_ai_outlines_task/1706/f4_f6/agent6.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "hunks": [
+   {
+    "file": "outlines/backends/xgrammar.py",
+    "ours": "from typing import TYPE_CHECKING, Callable, Optional",
+    "theirs": "from typing import TYPE_CHECKING, Optional",
+    "ours_lines": 1,
+    "theirs_lines": 1
+   },
+   {
+    "file": "outlines/backends/xgrammar.py",
+    "ours": "        self,\n        compiled_grammar: str,\n        max_batch_size: Optional[int] = None,",
+    "theirs": "        self, compiled_grammar: str, max_batch_size: Optional[int] = None",
+    "ours_lines": 3,
+    "theirs_lines": 1
+   },
+   {
+    "file": "outlines/backends/xgrammar.py",
+    "ours": "        max_batch_size: Optional[int]\n            The maximum batch size accepted by the logits processor.",
+    "theirs": "        max_batch_size: int, optional\n            Maximum allowed batch size. If None, no limit is enforced.",
+    "ours_lines": 2,
+    "theirs_lines": 2
+   },
+   {
+    "file": "outlines/backends/xgrammar.py",
+    "ours": "            if self.max_batch_size is not None and batch_size > self.max_batch_size:",
+    "theirs": "            if (\n                self.max_batch_size is not None\n                and batch_size > self.max_batch_size\n            ):",
+    "ours_lines": 1,
+    "theirs_lines": 4
+   }
+  ]
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f6_f8",
+  "repo": "openai_tiktoken_task",
+  "task_id": 0,
+  "feature1": 6,
+  "feature2": 8,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f6_f8/agent6.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f6_f8/agent8.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "hunks": [
+   {
+    "file": "tiktoken/core.py",
+    "ours": "    ) -> list[int] | tuple[list[int], dict[tuple[int, int], int]]:",
+    "theirs": "        transformers: Callable[[str], str] | Sequence[Callable[[str], str]] | None = None,\n    ) -> list[int]:",
+    "ours_lines": 1,
+    "theirs_lines": 2
+   }
+  ]
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2068/f5_f7",
+  "repo": "pallets_click_task",
+  "task_id": 2068,
+  "feature1": 5,
+  "feature2": 7,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2068/f5_f7/agent5.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2068/f5_f7/agent7.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "hunks": [
+   {
+    "file": "src/click/_termui_impl.py",
+    "ours": "        escape_shell: bool = False,",
+    "theirs": "        lock_files: bool = False,",
+    "ours_lines": 1,
+    "theirs_lines": 1
+   },
+   {
+    "file": "src/click/_termui_impl.py",
+    "ours": "        self.escape_shell = escape_shell",
+    "theirs": "        self.lock_files = lock_files\n\n    def _get_lock_filename(self, filename: str) -> str:\n        \"\"\"Return the lock file name for *filename*.\"\"\"\n        directory, basename = os.path.split(filename)\n        return os.path.join(directory, f\".{basename}.lock\")\n\n    def _create_lock_file(self, filename: str) -> str:\n        \"\"\"Atomically create and return the lock file for *filename*.\"\"\"\n        lock_filename = self._get_lock_filename(filename)\n        content = (\n            f\"PID: {os.getpid()}\\n\"\n            f\"Time: {datetime.datetime.now().isoformat()}\\n\"\n        ).encode(\"utf-8\")\n\n        try:\n            fd = os.open(lock_filename, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o644)\n        except FileExistsError as e:\n            raise ClickException(\n                _(\"File is already being edited: {filename}\").format(filename=filename)\n            ) from e\n\n        try:\n            with os.fdopen(fd, \"wb\") as f:\n                f.write(content)\n        except BaseException:\n            # Do not leave a partially written lock behind.\n            self._remove_lock_file(lock_filename)\n            raise\n\n        return lock_filename\n\n    def _remove_lock_file(self, lock_filename: str) -> None:\n        \"\"\"Remove a lock file, ignoring a lock that is already gone.\"\"\"\n        try:\n            os.unlink(lock_filename)\n        except FileNotFoundError:\n            pass",
+    "ours_lines": 1,
+    "theirs_lines": 38
+   },
+   {
+    "file": "src/click/_termui_impl.py",
+    "ours": "        if self.escape_shell:\n            import shlex\n\n            # Keep the editor command's argument structure, but quote every\n            # token so shell metacharacters are passed literally.\n            editor = shlex.join(shlex.split(editor))\n            command = f\"{editor} {shlex.quote(filename)}\"\n        else:\n            command = f'{editor} \"{filename}\"'\n\n        try:\n            c = subprocess.Popen(command, env=environ, shell=True)\n            exit_code = c.wait()\n            if exit_code != 0:",
+    "theirs": "        lock_filename: str | None = None\n        if self.lock_files:\n            lock_filename = self._create_lock_file(filename)\n\n        try:\n            try:\n                c = subprocess.Popen(f'{editor} \"{filename}\"', env=environ, shell=True)\n                exit_code = c.wait()\n                if exit_code != 0:\n                    raise ClickException(\n                        _(\"{editor}: Editing failed\").format(editor=editor)\n                    )\n            except OSError as e:",
+    "ours_lines": 14,
+    "theirs_lines": 13
+   },
+   {
+    "file": "src/click/termui.py",
+    "ours": "    escape_shell: bool = False,",
+    "theirs": "    lock_files: bool = False,",
+    "ours_lines": 1,
+    "theirs_lines": 1
+   },
+   {
+    "file": "src/click/termui.py",
+    "ours": "    :param escape_shell: if set to `True`, shell special characters in the\n                          editor and filename are escaped.",
+    "theirs": "    :param lock_files: if true, create a lock file while the editor is\n                       running to prevent concurrent edits.",
+    "ours_lines": 2,
+    "theirs_lines": 2
+   },
+   {
+    "file": "src/click/termui.py",
+    "ours": "        escape_shell=escape_shell,",
+    "theirs": "        lock_files=lock_files,",
+    "ours_lines": 1,
+    "theirs_lines": 1
+   }
+  ]
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2068/f7_f10",
+  "repo": "pallets_click_task",
+  "task_id": 2068,
+  "feature1": 7,
+  "feature2": 10,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2068/f7_f10/agent7.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2068/f7_f10/agent10.patch",
+  "original_status": "conflicts",
+  "original_both_passed": true,
+  "hunks": [
+   {
+    "file": "src/click/termui.py",
+    "ours": "    :param escape_shell: if set to `True`, shell-sensitive arguments in the\n                          editor command will be escaped.\n    :param working_dir: the directory in which to launch the editor process.",
+    "theirs": "    :param escape_shell: if this is true, shell characters in the editor\n                          command and filename will be escaped.\n    :param working_dir: the working directory in which to run the editor.",
+    "ours_lines": 3,
+    "theirs_lines": 3
+   }
+  ]
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2800/f2_f7",
+  "repo": "pallets_click_task",
+  "task_id": 2800,
+  "feature1": 2,
+  "feature2": 7,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2800/f2_f7/agent2.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2800/f2_f7/agent7.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "hunks": [
+   {
+    "file": "src/click/core.py",
+    "ours": "        validate_nesting: bool = False,",
+    "theirs": "        on_exit: t.Callable[[Context], t.Any] | None = None,",
+    "ours_lines": 1,
+    "theirs_lines": 1
+   },
+   {
+    "file": "src/click/core.py",
+    "ours": "        if self.validate_nesting and self._children:\n            children = \", \".join(child.command_path for child in self._children)\n            raise RuntimeError(\n                f\"Cannot close context {self.command_path!r} while child \"\n                f\"contexts are still open: {children}\"\n            )\n",
+    "theirs": "",
+    "ours_lines": 7,
+    "theirs_lines": 0
+   },
+   {
+    "file": "src/click/core.py",
+    "ours": "            if self.validate_nesting and self.parent is not None:\n                self.parent._children.discard(self)",
+    "theirs": "\n            if self.on_exit is not None:\n                try:\n                    self.on_exit(self)\n                except Exception:\n                    # Cleanup hooks must not interfere with context cleanup.\n                    pass",
+    "ours_lines": 2,
+    "theirs_lines": 7
+   }
+  ]
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_jinja_task/1465/f2_f3",
+  "repo": "pallets_jinja_task",
+  "task_id": 1465,
+  "feature1": 2,
+  "feature2": 3,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_jinja_task/1465/f2_f3/agent2.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_jinja_task/1465/f2_f3/agent3.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "hunks": [
+   {
+    "file": "src/jinja2/filters.py",
+    "ours": "    separator: str = \".\",",
+    "theirs": "    reverse: bool = False,",
+    "ours_lines": 1,
+    "theirs_lines": 1
+   },
+   {
+    "file": "src/jinja2/filters.py",
+    "ours": "    separator: str = \".\",",
+    "theirs": "    reverse: bool = False,",
+    "ours_lines": 1,
+    "theirs_lines": 1
+   }
+  ]
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_jinja_task/1621/f1_f6",
+  "repo": "pallets_jinja_task",
+  "task_id": 1621,
+  "feature1": 1,
+  "feature2": 6,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_jinja_task/1621/f1_f6/agent1.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_jinja_task/1621/f1_f6/agent6.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "hunks": [
+   {
+    "file": "src/jinja2/loaders.py",
+    "ours": "        path_transform: t.Optional[t.Callable[[str], str]] = None,",
+    "theirs": "        fallback_searchpath: t.Optional[\n            t.Union[str, os.PathLike, t.Sequence[t.Union[str, os.PathLike]]]\n        ] = None,",
+    "ours_lines": 1,
+    "theirs_lines": 3
+   }
+  ]
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/samuelcolvin_dirty_equals_task/43/f2_f3",
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task_id": 43,
+  "feature1": 2,
+  "feature2": 3,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/samuelcolvin_dirty_equals_task/43/f2_f3/agent2.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/samuelcolvin_dirty_equals_task/43/f2_f3/agent3.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "hunks": [
+   {
+    "file": "dirty_equals/__init__.py",
+    "ours": "from ._other import IsEmail",
+    "theirs": "from ._other import IsMac",
+    "ours_lines": 1,
+    "theirs_lines": 1
+   }
+  ]
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pillow_task/290/f4_f5",
+  "repo": "pillow_task",
+  "task_id": 290,
+  "feature1": 4,
+  "feature2": 5,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pillow_task/290/f4_f5/agent4.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pillow_task/290/f4_f5/agent5.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "hunks": [
+   {
+    "file": "src/PIL/Image.py",
+    "ours": "    def _adjust_palette_lightness(self, lightness_factor):\n        \"\"\"Adjust the lightness of this palette image's colors.\"\"\"\n        if lightness_factor == 1.0:\n            return\n\n        palette = self.palette.palette\n        channels = len(self.palette.mode)\n        adjusted = bytearray(palette)\n        for index in range(0, len(adjusted), channels):\n            for channel in range(min(3, channels)):\n                adjusted[index + channel] = min(\n                    255, int(adjusted[index + channel] * lightness_factor)\n                )\n        self.palette.palette = adjusted\n        self.palette.dirty = 1\n",
+    "theirs": "",
+    "ours_lines": 16,
+    "theirs_lines": 0
+   },
+   {
+    "file": "src/PIL/Image.py",
+    "ours": "        if lightness_factor <= 0:\n            raise ValueError(\"lightness_factor must be greater than 0\")",
+    "theirs": "        if error_threshold is not None:\n            if not isinstance(error_threshold, numbers.Real):\n                raise TypeError(\"error_threshold must be a number\")\n            if error_threshold < 0 or math.isnan(error_threshold):\n                raise ValueError(\"error_threshold must be non-negative\")",
+    "ours_lines": 2,
+    "theirs_lines": 5
+   },
+   {
+    "file": "src/PIL/Image.py",
+    "ours": "            new_im._adjust_palette_lightness(lightness_factor)",
+    "theirs": "            _adjust_palette_lightness(new_im, lightness_factor)",
+    "ours_lines": 1,
+    "theirs_lines": 1
+   },
+   {
+    "file": "src/PIL/Image.py",
+    "ours": "        im._adjust_palette_lightness(lightness_factor)",
+    "theirs": "        _adjust_palette_lightness(im, lightness_factor)",
+    "ours_lines": 1,
+    "theirs_lines": 1
+   }
+  ]
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/samuelcolvin_dirty_equals_task/43/f3_f7",
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task_id": 43,
+  "feature1": 3,
+  "feature2": 7,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/samuelcolvin_dirty_equals_task/43/f3_f7/agent3.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/samuelcolvin_dirty_equals_task/43/f3_f7/agent7.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "hunks": [
+   {
+    "file": "dirty_equals/_other.py",
+    "ours": "class IsHash(DirtyEquals[str]):\n    \"\"\"\n    A class that checks if a value is a hexadecimal digest for a hash algorithm.\n\n    The algorithm name is case-insensitive, while its original spelling is retained\n    in the validator representation.\n    \"\"\"\n\n    _HASH_LENGTHS = {\n        'md5': 32,\n        'sha1': 40,\n        'sha224': 56,\n        'sha256': 64,\n        'sha384': 96,\n        'sha512': 128,\n    }\n\n    def __init__(self, algorithm: str):\n        \"\"\"\n        Args:\n            algorithm: Hash algorithm whose hexadecimal digest format is expected.\n\n        ```py title=\"IsHash\"\n        from dirty_equals import IsHash\n\n        assert 'd41d8cd98f00b204e9800998ecf8427e' == IsHash('md5')\n        assert 'd41d8cd98f00b204e9800998ecf8427e' != IsHash('sha1')\n        ```\n        \"\"\"\n        if not isinstance(algorithm, str):\n            raise TypeError('algorithm must be a string')\n\n        normalized_algorithm = algorithm.lower()\n        if normalized_algorithm not in self._HASH_LENGTHS:\n            supported = ', '.join(self._HASH_LENGTHS)\n            raise ValueError(f'unsupported hash algorithm {algorithm!r}; supported algorithms: {supported}')\n\n        self.algorithm = algorithm\n        self._hash_length = self._HASH_LENGTHS[normalized_algorithm]\n        super().__init__(algorithm)\n\n    def equals(self, other: Any) -> bool:\n        return (\n            isinstance(other, str)\n            and len(other) == self._hash_length\n            and all(c in '0123456789abcdefABCDEF' for c in other)\n        )",
+    "theirs": "class IsEmail(DirtyEquals[str]):\n    \"\"\"\n    A class that checks if a value is a valid email address, optionally restricted to a domain.\n\n    The domain restriction is matched exactly and is case-sensitive.\n    \"\"\"\n\n    _email_regex = re.compile(\n        r\"^[^\\s@]+@[^\\s@.](?:[^\\s@]*[^\\s@.])?(?:\\.[^\\s@.]+)+$\"\n    )\n\n    def __init__(self, domain: Optional[str] = None):\n        \"\"\"\n        Args:\n            domain: Optional domain that the email must belong to.\n\n        ```py title=\"IsEmail\"\n        from dirty_equals import IsEmail\n\n        assert 'user@example.com' == IsEmail\n        assert 'user@example.com' == IsEmail(domain='example.com')\n        assert 'user@other.com' != IsEmail(domain='example.com')\n        ```\n        \"\"\"\n        self.domain = domain\n        super().__init__(plain_repr('*') if domain is None else domain)\n\n    def equals(self, other: Any) -> bool:\n        if not isinstance(other, str) or not self._email_regex.fullmatch(other):\n            return False\n\n        if self.domain is None:\n            return True\n        return other.rsplit('@', 1)[1] == self.domain",
+    "ours_lines": 47,
+    "theirs_lines": 34
+   }
+  ]
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f1_f9",
+  "repo": "typst_task",
+  "task_id": 6554,
+  "feature1": 1,
+  "feature2": 9,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f1_f9/agent1.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f1_f9/agent9.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "hunks": [
+   {
+    "file": "crates/typst/src/foundations/str.rs",
+    "ours": "        /// Characters to remove from the start before extracting the grapheme.\n        #[named]\n        strip: Option<Str>,\n    ) -> StrResult<Str> {\n        let s = match strip {\n            Some(strip) => self.0.trim_start_matches(|c| strip.as_str().contains(c)),\n            None => self.as_str(),\n        };\n        s.graphemes(true)",
+    "theirs": "        /// A default value to return if the string is empty.\n        #[named]\n        default: Option<Str>,\n    ) -> StrResult<Str> {\n        self.0\n            .graphemes(true)",
+    "ours_lines": 9,
+    "theirs_lines": 6
+   },
+   {
+    "file": "crates/typst/src/foundations/str.rs",
+    "ours": "        /// Characters to remove from the end before extracting the grapheme.\n        #[named]\n        strip: Option<Str>,\n    ) -> StrResult<Str> {\n        let s = match strip {\n            Some(strip) => self.0.trim_end_matches(|c| strip.as_str().contains(c)),\n            None => self.as_str(),\n        };\n        s.graphemes(true)",
+    "theirs": "        /// A default value to return if the string is empty.\n        #[named]\n        default: Option<Str>,\n    ) -> StrResult<Str> {\n        self.0\n            .graphemes(true)",
+    "ours_lines": 9,
+    "theirs_lines": 6
+   }
+  ]
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f4_f9",
+  "repo": "typst_task",
+  "task_id": 6554,
+  "feature1": 4,
+  "feature2": 9,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f4_f9/agent4.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f4_f9/agent9.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "hunks": [
+   {
+    "file": "crates/typst/src/foundations/str.rs",
+    "ours": "        /// Characters to remove from the start before extracting.\n        #[named]\n        strip: Option<Str>,\n    ) -> StrResult<Str> {\n        let s = strip\n            .as_ref()\n            .map_or(self.as_str(), |strip| {\n                self.as_str()\n                    .trim_start_matches(|c| strip.as_str().contains(c))\n            });\n        s.graphemes(true)\n            .next()\n            .map(Into::into)\n            .ok_or_else(string_is_empty)",
+    "theirs": "        /// Number of grapheme clusters to extract.\n        #[named]\n        #[default(1)]\n        repeat: usize,\n    ) -> StrResult<Str> {\n        extract_graphemes(self, repeat, false)",
+    "ours_lines": 14,
+    "theirs_lines": 6
+   },
+   {
+    "file": "crates/typst/src/foundations/str.rs",
+    "ours": "        /// Characters to remove from the end before extracting.\n        #[named]\n        strip: Option<Str>,\n    ) -> StrResult<Str> {\n        let s = strip\n            .as_ref()\n            .map_or(self.as_str(), |strip| {\n                self.as_str()\n                    .trim_end_matches(|c| strip.as_str().contains(c))\n            });\n        s.graphemes(true)\n            .next_back()\n            .map(Into::into)\n            .ok_or_else(string_is_empty)",
+    "theirs": "        /// Number of grapheme clusters to extract.\n        #[named]\n        #[default(1)]\n        repeat: usize,\n    ) -> StrResult<Str> {\n        extract_graphemes(self, repeat, true)",
+    "ours_lines": 14,
+    "theirs_lines": 6
+   }
+  ]
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f5_f9",
+  "repo": "typst_task",
+  "task_id": 6554,
+  "feature1": 5,
+  "feature2": 9,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f5_f9/agent5.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f5_f9/agent9.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "hunks": [
+   {
+    "file": "crates/typst/src/foundations/str.rs",
+    "ours": "        /// Characters to remove from the start before extracting.\n        #[named]\n        strip: Option<Str>,\n    ) -> StrResult<Str> {\n        let text = strip.map_or_else(|| self.as_str(), |strip| {\n            self.0.trim_start_matches(|c| strip.as_str().contains(c))\n        });\n        text\n            .graphemes(true)\n            .next()\n            .map(Into::into)\n            .ok_or_else(string_is_empty)",
+    "theirs": "        /// Number of characters to return as an array. If omitted, returns a\n        /// single string.\n        #[named]\n        count: Option<usize>,\n    ) -> StrResult<Value> {\n        let Some(count) = count else {\n            return self\n                .0\n                .graphemes(true)\n                .next()\n                .map(|s| s.into_value())\n                .ok_or_else(string_is_empty);\n        };\n        if count == 0 {\n            return Err(\"count must be at least 1\".into());\n        }\n        let graphemes: Vec<_> = self.0.graphemes(true).take(count).collect();\n        if graphemes.len() < count {\n            return Err(eco_format!(\n                \"not enough characters (requested {}, but string only has {})\",\n                count,\n                graphemes.len()\n            ));\n        }\n        Ok(graphemes\n            .into_iter()\n            .map(|s| Value::Str(s.into()))\n            .collect::<Array>()\n            .into_value())",
+    "ours_lines": 12,
+    "theirs_lines": 29
+   },
+   {
+    "file": "crates/typst/src/foundations/str.rs",
+    "ours": "        /// Characters to remove from the end before extracting.\n        #[named]\n        strip: Option<Str>,\n    ) -> StrResult<Str> {\n        let text = strip.map_or_else(|| self.as_str(), |strip| {\n            self.0.trim_end_matches(|c| strip.as_str().contains(c))\n        });\n        text\n            .graphemes(true)\n            .next_back()\n            .map(Into::into)\n            .ok_or_else(string_is_empty)",
+    "theirs": "        /// Number of characters to return as an array. If omitted, returns a\n        /// single string.\n        #[named]\n        count: Option<usize>,\n    ) -> StrResult<Value> {\n        let Some(count) = count else {\n            return self\n                .0\n                .graphemes(true)\n                .next_back()\n                .map(|s| s.into_value())\n                .ok_or_else(string_is_empty);\n        };\n        if count == 0 {\n            return Err(\"count must be at least 1\".into());\n        }\n        let mut graphemes: Vec<_> = self.0.graphemes(true).rev().take(count).collect();\n        if graphemes.len() < count {\n            return Err(eco_format!(\n                \"not enough characters (requested {}, but string only has {})\",\n                count,\n                graphemes.len()\n            ));\n        }\n        graphemes.reverse();\n        Ok(graphemes\n            .into_iter()\n            .map(|s| Value::Str(s.into()))\n            .collect::<Array>()\n            .into_value())",
+    "ours_lines": 12,
+    "theirs_lines": 30
+   }
+  ]
+ }
+]

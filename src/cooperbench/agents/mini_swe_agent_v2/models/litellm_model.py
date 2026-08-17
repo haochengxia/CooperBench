@@ -116,6 +116,91 @@ def _extract_token_capture(response: Any) -> dict[str, list[int]] | None:
     return {"prompt_token_ids": prompt_ids, "output_token_ids": output_ids}
 
 
+#: Roles the Chat Completions API accepts.  Anything else in ``messages`` is an
+#: internal sentinel and must be rewritten before the payload leaves us.
+_API_ROLES = frozenset({"system", "assistant", "user", "function", "tool", "developer"})
+
+
+def _normalize_internal_roles(messages: list[dict]) -> list[dict]:
+    """Rewrite internal control-flow roles (``exit``) to a valid API role.
+
+    The agent loop marks episode termination by appending a message with
+    ``role="exit"`` carrying the submission text, ``"LimitsExceeded"``, or an
+    exception string.  That is loop bookkeeping, but the message lands in
+    ``self.messages`` and is replayed on the next request whenever the episode
+    continues past it — which ``_nudge_unsubmitted()`` does on purpose, twice,
+    for an agent that fired the sentinel without publishing anything.
+
+    Strict providers reject the unknown role outright::
+
+        litellm.BadRequestError: OpenAIException - Invalid value: 'exit'.
+        Supported values are: 'system', 'assistant', 'user', 'function',
+        'tool', and 'developer'.
+
+    That 400 aborts the run, so the agent never gets to act on the nudge and
+    submits an empty patch.  ``user`` is the right target: an exit message is
+    feedback *about* the episode, which is how the nudge that follows it reads
+    too.
+    """
+    normalized = []
+    for msg in messages:
+        if msg.get("role") in _API_ROLES:
+            normalized.append(msg)
+        else:
+            normalized.append({**msg, "role": "user"})
+    return normalized
+
+
+#: Content for a synthesised tool result.  Deliberately explicit: the model
+#: should know the observation is missing rather than infer silence as success.
+_UNRECORDED_TOOL_RESULT = "[tool result not recorded: the episode ended before this call's output was captured]"
+
+
+def _repair_dangling_tool_calls(messages: list[dict]) -> list[dict]:
+    """Give every ``tool_calls`` entry a matching ``tool`` response.
+
+    The agent terminates by running ``echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT``
+    through the bash tool.  The environment spots the sentinel in the output and
+    raises ``Submitted`` *instead of* appending the tool result, so the final
+    assistant message keeps a ``tool_call_id`` nothing ever answers.
+
+    That is invisible while the exit message is the last one, but
+    ``_nudge_unsubmitted()`` continues the episode, and the replayed history is
+    then structurally invalid::
+
+        litellm.BadRequestError: OpenAIException - An assistant message with
+        'tool_calls' must be followed by tool messages responding to each
+        'tool_call_id'.
+
+    Same failure mode as the ``exit`` role — a loop-bookkeeping shortcut that
+    only shows up once the history is replayed — and the same consequence: the
+    request 400s, the agent never acts on the nudge, and a run with real work in
+    the tree is graded as an empty patch.
+
+    An assistant message may carry several calls and have only some answered, so
+    responses are matched per ``tool_call_id`` rather than by counting.
+    """
+    repaired: list[dict] = []
+    i = 0
+    while i < len(messages):
+        msg = messages[i]
+        repaired.append(msg)
+        i += 1
+        if msg.get("role") != "assistant" or not msg.get("tool_calls"):
+            continue
+        # Consume the contiguous run of tool replies belonging to this call.
+        answered: set[str] = set()
+        while i < len(messages) and messages[i].get("role") == "tool":
+            answered.add(messages[i].get("tool_call_id"))
+            repaired.append(messages[i])
+            i += 1
+        for call in msg["tool_calls"]:
+            call_id = call.get("id") if isinstance(call, dict) else getattr(call, "id", None)
+            if call_id and call_id not in answered:
+                repaired.append({"role": "tool", "tool_call_id": call_id, "content": _UNRECORDED_TOOL_RESULT})
+    return repaired
+
+
 class LitellmModel:
     abort_exceptions: list[type[BaseException]] = [
         litellm.exceptions.UnsupportedParamsError,
@@ -149,6 +234,11 @@ class LitellmModel:
 
     def _prepare_messages_for_api(self, messages: list[dict]) -> list[dict]:
         prepared = [{k: v for k, v in msg.items() if k != "extra"} for msg in messages]
+        # Repair before role normalization: the dangling call is detected by the
+        # `exit` message interrupting the assistant -> tool run, so this must see
+        # the original roles.
+        prepared = _repair_dangling_tool_calls(prepared)
+        prepared = _normalize_internal_roles(prepared)
         prepared = _reorder_anthropic_thinking_blocks(prepared)
         return set_cache_control(prepared, mode=self.config.set_cache_control)
 

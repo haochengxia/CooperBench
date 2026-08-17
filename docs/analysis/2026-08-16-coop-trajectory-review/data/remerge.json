@@ -1,0 +1,371 @@
+[
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f2_f9",
+  "repo": "openai_tiktoken_task",
+  "task_id": 0,
+  "feature1": 2,
+  "feature2": 9,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f2_f9/agent2.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f2_f9/agent9.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "rung": null,
+  "feature1_passed": false,
+  "feature2_passed": false,
+  "apply_status": {
+   "agent1": "applied",
+   "agent2": "applied"
+  },
+  "conflicted_files": [
+   "tiktoken/core.py"
+  ],
+  "conflict_hunks": 2,
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/dottxt_ai_outlines_task/1706/f4_f6",
+  "repo": "dottxt_ai_outlines_task",
+  "task_id": 1706,
+  "feature1": 4,
+  "feature2": 6,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/dottxt_ai_outlines_task/1706/f4_f6/agent4.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/dottxt_ai_outlines_task/1706/f4_f6/agent6.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "rung": null,
+  "feature1_passed": false,
+  "feature2_passed": false,
+  "apply_status": {
+   "agent1": "applied",
+   "agent2": "applied"
+  },
+  "conflicted_files": [
+   "outlines/backends/xgrammar.py"
+  ],
+  "conflict_hunks": 4,
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f3_f6",
+  "repo": "openai_tiktoken_task",
+  "task_id": 0,
+  "feature1": 3,
+  "feature2": 6,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f3_f6/agent3.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f3_f6/agent6.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "rung": null,
+  "feature1_passed": false,
+  "feature2_passed": false,
+  "apply_status": {
+   "agent1": "applied",
+   "agent2": "applied"
+  },
+  "conflicted_files": [
+   "tiktoken/core.py"
+  ],
+  "conflict_hunks": 2,
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/dspy_task/8394/f3_f5",
+  "repo": "dspy_task",
+  "task_id": 8394,
+  "feature1": 3,
+  "feature2": 5,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/dspy_task/8394/f3_f5/agent3.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/dspy_task/8394/f3_f5/agent5.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "rung": null,
+  "feature1_passed": false,
+  "feature2_passed": false,
+  "apply_status": {
+   "agent1": "applied",
+   "agent2": "applied"
+  },
+  "conflicted_files": [
+   "dspy/clients/cache.py"
+  ],
+  "conflict_hunks": 1,
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f6_f8",
+  "repo": "openai_tiktoken_task",
+  "task_id": 0,
+  "feature1": 6,
+  "feature2": 8,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f6_f8/agent6.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/openai_tiktoken_task/0/f6_f8/agent8.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "rung": null,
+  "feature1_passed": false,
+  "feature2_passed": false,
+  "apply_status": {
+   "agent1": "applied",
+   "agent2": "applied"
+  },
+  "conflicted_files": [
+   "tiktoken/core.py"
+  ],
+  "conflict_hunks": 1,
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2068/f5_f7",
+  "repo": "pallets_click_task",
+  "task_id": 2068,
+  "feature1": 5,
+  "feature2": 7,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2068/f5_f7/agent5.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2068/f5_f7/agent7.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "rung": null,
+  "feature1_passed": false,
+  "feature2_passed": false,
+  "apply_status": {
+   "agent1": "applied",
+   "agent2": "applied"
+  },
+  "conflicted_files": [
+   "src/click/_termui_impl.py",
+   "src/click/termui.py"
+  ],
+  "conflict_hunks": 6,
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2068/f7_f10",
+  "repo": "pallets_click_task",
+  "task_id": 2068,
+  "feature1": 7,
+  "feature2": 10,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2068/f7_f10/agent7.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2068/f7_f10/agent10.patch",
+  "original_status": "conflicts",
+  "original_both_passed": true,
+  "rung": null,
+  "feature1_passed": false,
+  "feature2_passed": false,
+  "apply_status": {
+   "agent1": "applied",
+   "agent2": "applied"
+  },
+  "conflicted_files": [
+   "src/click/termui.py"
+  ],
+  "conflict_hunks": 1,
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2800/f2_f7",
+  "repo": "pallets_click_task",
+  "task_id": 2800,
+  "feature1": 2,
+  "feature2": 7,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2800/f2_f7/agent2.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_click_task/2800/f2_f7/agent7.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "rung": null,
+  "feature1_passed": false,
+  "feature2_passed": false,
+  "apply_status": {
+   "agent1": "applied",
+   "agent2": "applied"
+  },
+  "conflicted_files": [
+   "src/click/core.py"
+  ],
+  "conflict_hunks": 3,
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_jinja_task/1465/f2_f3",
+  "repo": "pallets_jinja_task",
+  "task_id": 1465,
+  "feature1": 2,
+  "feature2": 3,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_jinja_task/1465/f2_f3/agent2.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_jinja_task/1465/f2_f3/agent3.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "rung": null,
+  "feature1_passed": false,
+  "feature2_passed": false,
+  "apply_status": {
+   "agent1": "applied",
+   "agent2": "applied"
+  },
+  "conflicted_files": [
+   "src/jinja2/filters.py"
+  ],
+  "conflict_hunks": 2,
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_jinja_task/1621/f1_f6",
+  "repo": "pallets_jinja_task",
+  "task_id": 1621,
+  "feature1": 1,
+  "feature2": 6,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_jinja_task/1621/f1_f6/agent1.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pallets_jinja_task/1621/f1_f6/agent6.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "rung": null,
+  "feature1_passed": false,
+  "feature2_passed": false,
+  "apply_status": {
+   "agent1": "applied",
+   "agent2": "applied"
+  },
+  "conflicted_files": [
+   "src/jinja2/loaders.py"
+  ],
+  "conflict_hunks": 1,
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/samuelcolvin_dirty_equals_task/43/f2_f3",
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task_id": 43,
+  "feature1": 2,
+  "feature2": 3,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/samuelcolvin_dirty_equals_task/43/f2_f3/agent2.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/samuelcolvin_dirty_equals_task/43/f2_f3/agent3.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "rung": null,
+  "feature1_passed": false,
+  "feature2_passed": false,
+  "apply_status": {
+   "agent1": "applied",
+   "agent2": "applied"
+  },
+  "conflicted_files": [
+   "dirty_equals/__init__.py"
+  ],
+  "conflict_hunks": 1,
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pillow_task/290/f4_f5",
+  "repo": "pillow_task",
+  "task_id": 290,
+  "feature1": 4,
+  "feature2": 5,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pillow_task/290/f4_f5/agent4.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/pillow_task/290/f4_f5/agent5.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "rung": null,
+  "feature1_passed": false,
+  "feature2_passed": false,
+  "apply_status": {
+   "agent1": "applied",
+   "agent2": "applied"
+  },
+  "conflicted_files": [
+   "src/PIL/Image.py"
+  ],
+  "conflict_hunks": 4,
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/samuelcolvin_dirty_equals_task/43/f3_f7",
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task_id": 43,
+  "feature1": 3,
+  "feature2": 7,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/samuelcolvin_dirty_equals_task/43/f3_f7/agent3.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/samuelcolvin_dirty_equals_task/43/f3_f7/agent7.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "rung": null,
+  "feature1_passed": false,
+  "feature2_passed": false,
+  "apply_status": {
+   "agent1": "applied",
+   "agent2": "applied"
+  },
+  "conflicted_files": [
+   "dirty_equals/_other.py"
+  ],
+  "conflict_hunks": 1,
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f1_f9",
+  "repo": "typst_task",
+  "task_id": 6554,
+  "feature1": 1,
+  "feature2": 9,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f1_f9/agent1.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f1_f9/agent9.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "rung": null,
+  "feature1_passed": false,
+  "feature2_passed": false,
+  "apply_status": {
+   "agent1": "applied",
+   "agent2": "applied"
+  },
+  "conflicted_files": [
+   "crates/typst/src/foundations/str.rs"
+  ],
+  "conflict_hunks": 2,
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f5_f9",
+  "repo": "typst_task",
+  "task_id": 6554,
+  "feature1": 5,
+  "feature2": 9,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f5_f9/agent5.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f5_f9/agent9.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "rung": null,
+  "feature1_passed": false,
+  "feature2_passed": false,
+  "apply_status": {
+   "agent1": "applied",
+   "agent2": "applied"
+  },
+  "conflicted_files": [
+   "crates/typst/src/foundations/str.rs"
+  ],
+  "conflict_hunks": 2,
+  "both_passed": false
+ },
+ {
+  "dir": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f4_f9",
+  "repo": "typst_task",
+  "task_id": 6554,
+  "feature1": 4,
+  "feature2": 9,
+  "patch1": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f4_f9/agent4.patch",
+  "patch2": "/home/haocheng/work/CooperBench/logs/net-coop/coop/typst_task/6554/f4_f9/agent9.patch",
+  "original_status": "conflicts",
+  "original_both_passed": false,
+  "rung": null,
+  "feature1_passed": false,
+  "feature2_passed": false,
+  "apply_status": {
+   "agent1": "applied",
+   "agent2": "applied"
+  },
+  "conflicted_files": [
+   "crates/typst/src/foundations/str.rs"
+  ],
+  "conflict_hunks": 2,
+  "both_passed": false
+ }
+]

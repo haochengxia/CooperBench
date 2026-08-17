@@ -106,6 +106,16 @@ class TeamHarnessConfig:
     auto_refresh: bool = True
     protocol: bool = True
 
+    legacy_prompt: bool = False
+    """Reproduce the pre-2026-08-16 prompt, which described the scratchpad and
+    task list regardless of whether they were provisioned.
+
+    Not a coordination feature — an instrumentation switch kept solely so the
+    miscalibrated ablation arms can be re-run head-to-head against corrected
+    ones.  With every feature enabled it changes nothing; it only matters when
+    ``scratchpad`` or ``task_list`` is off, which is exactly where the old
+    prompt told agents to use plumbing that had been removed."""
+
     @staticmethod
     def with_only(*features: str) -> TeamHarnessConfig:
         """Return a config with only the named features enabled.
@@ -238,6 +248,16 @@ class TeamSession:
             return []
         return scratchpad_mount_args(self.team_volume)
 
+    def _prompt_features(self) -> dict[str, bool]:
+        """Feature flags the prompt must mirror.
+
+        ``legacy_prompt`` forces them True so the prompt describes plumbing
+        that isn't there — the old behaviour, kept only for A/B runs.
+        """
+        if self.config.legacy_prompt:
+            return {"scratchpad": True, "task_list": True}
+        return {"scratchpad": self.config.scratchpad, "task_list": self.config.task_list}
+
     def prompt_for(self, *, task: str, agent_id: str, git_enabled: bool = False) -> str:
         """Full team-instruction prompt (used by CLI adapters)."""
         return build_team_instruction(
@@ -246,6 +266,7 @@ class TeamSession:
             agent_id=agent_id,
             team_role=self.role_for(agent_id),
             git_enabled=git_enabled,
+            **self._prompt_features(),
         )
 
     def prompt_section(self, *, agent_id: str) -> str:
@@ -255,6 +276,7 @@ class TeamSession:
             agents=self.agents,
             agent_id=agent_id,
             team_role=self.role_for(agent_id),
+            **self._prompt_features(),
         )
 
     def loop_poller(self, *, agent_id: str) -> TeamPoller | None:

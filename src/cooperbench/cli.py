@@ -193,6 +193,13 @@ def main():
         help="(team only) drop the typed coop-request / coop-respond / coop-pending verbs.",
     )
     run_parser.add_argument(
+        "--team-legacy-prompt",
+        action="store_true",
+        help="(team only) reproduce the pre-2026-08-16 prompt, which described the "
+        "scratchpad and task list even when they were disabled. Only for re-running "
+        "the miscalibrated ablation arms head-to-head; no effect on the full harness.",
+    )
+    run_parser.add_argument(
         "--redis",
         default="redis://localhost:6379",
         help="Redis URL for inter-agent communication (default: redis://localhost:6379)",
@@ -388,6 +395,7 @@ def _run_command(args):
         mcp=not args.team_no_mcp,
         auto_refresh=not args.team_no_auto_refresh,
         protocol=not args.team_no_protocol,
+        legacy_prompt=args.team_legacy_prompt,
     )
 
     run(
