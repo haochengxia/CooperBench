@@ -214,13 +214,84 @@ We expect that split to move on a second model.
 
 ---
 
+## FINAL ROUND — "make finish a real event" is already shipped
+
+`agents/default.py:466` `_announce_departed_peers()` already tells the surviving
+agent, in git mode:
+
+> *"[agent1 has completed their work and exited] ... Their submitted patch is on
+> branch origin/agent1. If your changes overlap theirs, **inspect and reconcile
+> before you submit**."*
+
+### And the agents comply
+
+| | |
+|---|---|
+| told the peer exited + given the branch | **43/43** |
+| **inspected** the peer branch (`git fetch` / `diff`) | **43/43 = 100%** |
+| **merged** the peer branch in-run | **31/43 = 72%** |
+
+**coop+git = 41%. Still below solo's 48%.**
+
+→ Compliance is not the problem. **Notification is not the missing piece.**
+
+---
+
+## So we ran the round on coop+git's failures
+
+These agents had **already merged** the partner's code. If the round still rescues
+them, what was missing was never *access*.
+
+| round applied to failures of | rescued | median novel-line |
+|---|---|---|
+| **coop** — no sharing at all | **16/34 = 47%** | 3% |
+| **coop+git** — branch shared *and merged* | **9/27 = 33%** | 4% |
+| **solo** — one agent, one tree (control) | **6/26 = 23%** | 17% |
+
+Both coop arms rescue by **recombination** (3–4% novel). Solo rescues by **new
+work** (17%).
+
+*Caveat: only coop-vs-solo approaches significance (p = 0.065). The middle step is
+p = 0.31.*
+
+---
+
+## The refined conclusion
+
+# It is not access to the partner's code. It is accountability for the partner's feature.
+
+coop+git gives access. 72% of agents use it. A third of those failures are **still**
+recoverable by pure recombination.
+
+A coop+git agent merges the partner's branch — then goes back to optimising for
+**its own** feature. Nobody's success criterion is ever *"both features work."*
+
+---
+
+## Arm level: the spread collapses
+
+| arm | before | after the same round | Δ |
+|---|---|---|---|
+| solo | 48% | 60% | +12 |
+| coop+git | 41% | 61% | +20 |
+| coop | 34% | **64%** | **+30** |
+
+### spread 14 pp → 4 pp
+
+Every arm converges once someone is made accountable for the union.
+(coop+round vs solo+round: p = 0.84)
+
+---
+
 ## The design conclusion — and it's shippable
 
-**Make "finish" a real event.** On finish, an agent publishes branch + diff to the
-channel. The last agent **must** fetch, merge, and run both features' visible tests
-on the merged tree **before** writing `patch.txt`.
+The notification exists. **The gate and the mandate do not.**
 
-A mechanical precondition on submit — not a prompt suggestion.
+The last agent **must**, before writing `patch.txt`: merge the partner's branch,
+and **run both features' visible tests on the merged tree**.
+
+A mechanical precondition on submit — not a prompt suggestion. The prompt
+suggestion is exactly what's deployed today, and it yields 41%.
 
 - **Merge, not rebase** — rebase destroys the line attribution the novel-line analysis needs
 - **Gate must be unconditional**, not conflict-triggered → clean pairs need it too
@@ -276,16 +347,17 @@ Want the same fallback-share number on a second model before saying it out loud.
 
 ---
 
-## Three checks before this goes wider
+## Three checks — status after the final round
 
-1. **Agent-side integration matches the harness round**
-   → the version maintainers can't argue changes the construct
-2. **A second seed**
-   → the whole thing is 50 pairs on one draw
-3. **One more model**
-   → both the fix *and* the diagnosis were built on the same stack
+1. ~~**Agent-side integration matches the harness round**~~
+   **Partly answered, and it changed the claim.** The agent-side *notification*
+   ships today with 100% inspect / 72% merge compliance and still yields 41%.
+   The untested piece is now narrower: the **submit gate + both-features mandate**.
+2. **A second seed** — the whole thing is 50 pairs on one draw
+3. **One more model** — both the fix *and* the diagnosis were built on this stack
 
-If (1) matches and (2) holds the ordering → we have something to say publicly.
+**Still to build:** the mechanical gate. What we now know is that the notification
+half of it is not what's load-bearing.
 
 ---
 
@@ -304,11 +376,14 @@ If (1) matches and (2) holds the ordering → we have something to say publicly.
 
 # Bottom line
 
-**Nobody in the coop pipeline holds both specs, both test signals, and one tree.**
+**Nobody in the coop pipeline is ever accountable for both features at once.**
 
-- The conflicts are real, tiny, and were discussed in chat before they happened
-- The fix is an unconditional integration gate, agent-side, in existing headroom
-- Coop's rescues are recombination; solo's are new work
+- The conflicts are real, tiny, and were **named in chat before they happened**
+- Agents already get the partner's code and **already merge it (72%)** — and it isn't enough
+- Coop's rescues are **recombination** (3–4% novel); solo's are **new work** (17%)
+- Give any arm an integration pass and the **14 pp spread collapses to 4 pp**
+
+### The missing piece is a success criterion, not a channel.
 
 ### Enough to change how we build the harness.
 ### Not yet enough to change what the benchmark claims.

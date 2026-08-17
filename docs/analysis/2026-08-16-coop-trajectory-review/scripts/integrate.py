@@ -272,6 +272,18 @@ def collect(cohort: str) -> list[dict]:
                           "patch": str(patch), "original_both_passed": False})
         return items
 
+    if cohort == "coopgit-failed":
+        # The decisive cohort: these agents were TOLD the peer had finished, were
+        # given its branch, and 72% of them merged it in-run.  The merge already
+        # happened.  If the round still rescues them, what was missing was never
+        # access to the partner's code -- it was accountability for the partner's
+        # feature.
+        for p in remerge.collect(remerge.REPO_ROOT / "logs/net-coopgit", only_conflicts=False):
+            if p["original_both_passed"]:
+                continue
+            items.append({**p, "cohort": cohort})
+        return items
+
     want_conflict = cohort == "coop-conflicted"
     for p in remerge.collect(remerge.REPO_ROOT / "logs/net-coop", only_conflicts=False):
         conflicted = p["original_status"] == "conflicts"
@@ -286,7 +298,8 @@ def collect(cohort: str) -> list[dict]:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--cohort", required=True,
-                    choices=["coop-clean-failed", "coop-conflicted", "solo-failed"])
+                    choices=["coop-clean-failed", "coop-conflicted", "solo-failed",
+                             "coopgit-failed"])
     ap.add_argument("-c", "--concurrency", type=int, default=4)
     args = ap.parse_args()
 
