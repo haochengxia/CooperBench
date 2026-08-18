@@ -1,0 +1,2647 @@
+[
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "n": 2,
+  "features": [
+   5,
+   9
+  ],
+  "category": "A-mechanical",
+  "co_file": 1,
+  "co_scope": 0,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [],
+  "def_names": [],
+  "n_touched_scopes": 0,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "n": 2,
+  "features": [
+   4,
+   7
+  ],
+  "category": "A-mechanical",
+  "co_file": 1,
+  "co_scope": 0,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [],
+  "def_names": [],
+  "n_touched_scopes": 0,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "n": 2,
+  "features": [
+   3,
+   6
+  ],
+  "category": "clean-already",
+  "co_file": 1,
+  "co_scope": 0,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [],
+  "def_names": [],
+  "n_touched_scopes": 0,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "n": 3,
+  "features": [
+   2,
+   4,
+   8
+  ],
+  "category": "A-mechanical",
+  "co_file": 3,
+  "co_scope": 0,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [],
+  "def_names": [],
+  "n_touched_scopes": 0,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "n": 3,
+  "features": [
+   2,
+   3,
+   5
+  ],
+  "category": "A-mechanical",
+  "co_file": 3,
+  "co_scope": 0,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [],
+  "def_names": [],
+  "n_touched_scopes": 0,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "n": 3,
+  "features": [
+   1,
+   5,
+   7
+  ],
+  "category": "A-mechanical",
+  "co_file": 3,
+  "co_scope": 0,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [],
+  "def_names": [],
+  "n_touched_scopes": 0,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1706,
+  "n": 2,
+  "features": [
+   5,
+   8
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "XGrammarBackend",
+   "XGrammarLogitsProcessor"
+  ],
+  "def_names": [
+   "get_cfg_logits_processor",
+   "get_regex_logits_processor"
+  ],
+  "n_touched_scopes": 3,
+  "n_touched_files": 3
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1706,
+  "n": 2,
+  "features": [
+   5,
+   6
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "XGrammarBackend"
+  ],
+  "def_names": [
+   "get_cfg_logits_processor",
+   "get_regex_logits_processor"
+  ],
+  "n_touched_scopes": 3,
+  "n_touched_files": 3
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1706,
+  "n": 2,
+  "features": [
+   3,
+   8
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "XGrammarBackend",
+   "XGrammarLogitsProcessor"
+  ],
+  "def_names": [
+   "get_cfg_logits_processor",
+   "get_regex_logits_processor"
+  ],
+  "n_touched_scopes": 2,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1706,
+  "n": 3,
+  "features": [
+   3,
+   5,
+   8
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 3,
+  "scope_names": [
+   "XGrammarBackend",
+   "XGrammarLogitsProcessor"
+  ],
+  "def_names": [
+   "get_cfg_logits_processor",
+   "get_regex_logits_processor"
+  ],
+  "n_touched_scopes": 3,
+  "n_touched_files": 3
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1706,
+  "n": 3,
+  "features": [
+   1,
+   5,
+   8
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 1,
+  "scope_names": [
+   "XGrammarBackend",
+   "XGrammarLogitsProcessor"
+  ],
+  "def_names": [
+   "get_cfg_logits_processor",
+   "get_regex_logits_processor"
+  ],
+  "n_touched_scopes": 3,
+  "n_touched_files": 3
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1706,
+  "n": 3,
+  "features": [
+   1,
+   3,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 1,
+  "scope_names": [
+   "XGrammarBackend",
+   "XGrammarLogitsProcessor"
+  ],
+  "def_names": [
+   "get_cfg_logits_processor",
+   "get_regex_logits_processor"
+  ],
+  "n_touched_scopes": 3,
+  "n_touched_files": 3
+ },
+ {
+  "repo": "dspy_task",
+  "task": 8394,
+  "n": 2,
+  "features": [
+   1,
+   2
+  ],
+  "category": "A-mechanical",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "Cache"
+  ],
+  "def_names": [
+   "default"
+  ],
+  "n_touched_scopes": 3,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "dspy_task",
+  "task": 8394,
+  "n": 2,
+  "features": [
+   1,
+   5
+  ],
+  "category": "A-mechanical",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Cache"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 2,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "dspy_task",
+  "task": 8394,
+  "n": 2,
+  "features": [
+   2,
+   5
+  ],
+  "category": "A-mechanical",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Cache",
+   "configure_cache"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 3,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "dspy_task",
+  "task": 8394,
+  "n": 3,
+  "features": [
+   2,
+   3,
+   4
+  ],
+  "category": "A-mechanical",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Cache",
+   "configure_cache"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 7,
+  "n_touched_files": 5
+ },
+ {
+  "repo": "dspy_task",
+  "task": 8394,
+  "n": 3,
+  "features": [
+   1,
+   3,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Cache",
+   "configure_cache"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 2,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "dspy_task",
+  "task": 8394,
+  "n": 3,
+  "features": [
+   1,
+   4,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Cache"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 6,
+  "n_touched_files": 5
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 26,
+  "n": 2,
+  "features": [
+   3,
+   4
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Reset",
+   "routeHTTP"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 7,
+  "n_touched_files": 5
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 26,
+  "n": 2,
+  "features": [
+   2,
+   3
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "routeHTTP"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 4,
+  "n_touched_files": 4
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 26,
+  "n": 2,
+  "features": [
+   1,
+   3
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "routeHTTP"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 3,
+  "n_touched_files": 5
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 26,
+  "n": 3,
+  "features": [
+   1,
+   2,
+   3
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "routeHTTP"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 4,
+  "n_touched_files": 6
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 26,
+  "n": 3,
+  "features": [
+   2,
+   3,
+   4
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Reset",
+   "routeHTTP"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 8,
+  "n_touched_files": 6
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 26,
+  "n": 3,
+  "features": [
+   1,
+   3,
+   4
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Reset",
+   "routeHTTP"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 7,
+  "n_touched_files": 7
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 56,
+  "n": 2,
+  "features": [
+   1,
+   4
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "updateRouteHandler"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 5,
+  "n_touched_files": 5
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 56,
+  "n": 2,
+  "features": [
+   3,
+   5
+  ],
+  "category": "A-mechanical",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "URLParam"
+  ],
+  "def_names": [
+   "Instrument"
+  ],
+  "n_touched_scopes": 10,
+  "n_touched_files": 4
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 56,
+  "n": 2,
+  "features": [
+   1,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "updateRouteHandler"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 7,
+  "n_touched_files": 5
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 56,
+  "n": 3,
+  "features": [
+   1,
+   4,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "updateRouteHandler"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 8,
+  "n_touched_files": 6
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 56,
+  "n": 3,
+  "features": [
+   2,
+   4,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 1,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "updateRouteHandler"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 9,
+  "n_touched_files": 5
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 56,
+  "n": 3,
+  "features": [
+   1,
+   2,
+   4
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 2,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "routeHTTP",
+   "updateRouteHandler"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 8,
+  "n_touched_files": 5
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 3997,
+  "n": 2,
+  "features": [
+   1,
+   3
+  ],
+  "category": "A-mechanical",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Features",
+   "require_decoding"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 2,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 3997,
+  "n": 2,
+  "features": [
+   2,
+   3
+  ],
+  "category": "A-mechanical",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "Features",
+   "require_decoding"
+  ],
+  "def_names": [
+   "custom_criteria",
+   "custom_require_decoding",
+   "ignore_decode_attribute",
+   "set_custom_decoding_criteria"
+  ],
+  "n_touched_scopes": 2,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 3997,
+  "n": 2,
+  "features": [
+   2,
+   5
+  ],
+  "category": "A-mechanical",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Features"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 2,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 3997,
+  "n": 3,
+  "features": [
+   1,
+   2,
+   4
+  ],
+  "category": "A-mechanical",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Features",
+   "require_decoding"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 2,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 3997,
+  "n": 3,
+  "features": [
+   2,
+   4,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Features"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 2,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 3997,
+  "n": 3,
+  "features": [
+   2,
+   3,
+   5
+  ],
+  "category": "A-mechanical",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 1,
+  "scope_names": [
+   "Features",
+   "require_decoding"
+  ],
+  "def_names": [
+   "custom_criteria",
+   "custom_require_decoding",
+   "ignore_decode_attribute",
+   "set_custom_decoding_criteria"
+  ],
+  "n_touched_scopes": 2,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 6252,
+  "n": 2,
+  "features": [
+   3,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Image"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 6252,
+  "n": 2,
+  "features": [
+   3,
+   4
+  ],
+  "category": "A-mechanical",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Image"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 6252,
+  "n": 2,
+  "features": [
+   1,
+   4
+  ],
+  "category": "clean-already",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Image"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 6252,
+  "n": 3,
+  "features": [
+   2,
+   4,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Image"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 6252,
+  "n": 3,
+  "features": [
+   3,
+   4,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Image"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 6252,
+  "n": 3,
+  "features": [
+   2,
+   3,
+   4
+  ],
+  "category": "A-mechanical",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Image"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "llama_index_task",
+  "task": 18813,
+  "n": 2,
+  "features": [
+   1,
+   2
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "AudioBlock",
+   "DocumentBlock",
+   "ImageBlock"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 3,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "llama_index_task",
+  "task": 18813,
+  "n": 2,
+  "features": [
+   2,
+   4
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "AudioBlock"
+  ],
+  "def_names": [
+   "as_base64",
+   "resolve_audio"
+  ],
+  "n_touched_scopes": 3,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "llama_index_task",
+  "task": 18813,
+  "n": 2,
+  "features": [
+   2,
+   3
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "AudioBlock",
+   "DocumentBlock",
+   "ImageBlock"
+  ],
+  "def_names": [
+   "as_base64"
+  ],
+  "n_touched_scopes": 3,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "llama_index_task",
+  "task": 18813,
+  "n": 3,
+  "features": [
+   3,
+   5,
+   6
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 1,
+  "scope_names": [
+   "AudioBlock"
+  ],
+  "def_names": [
+   "as_base64"
+  ],
+  "n_touched_scopes": 3,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "llama_index_task",
+  "task": 18813,
+  "n": 3,
+  "features": [
+   1,
+   2,
+   4
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 1,
+  "scope_names": [
+   "AudioBlock",
+   "DocumentBlock",
+   "ImageBlock"
+  ],
+  "def_names": [
+   "as_base64",
+   "resolve_audio"
+  ],
+  "n_touched_scopes": 3,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "llama_index_task",
+  "task": 18813,
+  "n": 3,
+  "features": [
+   2,
+   3,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 3,
+  "scope_names": [
+   "AudioBlock",
+   "DocumentBlock",
+   "ImageBlock"
+  ],
+  "def_names": [
+   "as_base64",
+   "resolve_audio"
+  ],
+  "n_touched_scopes": 3,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "openai_tiktoken_task",
+  "task": 0,
+  "n": 2,
+  "features": [
+   1,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Encoding"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "openai_tiktoken_task",
+  "task": 0,
+  "n": 2,
+  "features": [
+   5,
+   6
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Encoding"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "openai_tiktoken_task",
+  "task": 0,
+  "n": 2,
+  "features": [
+   3,
+   10
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Encoding"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "openai_tiktoken_task",
+  "task": 0,
+  "n": 3,
+  "features": [
+   3,
+   5,
+   10
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Encoding"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "openai_tiktoken_task",
+  "task": 0,
+  "n": 3,
+  "features": [
+   4,
+   9,
+   10
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Encoding"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "openai_tiktoken_task",
+  "task": 0,
+  "n": 3,
+  "features": [
+   1,
+   2,
+   3
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Encoding"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "n": 2,
+  "features": [
+   7,
+   8
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "Editor",
+   "edit"
+  ],
+  "def_names": [
+   "shell"
+  ],
+  "n_touched_scopes": 2,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "n": 2,
+  "features": [
+   4,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "Editor",
+   "edit"
+  ],
+  "def_names": [
+   "shell"
+  ],
+  "n_touched_scopes": 2,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "n": 2,
+  "features": [
+   2,
+   6
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Editor",
+   "edit"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 3,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "n": 3,
+  "features": [
+   4,
+   5,
+   12
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 1,
+  "scope_names": [
+   "Editor",
+   "edit"
+  ],
+  "def_names": [
+   "shell"
+  ],
+  "n_touched_scopes": 2,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "n": 3,
+  "features": [
+   1,
+   11,
+   12
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Editor",
+   "edit"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 6,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "n": 3,
+  "features": [
+   2,
+   3,
+   12
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Editor",
+   "edit"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 3,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2800,
+  "n": 2,
+  "features": [
+   4,
+   6
+  ],
+  "category": "clean-already",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Context",
+   "Group"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 2,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2800,
+  "n": 2,
+  "features": [
+   3,
+   4
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Context",
+   "Group"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 3,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2800,
+  "n": 2,
+  "features": [
+   1,
+   3
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "_resolve_context"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 4,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2800,
+  "n": 3,
+  "features": [
+   2,
+   3,
+   6
+  ],
+  "category": "A-mechanical",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Context",
+   "Group"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 4,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2800,
+  "n": 3,
+  "features": [
+   1,
+   2,
+   7
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 2,
+  "hunk_near": 2,
+  "contested": 1,
+  "scope_names": [
+   "Context",
+   "Group",
+   "_resolve_context"
+  ],
+  "def_names": [
+   "resilient_parsing"
+  ],
+  "n_touched_scopes": 5,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2800,
+  "n": 3,
+  "features": [
+   1,
+   5,
+   6
+  ],
+  "category": "clean-already",
+  "co_file": 3,
+  "co_scope": 1,
+  "hunk_near": 0,
+  "contested": 0,
+  "scope_names": [
+   "Context"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 5,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2956,
+  "n": 2,
+  "features": [
+   5,
+   7
+  ],
+  "category": "A-mechanical",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Option"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2956,
+  "n": 2,
+  "features": [
+   4,
+   6
+  ],
+  "category": "A-mechanical",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Command",
+   "Option"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 3,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2956,
+  "n": 2,
+  "features": [
+   6,
+   8
+  ],
+  "category": "clean-already",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 0,
+  "contested": 0,
+  "scope_names": [
+   "Command"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 4,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2956,
+  "n": 3,
+  "features": [
+   2,
+   7,
+   8
+  ],
+  "category": "A-mechanical",
+  "co_file": 3,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Option"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 4,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2956,
+  "n": 3,
+  "features": [
+   2,
+   6,
+   8
+  ],
+  "category": "clean-already",
+  "co_file": 3,
+  "co_scope": 2,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Command",
+   "Option"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 4,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2956,
+  "n": 3,
+  "features": [
+   1,
+   3,
+   6
+  ],
+  "category": "A-mechanical",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Option"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 3,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1465,
+  "n": 2,
+  "features": [
+   2,
+   10
+  ],
+  "category": "A-mechanical",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "do_attr",
+   "do_forceescape",
+   "do_groupby",
+   "do_map",
+   "do_mark_unsafe",
+   "make_multi_attrgetter",
+   "sync_do_groupby",
+   "sync_do_map"
+  ],
+  "def_names": [
+   "do_reverse"
+  ],
+  "n_touched_scopes": 8,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1465,
+  "n": 2,
+  "features": [
+   8,
+   9
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "do_attr",
+   "do_forceescape",
+   "do_map",
+   "do_mark_unsafe",
+   "make_multi_attrgetter",
+   "sync_do_groupby",
+   "sync_do_map"
+  ],
+  "def_names": [
+   "do_reverse"
+  ],
+  "n_touched_scopes": 9,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1465,
+  "n": 2,
+  "features": [
+   3,
+   6
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "do_attr",
+   "do_forceescape",
+   "do_groupby",
+   "do_map",
+   "do_mark_unsafe",
+   "make_multi_attrgetter",
+   "sync_do_groupby",
+   "sync_do_map"
+  ],
+  "def_names": [
+   "do_reverse"
+  ],
+  "n_touched_scopes": 9,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1465,
+  "n": 3,
+  "features": [
+   7,
+   8,
+   10
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 1,
+  "scope_names": [
+   "do_attr",
+   "do_forceescape",
+   "do_groupby",
+   "do_map",
+   "do_mark_unsafe",
+   "make_multi_attrgetter",
+   "sync_do_groupby",
+   "sync_do_map"
+  ],
+  "def_names": [
+   "do_reverse"
+  ],
+  "n_touched_scopes": 8,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1465,
+  "n": 3,
+  "features": [
+   2,
+   4,
+   6
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 3,
+  "scope_names": [
+   "do_attr",
+   "do_forceescape",
+   "do_groupby",
+   "do_map",
+   "do_mark_unsafe",
+   "make_multi_attrgetter",
+   "sync_do_groupby",
+   "sync_do_map"
+  ],
+  "def_names": [
+   "do_reverse"
+  ],
+  "n_touched_scopes": 8,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1465,
+  "n": 3,
+  "features": [
+   2,
+   3,
+   8
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 3,
+  "scope_names": [
+   "do_attr",
+   "do_forceescape",
+   "do_groupby",
+   "do_map",
+   "do_mark_unsafe",
+   "make_multi_attrgetter",
+   "sync_do_groupby",
+   "sync_do_map"
+  ],
+  "def_names": [
+   "do_reverse"
+  ],
+  "n_touched_scopes": 9,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1559,
+  "n": 2,
+  "features": [
+   2,
+   4
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "InternationalizationExtension"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1559,
+  "n": 2,
+  "features": [
+   3,
+   8
+  ],
+  "category": "clean-already",
+  "co_file": 1,
+  "co_scope": 0,
+  "hunk_near": 0,
+  "contested": 0,
+  "scope_names": [],
+  "def_names": [],
+  "n_touched_scopes": 2,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1559,
+  "n": 2,
+  "features": [
+   1,
+   8
+  ],
+  "category": "clean-already",
+  "co_file": 1,
+  "co_scope": 0,
+  "hunk_near": 0,
+  "contested": 0,
+  "scope_names": [],
+  "def_names": [],
+  "n_touched_scopes": 4,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1559,
+  "n": 3,
+  "features": [
+   7,
+   8,
+   9
+  ],
+  "category": "A-mechanical",
+  "co_file": 3,
+  "co_scope": 0,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [],
+  "def_names": [
+   "parse"
+  ],
+  "n_touched_scopes": 5,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1559,
+  "n": 3,
+  "features": [
+   3,
+   5,
+   9
+  ],
+  "category": "clean-already",
+  "co_file": 3,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "InternationalizationExtension"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 2,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1559,
+  "n": 3,
+  "features": [
+   3,
+   5,
+   10
+  ],
+  "category": "A-mechanical",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "InternationalizationExtension"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "n": 2,
+  "features": [
+   3,
+   4
+  ],
+  "category": "clean-already",
+  "co_file": 1,
+  "co_scope": 0,
+  "hunk_near": 0,
+  "contested": 0,
+  "scope_names": [],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "n": 2,
+  "features": [
+   3,
+   8
+  ],
+  "category": "clean-already",
+  "co_file": 1,
+  "co_scope": 0,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [],
+  "def_names": [],
+  "n_touched_scopes": 7,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "n": 2,
+  "features": [
+   1,
+   2
+  ],
+  "category": "clean-already",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "FileSystemLoader"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 2,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "n": 3,
+  "features": [
+   1,
+   2,
+   9
+  ],
+  "category": "A-mechanical",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "FileSystemLoader"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 2,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "n": 3,
+  "features": [
+   4,
+   7,
+   10
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "FileSystemLoader"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 8,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "n": 3,
+  "features": [
+   2,
+   4,
+   6
+  ],
+  "category": "A-mechanical",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "FileSystemLoader"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 5,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 25,
+  "n": 2,
+  "features": [
+   1,
+   2
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 0,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [],
+  "def_names": [],
+  "n_touched_scopes": 2,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 25,
+  "n": 2,
+  "features": [
+   3,
+   4
+  ],
+  "category": "A-mechanical",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Image"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 25,
+  "n": 2,
+  "features": [
+   2,
+   3
+  ],
+  "category": "A-mechanical",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Image"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 25,
+  "n": 3,
+  "features": [
+   2,
+   3,
+   5
+  ],
+  "category": "A-mechanical",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Image"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 25,
+  "n": 3,
+  "features": [
+   1,
+   2,
+   3
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 1,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Image"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 2,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 25,
+  "n": 3,
+  "features": [
+   1,
+   3,
+   4
+  ],
+  "category": "A-mechanical",
+  "co_file": 3,
+  "co_scope": 1,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Image"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 2,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 290,
+  "n": 2,
+  "features": [
+   2,
+   3
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "Image"
+  ],
+  "def_names": [
+   "dither",
+   "kmeans",
+   "method",
+   "palette",
+   "quantize"
+  ],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 290,
+  "n": 2,
+  "features": [
+   4,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "Image"
+  ],
+  "def_names": [
+   "dither",
+   "kmeans",
+   "method",
+   "palette",
+   "quantize"
+  ],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 290,
+  "n": 2,
+  "features": [
+   1,
+   3
+  ],
+  "category": "A-mechanical",
+  "co_file": 1,
+  "co_scope": 0,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [],
+  "def_names": [],
+  "n_touched_scopes": 2,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 290,
+  "n": 3,
+  "features": [
+   2,
+   3,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 3,
+  "scope_names": [
+   "Image"
+  ],
+  "def_names": [
+   "dither",
+   "kmeans",
+   "method",
+   "palette",
+   "quantize"
+  ],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 290,
+  "n": 3,
+  "features": [
+   1,
+   2,
+   3
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 1,
+  "hunk_near": 3,
+  "contested": 1,
+  "scope_names": [
+   "Image"
+  ],
+  "def_names": [
+   "dither",
+   "kmeans",
+   "method",
+   "palette",
+   "quantize"
+  ],
+  "n_touched_scopes": 2,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 290,
+  "n": 3,
+  "features": [
+   1,
+   2,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 1,
+  "hunk_near": 3,
+  "contested": 1,
+  "scope_names": [
+   "Image"
+  ],
+  "def_names": [
+   "dither",
+   "kmeans",
+   "method",
+   "palette",
+   "quantize"
+  ],
+  "n_touched_scopes": 2,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 68,
+  "n": 2,
+  "features": [
+   2,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "exif_transpose"
+  ],
+  "def_names": [
+   "exif",
+   "exif_transpose",
+   "in_place"
+  ],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 68,
+  "n": 2,
+  "features": [
+   3,
+   4
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "exif_transpose"
+  ],
+  "def_names": [
+   "exif_transpose",
+   "in_place"
+  ],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 68,
+  "n": 2,
+  "features": [
+   4,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "exif_transpose"
+  ],
+  "def_names": [
+   "exif_transpose",
+   "in_place"
+  ],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 68,
+  "n": 3,
+  "features": [
+   1,
+   2,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 1,
+  "scope_names": [
+   "exif_transpose"
+  ],
+  "def_names": [
+   "exif",
+   "exif_transpose",
+   "in_place"
+  ],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 68,
+  "n": 3,
+  "features": [
+   1,
+   3,
+   4
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 1,
+  "scope_names": [
+   "exif_transpose"
+  ],
+  "def_names": [
+   "exif_transpose",
+   "in_place"
+  ],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 68,
+  "n": 3,
+  "features": [
+   1,
+   3,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 1,
+  "scope_names": [
+   "exif_transpose"
+  ],
+  "def_names": [
+   "exif_transpose",
+   "in_place"
+  ],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task": 43,
+  "n": 2,
+  "features": [
+   2,
+   4
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "IsJson"
+  ],
+  "def_names": [
+   "equals",
+   "that"
+  ],
+  "n_touched_scopes": 1,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task": 43,
+  "n": 2,
+  "features": [
+   1,
+   9
+  ],
+  "category": "A-mechanical",
+  "co_file": 1,
+  "co_scope": 0,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [],
+  "def_names": [
+   "equals",
+   "that"
+  ],
+  "n_touched_scopes": 2,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task": 43,
+  "n": 2,
+  "features": [
+   2,
+   8
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 1,
+  "scope_names": [
+   "IsJson"
+  ],
+  "def_names": [
+   "equals",
+   "that"
+  ],
+  "n_touched_scopes": 1,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task": 43,
+  "n": 3,
+  "features": [
+   1,
+   2,
+   9
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 1,
+  "hunk_near": 3,
+  "contested": 3,
+  "scope_names": [
+   "IsJson"
+  ],
+  "def_names": [
+   "equals",
+   "that"
+  ],
+  "n_touched_scopes": 2,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task": 43,
+  "n": 3,
+  "features": [
+   4,
+   6,
+   7
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 1,
+  "hunk_near": 3,
+  "contested": 3,
+  "scope_names": [
+   "IsJson"
+  ],
+  "def_names": [
+   "equals",
+   "that"
+  ],
+  "n_touched_scopes": 2,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task": 43,
+  "n": 3,
+  "features": [
+   2,
+   5,
+   6
+  ],
+  "category": "A-mechanical",
+  "co_file": 3,
+  "co_scope": 1,
+  "hunk_near": 3,
+  "contested": 3,
+  "scope_names": [
+   "FunctionCheck"
+  ],
+  "def_names": [
+   "equals",
+   "that"
+  ],
+  "n_touched_scopes": 2,
+  "n_touched_files": 2
+ },
+ {
+  "repo": "typst_task",
+  "task": 6554,
+  "n": 2,
+  "features": [
+   3,
+   7
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Str"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "typst_task",
+  "task": 6554,
+  "n": 2,
+  "features": [
+   1,
+   5
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Str"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "typst_task",
+  "task": 6554,
+  "n": 2,
+  "features": [
+   2,
+   4
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 1,
+  "co_scope": 1,
+  "hunk_near": 1,
+  "contested": 0,
+  "scope_names": [
+   "Str"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "typst_task",
+  "task": 6554,
+  "n": 3,
+  "features": [
+   7,
+   9,
+   10
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Str"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "typst_task",
+  "task": 6554,
+  "n": 3,
+  "features": [
+   2,
+   5,
+   10
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Str"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ },
+ {
+  "repo": "typst_task",
+  "task": 6554,
+  "n": 3,
+  "features": [
+   1,
+   3,
+   7
+  ],
+  "category": "B-shared-symbol",
+  "co_file": 3,
+  "co_scope": 3,
+  "hunk_near": 3,
+  "contested": 0,
+  "scope_names": [
+   "Str"
+  ],
+  "def_names": [],
+  "n_touched_scopes": 1,
+  "n_touched_files": 1
+ }
+]

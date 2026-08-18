@@ -28,18 +28,24 @@ class TestIdenticalPatchesShortCircuit:
     empty merged.patch downstream — even though the submission is
     perfectly valid.
 
-    Fix: before running ``_setup_branches`` / ``_merge_naive``, compare
-    the two patch strings.  If they match, copy patch1 to merged.patch
-    directly and skip the merge logic.  Verified via source inspection
-    that the short-circuit branch exists in ``test_merged``.
+    Fix: before running ``_merge_naive``, compare the agents' patch
+    strings.  If they all match, copy patch1 to merged.patch directly and
+    skip the merge logic.  Verified via source inspection that the
+    short-circuit branch exists in ``test_merged``, and that it comes
+    before the merge — which is the property that actually matters.
     """
 
     def test_test_merged_shortcircuits_on_identical_patches(self):
         src = inspect.getsource(_sandbox_module.test_merged)
-        # The function must compare patch contents and short-circuit
-        # before invoking _merge_naive when they match.
-        assert "patch1_content == patch2_content" in src, (
-            "test_merged must short-circuit when both agents submit identical patches"
+        # Generalized to N agents: all submitted patches collapsing to one
+        # distinct value is the identical-patch case.
+        assert "len(set(patch_contents)) == 1" in src, (
+            "test_merged must short-circuit when the agents submit identical patches"
+        )
+        # The invariant that matters: the short-circuit has to happen
+        # BEFORE the merge, otherwise the already-applied hunks still blow up.
+        assert src.index("len(set(patch_contents)) == 1") < src.index("_merge_naive("), (
+            "the identical-patch short-circuit must precede _merge_naive"
         )
         # The fast-path response uses a distinct merge status so the
         # caller can tell "we used identical-patches handling" from a

@@ -1,0 +1,932 @@
+[
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "n_features": 10,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 95,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 82,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": true,
+    "tests_passed": 87,
+    "tests_failed": 0
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 84,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 76,
+    "tests_failed": 0
+   },
+   "6": {
+    "passed": true,
+    "tests_passed": 100,
+    "tests_failed": 0
+   },
+   "7": {
+    "passed": true,
+    "tests_passed": 84,
+    "tests_failed": 0
+   },
+   "8": {
+    "passed": true,
+    "tests_passed": 88,
+    "tests_failed": 0
+   },
+   "9": {
+    "passed": true,
+    "tests_passed": 84,
+    "tests_failed": 0
+   },
+   "10": {
+    "passed": true,
+    "tests_passed": 80,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": true,
+  "error": null
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1706,
+  "n_features": 8,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 15,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 12,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": true,
+    "tests_passed": 12,
+    "tests_failed": 0
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 9,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 11,
+    "tests_failed": 0
+   },
+   "6": {
+    "passed": true,
+    "tests_passed": 11,
+    "tests_failed": 0
+   },
+   "7": {
+    "passed": true,
+    "tests_passed": 9,
+    "tests_failed": 0
+   },
+   "8": {
+    "passed": true,
+    "tests_passed": 10,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": true,
+  "error": null
+ },
+ {
+  "repo": "dspy_task",
+  "task": 8394,
+  "n_features": 5,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 15,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 10,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": true,
+    "tests_passed": 10,
+    "tests_failed": 0
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 14,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 15,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": true,
+  "error": null
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 26,
+  "n_features": 4,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 3,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": true,
+    "tests_passed": 2,
+    "tests_failed": 0
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": true,
+  "error": null
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 56,
+  "n_features": 5,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 8,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 7,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": true,
+    "tests_passed": 2,
+    "tests_failed": 0
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 5,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 5,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": true,
+  "error": null
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 3997,
+  "n_features": 5,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 26,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 26,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": true,
+    "tests_passed": 26,
+    "tests_failed": 0
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 26,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 27,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": true,
+  "error": null
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 6252,
+  "n_features": 6,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 44,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 44,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": true,
+    "tests_passed": 44,
+    "tests_failed": 0
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 44,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 44,
+    "tests_failed": 0
+   },
+   "6": {
+    "passed": true,
+    "tests_passed": 44,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": true,
+  "error": null
+ },
+ {
+  "repo": "llama_index_task",
+  "task": 18813,
+  "n_features": 6,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 21,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 23,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": true,
+    "tests_passed": 23,
+    "tests_failed": 0
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 21,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 21,
+    "tests_failed": 0
+   },
+   "6": {
+    "passed": true,
+    "tests_passed": 21,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": true,
+  "error": null
+ },
+ {
+  "repo": "openai_tiktoken_task",
+  "task": 0,
+  "n_features": 10,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": false,
+    "tests_passed": 0,
+    "tests_failed": 1
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   },
+   "6": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   },
+   "7": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   },
+   "8": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   },
+   "9": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   },
+   "10": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": false,
+  "error": null
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "n_features": 12,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 68,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 66,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": true,
+    "tests_passed": 68,
+    "tests_failed": 0
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 68,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 69,
+    "tests_failed": 0
+   },
+   "6": {
+    "passed": true,
+    "tests_passed": 72,
+    "tests_failed": 0
+   },
+   "7": {
+    "passed": true,
+    "tests_passed": 65,
+    "tests_failed": 0
+   },
+   "8": {
+    "passed": true,
+    "tests_passed": 65,
+    "tests_failed": 0
+   },
+   "9": {
+    "passed": true,
+    "tests_passed": 66,
+    "tests_failed": 0
+   },
+   "10": {
+    "passed": true,
+    "tests_passed": 65,
+    "tests_failed": 0
+   },
+   "11": {
+    "passed": true,
+    "tests_passed": 67,
+    "tests_failed": 0
+   },
+   "12": {
+    "passed": true,
+    "tests_passed": 66,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": true,
+  "error": null
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2800,
+  "n_features": 7,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 68,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 76,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": true,
+    "tests_passed": 72,
+    "tests_failed": 0
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 77,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 74,
+    "tests_failed": 0
+   },
+   "6": {
+    "passed": true,
+    "tests_passed": 79,
+    "tests_failed": 0
+   },
+   "7": {
+    "passed": true,
+    "tests_passed": 72,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": true,
+  "error": null
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2956,
+  "n_features": 8,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 220,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 220,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": true,
+    "tests_passed": 215,
+    "tests_failed": 0
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 217,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 219,
+    "tests_failed": 0
+   },
+   "6": {
+    "passed": true,
+    "tests_passed": 215,
+    "tests_failed": 0
+   },
+   "7": {
+    "passed": true,
+    "tests_passed": 221,
+    "tests_failed": 0
+   },
+   "8": {
+    "passed": true,
+    "tests_passed": 219,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": true,
+  "error": null
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1465,
+  "n_features": 10,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 167,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 171,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": true,
+    "tests_passed": 168,
+    "tests_failed": 0
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 184,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 178,
+    "tests_failed": 0
+   },
+   "6": {
+    "passed": true,
+    "tests_passed": 167,
+    "tests_failed": 0
+   },
+   "7": {
+    "passed": true,
+    "tests_passed": 178,
+    "tests_failed": 0
+   },
+   "8": {
+    "passed": true,
+    "tests_passed": 175,
+    "tests_failed": 0
+   },
+   "9": {
+    "passed": true,
+    "tests_passed": 177,
+    "tests_failed": 0
+   },
+   "10": {
+    "passed": true,
+    "tests_passed": 197,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": true,
+  "error": null
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1559,
+  "n_features": 10,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 49,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 59,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": false,
+    "tests_passed": 66,
+    "tests_failed": 1
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 61,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 57,
+    "tests_failed": 0
+   },
+   "6": {
+    "passed": true,
+    "tests_passed": 54,
+    "tests_failed": 0
+   },
+   "7": {
+    "passed": true,
+    "tests_passed": 54,
+    "tests_failed": 0
+   },
+   "8": {
+    "passed": true,
+    "tests_passed": 55,
+    "tests_failed": 0
+   },
+   "9": {
+    "passed": true,
+    "tests_passed": 61,
+    "tests_failed": 0
+   },
+   "10": {
+    "passed": true,
+    "tests_passed": 59,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": false,
+  "error": null
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "n_features": 10,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 47,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 44,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": true,
+    "tests_passed": 49,
+    "tests_failed": 0
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 47,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 48,
+    "tests_failed": 0
+   },
+   "6": {
+    "passed": true,
+    "tests_passed": 49,
+    "tests_failed": 0
+   },
+   "7": {
+    "passed": true,
+    "tests_passed": 49,
+    "tests_failed": 0
+   },
+   "8": {
+    "passed": true,
+    "tests_passed": 56,
+    "tests_failed": 0
+   },
+   "9": {
+    "passed": true,
+    "tests_passed": 50,
+    "tests_failed": 0
+   },
+   "10": {
+    "passed": true,
+    "tests_passed": 55,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": true,
+  "error": null
+ },
+ {
+  "repo": "pillow_task",
+  "task": 25,
+  "n_features": 5,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 193,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 193,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": true,
+    "tests_passed": 194,
+    "tests_failed": 0
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 195,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 194,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": true,
+  "error": null
+ },
+ {
+  "repo": "pillow_task",
+  "task": 290,
+  "n_features": 5,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 8,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 9,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": true,
+    "tests_passed": 9,
+    "tests_failed": 0
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 8,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 9,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": true,
+  "error": null
+ },
+ {
+  "repo": "pillow_task",
+  "task": 68,
+  "n_features": 5,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 35,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 36,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": true,
+    "tests_passed": 36,
+    "tests_failed": 0
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 37,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 36,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": true,
+  "error": null
+ },
+ {
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task": 43,
+  "n_features": 9,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 61,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 78,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": true,
+    "tests_passed": 60,
+    "tests_failed": 0
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 78,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 76,
+    "tests_failed": 0
+   },
+   "6": {
+    "passed": true,
+    "tests_passed": 112,
+    "tests_failed": 0
+   },
+   "7": {
+    "passed": true,
+    "tests_passed": 71,
+    "tests_failed": 0
+   },
+   "8": {
+    "passed": true,
+    "tests_passed": 57,
+    "tests_failed": 0
+   },
+   "9": {
+    "passed": true,
+    "tests_passed": 111,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": true,
+  "error": null
+ },
+ {
+  "repo": "typst_task",
+  "task": 6554,
+  "n_features": 10,
+  "per_feature": {
+   "1": {
+    "passed": true,
+    "tests_passed": 2354,
+    "tests_failed": 0
+   },
+   "2": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   },
+   "3": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   },
+   "4": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   },
+   "5": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   },
+   "6": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   },
+   "7": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   },
+   "8": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   },
+   "9": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   },
+   "10": {
+    "passed": true,
+    "tests_passed": 1,
+    "tests_failed": 0
+   }
+  },
+  "all_pass": true,
+  "error": null
+ }
+]

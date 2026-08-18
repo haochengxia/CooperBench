@@ -1,0 +1,4020 @@
+[
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "features": [
+   5,
+   9
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "features": [
+   4,
+   7
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "features": [
+   3,
+   6
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "naive"
+  ],
+  "category": "clean-already"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "features": [
+   2,
+   4,
+   8
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "features": [
+   2,
+   3,
+   5
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "features": [
+   1,
+   5,
+   7
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1706,
+  "features": [
+   5,
+   8
+  ],
+  "n": 2,
+  "contested": [
+   "get_cfg_logits_processor",
+   "get_regex_logits_processor"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/backends/xgrammar.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1706,
+  "features": [
+   5,
+   6
+  ],
+  "n": 2,
+  "contested": [
+   "get_cfg_logits_processor",
+   "get_regex_logits_processor"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/backends/xgrammar.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1706,
+  "features": [
+   3,
+   8
+  ],
+  "n": 2,
+  "contested": [
+   "get_cfg_logits_processor",
+   "get_regex_logits_processor"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/backends/xgrammar.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1706,
+  "features": [
+   3,
+   5,
+   8
+  ],
+  "n": 3,
+  "contested": [
+   "get_cfg_logits_processor",
+   "get_regex_logits_processor"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/backends/xgrammar.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1706,
+  "features": [
+   1,
+   5,
+   8
+  ],
+  "n": 3,
+  "contested": [
+   "get_cfg_logits_processor",
+   "get_regex_logits_processor"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/backends/xgrammar.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1706,
+  "features": [
+   1,
+   3,
+   5
+  ],
+  "n": 3,
+  "contested": [
+   "get_cfg_logits_processor",
+   "get_regex_logits_processor"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/backends/xgrammar.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "dspy_task",
+  "task": 8394,
+  "features": [
+   1,
+   2
+  ],
+  "n": 2,
+  "contested": [
+   "default"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "dspy/clients/cache.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "dspy_task",
+  "task": 8394,
+  "features": [
+   1,
+   5
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "dspy/clients/cache.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "dspy_task",
+  "task": 8394,
+  "features": [
+   2,
+   5
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "dspy/clients/__init__.py",
+     "dspy/clients/cache.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "dspy_task",
+  "task": 8394,
+  "features": [
+   2,
+   3,
+   4
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "dspy/clients/__init__.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "dspy_task",
+  "task": 8394,
+  "features": [
+   1,
+   3,
+   5
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "dspy/clients/__init__.py",
+     "dspy/clients/cache.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "dspy_task",
+  "task": 8394,
+  "features": [
+   1,
+   4,
+   5
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "dspy/clients/cache.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 26,
+  "features": [
+   3,
+   4
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "context.go",
+     "mux.go"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 26,
+  "features": [
+   2,
+   3
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "mux.go"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 26,
+  "features": [
+   1,
+   3
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "mux.go"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 26,
+  "features": [
+   1,
+   2,
+   3
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "mux.go"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 26,
+  "features": [
+   2,
+   3,
+   4
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "mux.go"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 26,
+  "features": [
+   1,
+   3,
+   4
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "mux.go"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 56,
+  "features": [
+   1,
+   4
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "mux.go"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 56,
+  "features": [
+   3,
+   5
+  ],
+  "n": 2,
+  "contested": [
+   "Instrument"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "context.go"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 56,
+  "features": [
+   1,
+   5
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "context.go",
+     "mux.go",
+     "tree.go"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 56,
+  "features": [
+   1,
+   4,
+   5
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "mux.go"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 56,
+  "features": [
+   2,
+   4,
+   5
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "context.go",
+     "mux.go",
+     "tree.go"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 56,
+  "features": [
+   1,
+   2,
+   4
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "context.go",
+     "tree.go"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 3997,
+  "features": [
+   1,
+   3
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/datasets/features/features.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 3997,
+  "features": [
+   2,
+   3
+  ],
+  "n": 2,
+  "contested": [
+   "custom_criteria",
+   "custom_require_decoding",
+   "ignore_decode_attribute",
+   "set_custom_decoding_criteria"
+  ],
+  "n_contested": 4,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/datasets/features/features.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 3997,
+  "features": [
+   2,
+   5
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/datasets/features/features.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 3997,
+  "features": [
+   1,
+   2,
+   4
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/datasets/features/features.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 3997,
+  "features": [
+   2,
+   4,
+   5
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/datasets/features/features.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     true,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 3997,
+  "features": [
+   2,
+   3,
+   5
+  ],
+  "n": 3,
+  "contested": [
+   "custom_criteria",
+   "custom_require_decoding",
+   "ignore_decode_attribute",
+   "set_custom_decoding_criteria"
+  ],
+  "n_contested": 4,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/datasets/features/features.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 6252,
+  "features": [
+   3,
+   5
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/datasets/features/image.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     true,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 6252,
+  "features": [
+   3,
+   4
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/datasets/features/image.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 6252,
+  "features": [
+   1,
+   4
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "naive"
+  ],
+  "category": "clean-already"
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 6252,
+  "features": [
+   2,
+   4,
+   5
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/datasets/features/image.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     true,
+     true,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 6252,
+  "features": [
+   3,
+   4,
+   5
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/datasets/features/image.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     true,
+     true,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 6252,
+  "features": [
+   2,
+   3,
+   4
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/datasets/features/image.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "llama_index_task",
+  "task": 18813,
+  "features": [
+   1,
+   2
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "llama-index-core/llama_index/core/base/llms/types.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     true,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "llama_index_task",
+  "task": 18813,
+  "features": [
+   2,
+   4
+  ],
+  "n": 2,
+  "contested": [
+   "as_base64",
+   "resolve_audio"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "llama-index-core/llama_index/core/base/llms/types.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "llama_index_task",
+  "task": 18813,
+  "features": [
+   2,
+   3
+  ],
+  "n": 2,
+  "contested": [
+   "as_base64"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "llama_index_task",
+  "task": 18813,
+  "features": [
+   3,
+   5,
+   6
+  ],
+  "n": 3,
+  "contested": [
+   "as_base64"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "llama-index-core/llama_index/core/base/llms/types.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "llama_index_task",
+  "task": 18813,
+  "features": [
+   1,
+   2,
+   4
+  ],
+  "n": 3,
+  "contested": [
+   "as_base64",
+   "resolve_audio"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "llama-index-core/llama_index/core/base/llms/types.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "llama_index_task",
+  "task": 18813,
+  "features": [
+   2,
+   3,
+   5
+  ],
+  "n": 3,
+  "contested": [
+   "as_base64",
+   "resolve_audio"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "llama-index-core/llama_index/core/base/llms/types.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "openai_tiktoken_task",
+  "task": 0,
+  "features": [
+   1,
+   5
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "tiktoken/core.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "openai_tiktoken_task",
+  "task": 0,
+  "features": [
+   5,
+   6
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "tiktoken/core.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "openai_tiktoken_task",
+  "task": 0,
+  "features": [
+   3,
+   10
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "tiktoken/core.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "openai_tiktoken_task",
+  "task": 0,
+  "features": [
+   3,
+   5,
+   10
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "tiktoken/core.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "openai_tiktoken_task",
+  "task": 0,
+  "features": [
+   4,
+   9,
+   10
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "tiktoken/core.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "openai_tiktoken_task",
+  "task": 0,
+  "features": [
+   1,
+   2,
+   3
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "tiktoken/core.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "features": [
+   7,
+   8
+  ],
+  "n": 2,
+  "contested": [
+   "shell"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "features": [
+   4,
+   5
+  ],
+  "n": 2,
+  "contested": [
+   "shell"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "features": [
+   2,
+   6
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "features": [
+   4,
+   5,
+   12
+  ],
+  "n": 3,
+  "contested": [
+   "shell"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "features": [
+   1,
+   11,
+   12
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "features": [
+   2,
+   3,
+   12
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2800,
+  "features": [
+   4,
+   6
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "naive"
+  ],
+  "category": "clean-already"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2800,
+  "features": [
+   3,
+   4
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/core.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2800,
+  "features": [
+   1,
+   3
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/shell_completion.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2800,
+  "features": [
+   2,
+   3,
+   6
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/core.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2800,
+  "features": [
+   1,
+   2,
+   7
+  ],
+  "n": 3,
+  "contested": [
+   "resilient_parsing"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/core.py",
+     "src/click/shell_completion.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2800,
+  "features": [
+   1,
+   5,
+   6
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "naive"
+  ],
+  "category": "clean-already"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2956,
+  "features": [
+   5,
+   7
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/core.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2956,
+  "features": [
+   4,
+   6
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/core.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2956,
+  "features": [
+   6,
+   8
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "naive"
+  ],
+  "category": "clean-already"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2956,
+  "features": [
+   2,
+   7,
+   8
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/core.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2956,
+  "features": [
+   2,
+   6,
+   8
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "naive"
+  ],
+  "category": "clean-already"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2956,
+  "features": [
+   1,
+   3,
+   6
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/core.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1465,
+  "features": [
+   2,
+   10
+  ],
+  "n": 2,
+  "contested": [
+   "do_reverse"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/filters.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1465,
+  "features": [
+   8,
+   9
+  ],
+  "n": 2,
+  "contested": [
+   "do_reverse"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/filters.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1465,
+  "features": [
+   3,
+   6
+  ],
+  "n": 2,
+  "contested": [
+   "do_reverse"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/filters.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1465,
+  "features": [
+   7,
+   8,
+   10
+  ],
+  "n": 3,
+  "contested": [
+   "do_reverse"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/filters.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1465,
+  "features": [
+   2,
+   4,
+   6
+  ],
+  "n": 3,
+  "contested": [
+   "do_reverse"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/filters.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1465,
+  "features": [
+   2,
+   3,
+   8
+  ],
+  "n": 3,
+  "contested": [
+   "do_reverse"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/filters.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1559,
+  "features": [
+   2,
+   4
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/ext.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1559,
+  "features": [
+   3,
+   8
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "naive"
+  ],
+  "category": "clean-already"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1559,
+  "features": [
+   1,
+   8
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "naive"
+  ],
+  "category": "clean-already"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1559,
+  "features": [
+   7,
+   8,
+   9
+  ],
+  "n": 3,
+  "contested": [
+   "parse"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/ext.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1559,
+  "features": [
+   3,
+   5,
+   9
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "naive"
+  ],
+  "category": "clean-already"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1559,
+  "features": [
+   3,
+   5,
+   10
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/ext.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "features": [
+   3,
+   4
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "naive"
+  ],
+  "category": "clean-already"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "features": [
+   3,
+   8
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "naive"
+  ],
+  "category": "clean-already"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "features": [
+   1,
+   2
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "naive"
+  ],
+  "category": "clean-already"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "features": [
+   1,
+   2,
+   9
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "features": [
+   4,
+   7,
+   10
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "features": [
+   2,
+   4,
+   6
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pillow_task",
+  "task": 25,
+  "features": [
+   1,
+   2
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/PIL/Image.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pillow_task",
+  "task": 25,
+  "features": [
+   3,
+   4
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/PIL/Image.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pillow_task",
+  "task": 25,
+  "features": [
+   2,
+   3
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/PIL/Image.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pillow_task",
+  "task": 25,
+  "features": [
+   2,
+   3,
+   5
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/PIL/Image.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pillow_task",
+  "task": 25,
+  "features": [
+   1,
+   2,
+   3
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/PIL/Image.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pillow_task",
+  "task": 25,
+  "features": [
+   1,
+   3,
+   4
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/PIL/Image.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pillow_task",
+  "task": 290,
+  "features": [
+   2,
+   3
+  ],
+  "n": 2,
+  "contested": [
+   "dither",
+   "kmeans",
+   "method",
+   "palette",
+   "quantize"
+  ],
+  "n_contested": 5,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/PIL/Image.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pillow_task",
+  "task": 290,
+  "features": [
+   4,
+   5
+  ],
+  "n": 2,
+  "contested": [
+   "dither",
+   "kmeans",
+   "method",
+   "palette",
+   "quantize"
+  ],
+  "n_contested": 5,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/PIL/Image.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pillow_task",
+  "task": 290,
+  "features": [
+   1,
+   3
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/PIL/Image.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pillow_task",
+  "task": 290,
+  "features": [
+   2,
+   3,
+   5
+  ],
+  "n": 3,
+  "contested": [
+   "dither",
+   "kmeans",
+   "method",
+   "palette",
+   "quantize"
+  ],
+  "n_contested": 5,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/PIL/Image.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pillow_task",
+  "task": 290,
+  "features": [
+   1,
+   2,
+   3
+  ],
+  "n": 3,
+  "contested": [
+   "dither",
+   "kmeans",
+   "method",
+   "palette",
+   "quantize"
+  ],
+  "n_contested": 5,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/PIL/Image.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pillow_task",
+  "task": 290,
+  "features": [
+   1,
+   2,
+   5
+  ],
+  "n": 3,
+  "contested": [
+   "dither",
+   "kmeans",
+   "method",
+   "palette",
+   "quantize"
+  ],
+  "n_contested": 5,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/PIL/Image.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pillow_task",
+  "task": 68,
+  "features": [
+   2,
+   5
+  ],
+  "n": 2,
+  "contested": [
+   "exif",
+   "exif_transpose",
+   "in_place"
+  ],
+  "n_contested": 3,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/PIL/ImageOps.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pillow_task",
+  "task": 68,
+  "features": [
+   3,
+   4
+  ],
+  "n": 2,
+  "contested": [
+   "exif_transpose",
+   "in_place"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/PIL/ImageOps.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pillow_task",
+  "task": 68,
+  "features": [
+   4,
+   5
+  ],
+  "n": 2,
+  "contested": [
+   "exif_transpose",
+   "in_place"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/PIL/ImageOps.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pillow_task",
+  "task": 68,
+  "features": [
+   1,
+   2,
+   5
+  ],
+  "n": 3,
+  "contested": [
+   "exif",
+   "exif_transpose",
+   "in_place"
+  ],
+  "n_contested": 3,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/PIL/ImageOps.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pillow_task",
+  "task": 68,
+  "features": [
+   1,
+   3,
+   4
+  ],
+  "n": 3,
+  "contested": [
+   "exif_transpose",
+   "in_place"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/PIL/ImageOps.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pillow_task",
+  "task": 68,
+  "features": [
+   1,
+   3,
+   5
+  ],
+  "n": 3,
+  "contested": [
+   "exif_transpose",
+   "in_place"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/PIL/ImageOps.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task": 43,
+  "features": [
+   2,
+   4
+  ],
+  "n": 2,
+  "contested": [
+   "equals",
+   "that"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "dirty_equals/__init__.py",
+     "dirty_equals/_other.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task": 43,
+  "features": [
+   1,
+   9
+  ],
+  "n": 2,
+  "contested": [
+   "equals",
+   "that"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "dirty_equals/__init__.py",
+     "dirty_equals/_other.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task": 43,
+  "features": [
+   2,
+   8
+  ],
+  "n": 2,
+  "contested": [
+   "equals",
+   "that"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "dirty_equals/__init__.py",
+     "dirty_equals/_other.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task": 43,
+  "features": [
+   1,
+   2,
+   9
+  ],
+  "n": 3,
+  "contested": [
+   "equals",
+   "that"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "dirty_equals/__init__.py",
+     "dirty_equals/_other.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     true,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task": 43,
+  "features": [
+   4,
+   6,
+   7
+  ],
+  "n": 3,
+  "contested": [
+   "equals",
+   "that"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "dirty_equals/__init__.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     true,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task": 43,
+  "features": [
+   2,
+   5,
+   6
+  ],
+  "n": 3,
+  "contested": [
+   "equals",
+   "that"
+  ],
+  "n_contested": 2,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "dirty_equals/__init__.py",
+     "dirty_equals/_other.py"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "typst_task",
+  "task": 6554,
+  "features": [
+   3,
+   7
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "crates/typst/src/foundations/str.rs"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "typst_task",
+  "task": 6554,
+  "features": [
+   1,
+   5
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "crates/typst/src/foundations/str.rs"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "typst_task",
+  "task": 6554,
+  "features": [
+   2,
+   4
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "crates/typst/src/foundations/str.rs"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "typst_task",
+  "task": 6554,
+  "features": [
+   7,
+   9,
+   10
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "crates/typst/src/foundations/str.rs"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "typst_task",
+  "task": 6554,
+  "features": [
+   2,
+   5,
+   10
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "crates/typst/src/foundations/str.rs"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "typst_task",
+  "task": 6554,
+  "features": [
+   1,
+   3,
+   7
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "crates/typst/src/foundations/str.rs"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ }
+]

@@ -1,0 +1,773 @@
+{
+ "p3-base": [
+  {
+   "repo": "go_chi_task",
+   "task": 26,
+   "features": [
+    1,
+    3
+   ],
+   "n": 2,
+   "n_assigned": 1,
+   "violations": 0,
+   "respected": 1,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "samuelcolvin_dirty_equals_task",
+   "task": 43,
+   "features": [
+    3,
+    8
+   ],
+   "n": 2,
+   "n_assigned": 3,
+   "violations": 1,
+   "respected": 2,
+   "co_touched": 1,
+   "co_touched_names": [
+    "equals"
+   ],
+   "empty_patches": [],
+   "merge_status": "conflicts",
+   "union_all_passed": false
+  },
+  {
+   "repo": "pillow_task",
+   "task": 290,
+   "features": [
+    3,
+    4
+   ],
+   "n": 2,
+   "n_assigned": 2,
+   "violations": 2,
+   "respected": 0,
+   "co_touched": 2,
+   "co_touched_names": [
+    "Image",
+    "quantize"
+   ],
+   "empty_patches": [],
+   "merge_status": "conflicts",
+   "union_all_passed": false
+  },
+  {
+   "repo": "pallets_click_task",
+   "task": 2068,
+   "features": [
+    7,
+    8
+   ],
+   "n": 2,
+   "n_assigned": 2,
+   "violations": 2,
+   "respected": 0,
+   "co_touched": 2,
+   "co_touched_names": [
+    "Editor",
+    "edit"
+   ],
+   "empty_patches": [],
+   "merge_status": "conflicts",
+   "union_all_passed": false
+  },
+  {
+   "repo": "huggingface_datasets_task",
+   "task": 3997,
+   "features": [
+    2,
+    3
+   ],
+   "n": 2,
+   "n_assigned": 4,
+   "violations": 0,
+   "respected": 4,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [
+    3
+   ],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "pillow_task",
+   "task": 25,
+   "features": [
+    2,
+    3
+   ],
+   "n": 2,
+   "n_assigned": 1,
+   "violations": 1,
+   "respected": 0,
+   "co_touched": 1,
+   "co_touched_names": [
+    "Image"
+   ],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "dspy_task",
+   "task": 8394,
+   "features": [
+    3,
+    4
+   ],
+   "n": 2,
+   "n_assigned": 1,
+   "violations": 0,
+   "respected": 1,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "pallets_click_task",
+   "task": 2800,
+   "features": [
+    3,
+    6
+   ],
+   "n": 2,
+   "n_assigned": 2,
+   "violations": 1,
+   "respected": 1,
+   "co_touched": 1,
+   "co_touched_names": [
+    "Context"
+   ],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "pallets_click_task",
+   "task": 2956,
+   "features": [
+    4,
+    8
+   ],
+   "n": 2,
+   "n_assigned": 1,
+   "violations": 1,
+   "respected": 0,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "pallets_jinja_task",
+   "task": 1559,
+   "features": [
+    3,
+    6
+   ],
+   "n": 2,
+   "n_assigned": 1,
+   "violations": 1,
+   "respected": 0,
+   "co_touched": 1,
+   "co_touched_names": [
+    "InternationalizationExtension"
+   ],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "llama_index_task",
+   "task": 18813,
+   "features": [
+    3,
+    5,
+    6
+   ],
+   "n": 3,
+   "n_assigned": 1,
+   "violations": 2,
+   "respected": 0,
+   "co_touched": 2,
+   "co_touched_names": [
+    "AudioBlock",
+    "resolve_audio"
+   ],
+   "empty_patches": [],
+   "merge_status": "conflicts",
+   "union_all_passed": false
+  },
+  {
+   "repo": "pillow_task",
+   "task": 290,
+   "features": [
+    3,
+    4,
+    5
+   ],
+   "n": 3,
+   "n_assigned": 2,
+   "violations": 0,
+   "respected": 2,
+   "co_touched": 2,
+   "co_touched_names": [
+    "_getscaleoffset",
+    "_quantize_with_error"
+   ],
+   "empty_patches": [],
+   "merge_status": "conflicts",
+   "union_all_passed": false
+  },
+  {
+   "repo": "pallets_jinja_task",
+   "task": 1559,
+   "features": [
+    1,
+    7,
+    8
+   ],
+   "n": 3,
+   "n_assigned": 1,
+   "violations": 1,
+   "respected": 0,
+   "co_touched": 1,
+   "co_touched_names": [
+    "InternationalizationExtension"
+   ],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "dspy_task",
+   "task": 8394,
+   "features": [
+    1,
+    3,
+    4
+   ],
+   "n": 3,
+   "n_assigned": 1,
+   "violations": 2,
+   "respected": 0,
+   "co_touched": 1,
+   "co_touched_names": [
+    "Cache"
+   ],
+   "empty_patches": [],
+   "merge_status": "conflicts",
+   "union_all_passed": false
+  },
+  {
+   "repo": "pallets_click_task",
+   "task": 2068,
+   "features": [
+    2,
+    8,
+    9
+   ],
+   "n": 3,
+   "n_assigned": 2,
+   "violations": 3,
+   "respected": 0,
+   "co_touched": 2,
+   "co_touched_names": [
+    "Editor",
+    "edit"
+   ],
+   "empty_patches": [],
+   "merge_status": "conflicts",
+   "union_all_passed": false
+  },
+  {
+   "repo": "dottxt_ai_outlines_task",
+   "task": 1706,
+   "features": [
+    2,
+    3,
+    6
+   ],
+   "n": 3,
+   "n_assigned": 4,
+   "violations": 2,
+   "respected": 2,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [
+    3,
+    6
+   ],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "pallets_click_task",
+   "task": 2956,
+   "features": [
+    5,
+    6,
+    7
+   ],
+   "n": 3,
+   "n_assigned": 1,
+   "violations": 2,
+   "respected": 0,
+   "co_touched": 3,
+   "co_touched_names": [
+    "Command",
+    "Option",
+    "Parameter"
+   ],
+   "empty_patches": [],
+   "merge_status": "conflicts",
+   "union_all_passed": false
+  },
+  {
+   "repo": "go_chi_task",
+   "task": 26,
+   "features": [
+    1,
+    2,
+    3
+   ],
+   "n": 3,
+   "n_assigned": 1,
+   "violations": 1,
+   "respected": 0,
+   "co_touched": 2,
+   "co_touched_names": [
+    "handle",
+    "routeHTTP"
+   ],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "pillow_task",
+   "task": 25,
+   "features": [
+    1,
+    2,
+    3
+   ],
+   "n": 3,
+   "n_assigned": 1,
+   "violations": 2,
+   "respected": 0,
+   "co_touched": 1,
+   "co_touched_names": [
+    "Image"
+   ],
+   "empty_patches": [],
+   "merge_status": "conflicts",
+   "union_all_passed": true
+  },
+  {
+   "repo": "pallets_click_task",
+   "task": 2800,
+   "features": [
+    4,
+    6,
+    7
+   ],
+   "n": 3,
+   "n_assigned": 2,
+   "violations": 2,
+   "respected": 1,
+   "co_touched": 1,
+   "co_touched_names": [
+    "Context"
+   ],
+   "empty_patches": [],
+   "merge_status": "conflicts",
+   "union_all_passed": false
+  }
+ ],
+ "p3-own": [
+  {
+   "repo": "go_chi_task",
+   "task": 26,
+   "features": [
+    1,
+    3
+   ],
+   "n": 2,
+   "n_assigned": 1,
+   "violations": 0,
+   "respected": 1,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "samuelcolvin_dirty_equals_task",
+   "task": 43,
+   "features": [
+    3,
+    8
+   ],
+   "n": 2,
+   "n_assigned": 3,
+   "violations": 1,
+   "respected": 2,
+   "co_touched": 1,
+   "co_touched_names": [
+    "equals"
+   ],
+   "empty_patches": [],
+   "merge_status": "conflicts",
+   "union_all_passed": false
+  },
+  {
+   "repo": "pillow_task",
+   "task": 290,
+   "features": [
+    3,
+    4
+   ],
+   "n": 2,
+   "n_assigned": 2,
+   "violations": 0,
+   "respected": 2,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "pallets_click_task",
+   "task": 2068,
+   "features": [
+    7,
+    8
+   ],
+   "n": 2,
+   "n_assigned": 2,
+   "violations": 0,
+   "respected": 2,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [
+    8
+   ],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "huggingface_datasets_task",
+   "task": 3997,
+   "features": [
+    2,
+    3
+   ],
+   "n": 2,
+   "n_assigned": 4,
+   "violations": 0,
+   "respected": 4,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [
+    3
+   ],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "pillow_task",
+   "task": 25,
+   "features": [
+    2,
+    3
+   ],
+   "n": 2,
+   "n_assigned": 1,
+   "violations": 0,
+   "respected": 1,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "dspy_task",
+   "task": 8394,
+   "features": [
+    3,
+    4
+   ],
+   "n": 2,
+   "n_assigned": 1,
+   "violations": 0,
+   "respected": 1,
+   "co_touched": 1,
+   "co_touched_names": [
+    "set_ttl"
+   ],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "pallets_click_task",
+   "task": 2800,
+   "features": [
+    3,
+    6
+   ],
+   "n": 2,
+   "n_assigned": 2,
+   "violations": 0,
+   "respected": 2,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "pallets_click_task",
+   "task": 2956,
+   "features": [
+    4,
+    8
+   ],
+   "n": 2,
+   "n_assigned": 1,
+   "violations": 0,
+   "respected": 1,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "pallets_jinja_task",
+   "task": 1559,
+   "features": [
+    3,
+    6
+   ],
+   "n": 2,
+   "n_assigned": 1,
+   "violations": 0,
+   "respected": 1,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [
+    6
+   ],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "llama_index_task",
+   "task": 18813,
+   "features": [
+    3,
+    5,
+    6
+   ],
+   "n": 3,
+   "n_assigned": 1,
+   "violations": 0,
+   "respected": 1,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [
+    5,
+    6
+   ],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "pillow_task",
+   "task": 290,
+   "features": [
+    3,
+    4,
+    5
+   ],
+   "n": 3,
+   "n_assigned": 2,
+   "violations": 0,
+   "respected": 2,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [
+    4,
+    5
+   ],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "pallets_jinja_task",
+   "task": 1559,
+   "features": [
+    1,
+    7,
+    8
+   ],
+   "n": 3,
+   "n_assigned": 1,
+   "violations": 0,
+   "respected": 1,
+   "co_touched": 1,
+   "co_touched_names": [
+    "InternationalizationExtension"
+   ],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "dspy_task",
+   "task": 8394,
+   "features": [
+    1,
+    3,
+    4
+   ],
+   "n": 3,
+   "n_assigned": 1,
+   "violations": 0,
+   "respected": 1,
+   "co_touched": 1,
+   "co_touched_names": [
+    "set_ttl"
+   ],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "pallets_click_task",
+   "task": 2068,
+   "features": [
+    2,
+    8,
+    9
+   ],
+   "n": 3,
+   "n_assigned": 2,
+   "violations": 0,
+   "respected": 2,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "dottxt_ai_outlines_task",
+   "task": 1706,
+   "features": [
+    2,
+    3,
+    6
+   ],
+   "n": 3,
+   "n_assigned": 4,
+   "violations": 1,
+   "respected": 3,
+   "co_touched": 1,
+   "co_touched_names": [
+    "XGrammarBackend"
+   ],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "pallets_click_task",
+   "task": 2956,
+   "features": [
+    5,
+    6,
+    7
+   ],
+   "n": 3,
+   "n_assigned": 1,
+   "violations": 0,
+   "respected": 1,
+   "co_touched": 1,
+   "co_touched_names": [
+    "Command"
+   ],
+   "empty_patches": [],
+   "merge_status": "conflicts",
+   "union_all_passed": false
+  },
+  {
+   "repo": "go_chi_task",
+   "task": 26,
+   "features": [
+    1,
+    2,
+    3
+   ],
+   "n": 3,
+   "n_assigned": 1,
+   "violations": 0,
+   "respected": 1,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "pillow_task",
+   "task": 25,
+   "features": [
+    1,
+    2,
+    3
+   ],
+   "n": 3,
+   "n_assigned": 1,
+   "violations": 0,
+   "respected": 1,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  },
+  {
+   "repo": "pallets_click_task",
+   "task": 2800,
+   "features": [
+    4,
+    6,
+    7
+   ],
+   "n": 3,
+   "n_assigned": 2,
+   "violations": 0,
+   "respected": 2,
+   "co_touched": 0,
+   "co_touched_names": [],
+   "empty_patches": [],
+   "merge_status": "clean",
+   "union_all_passed": null
+  }
+ ]
+}

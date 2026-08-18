@@ -1,6 +1,7 @@
 """Sandbox execution for patch testing."""
 
 import base64
+import os
 import re
 from pathlib import Path
 
@@ -90,71 +91,95 @@ def run_patch_test(
         sb.terminate()
 
 
+def _feature_payload(fid: int, r: dict) -> dict:
+    return {
+        "feature_id": fid,
+        "passed": r["passed"],
+        "exit_code": r.get("exit_code"),
+        "tests_passed": r.get("tests_passed", 0),
+        "tests_failed": r.get("tests_failed", 0),
+        "test_output": r["output"],
+    }
+
+
+def _merged_payload(feature_ids: list[int], results: list[dict], **extra) -> dict:
+    """Build the result dict, with the N==2 legacy keys kept identical."""
+    feats = [_feature_payload(f, r) for f, r in zip(feature_ids, results)]
+    all_passed = all(r["passed"] for r in results)
+    out = dict(extra)
+    out["features"] = feats
+    out["all_passed"] = all_passed
+    if len(feature_ids) == 2:
+        out["feature1"], out["feature2"] = feats[0], feats[1]
+        out["both_passed"] = all_passed
+    out["error"] = None
+    return out
+
+
 def test_merged(
     repo_name: str,
     task_id: int,
-    feature1_id: int,
-    feature2_id: int,
+    feature1_id: int | None = None,
+    feature2_id: int | None = None,
     patch1: str | Path | None = None,
     patch2: str | Path | None = None,
     timeout: int = 600,
     backend: str = "docker",
     dataset_dir: Path | str | None = None,
+    *,
+    feature_ids: list[int] | None = None,
+    patches: list[str | Path | None] | None = None,
 ) -> dict:
-    """Test merged patches from two agents (coop mode).
+    """Test merged patches from N agents (coop mode).
 
-    Creates two git branches, applies each agent's patch, merges them,
-    then tests the merged result against both feature test suites.
+    Creates one git branch per agent, applies each agent's patch, merges them
+    sequentially into ``agent1``, then tests the merged result against every
+    feature's test suite.
 
-    Args:
-        repo_name: Repository name
-        task_id: Task ID
-        feature1_id: First feature ID (agent1's task)
-        feature2_id: Second feature ID (agent2's task)
-        patch1: First agent's patch
-        patch2: Second agent's patch
-        timeout: Max seconds for sandbox execution
-        backend: Evaluation backend
-        dataset_dir: Root of the dataset tree.  Defaults to ``./dataset``.
+    Two calling conventions:
 
-    Returns:
-        Dict with keys: merge (status/strategy/diff), feature1, feature2,
-        both_passed, error
+    * ``feature_ids=[...], patches=[...]`` -- any N, preferred.
+    * ``feature1_id/feature2_id/patch1/patch2`` -- N=2 only, kept so existing
+      callers and readers of already-published runs keep working.
+
+    Returns ``features`` (one entry per feature, in the given order) and
+    ``all_passed``.  When N==2 the legacy ``feature1``/``feature2``/
+    ``both_passed`` keys are also emitted, with identical content.
     """
+    if feature_ids is None:
+        feature_ids = [f for f in (feature1_id, feature2_id) if f is not None]
+    if patches is None:
+        patches = [patch1, patch2]
+    if len(feature_ids) < 2:
+        return _merged_error_result("test_merged requires at least 2 features")
+    patches = list(patches)[: len(feature_ids)]
+    patches += [None] * (len(feature_ids) - len(patches))
+    n = len(feature_ids)
+
     root = Path(dataset_dir) if dataset_dir is not None else DEFAULT_DATASET_DIR
     task_dir = root / repo_name / f"task{task_id}"
 
-    tests1_path = task_dir / f"feature{feature1_id}" / "tests.patch"
-    tests2_path = task_dir / f"feature{feature2_id}" / "tests.patch"
+    tests_paths = [task_dir / f"feature{f}" / "tests.patch" for f in feature_ids]
+    for tp in tests_paths:
+        if not tp.exists():
+            return _merged_error_result(f"Tests patch not found: {tp}")
 
-    if not tests1_path.exists():
-        return _merged_error_result(f"Tests patch not found: {tests1_path}")
-    if not tests2_path.exists():
-        return _merged_error_result(f"Tests patch not found: {tests2_path}")
-
-    patch1_content = _load_patch(patch1) or ""
-    patch2_content = _load_patch(patch2) or ""
-
-    # Filter test files from patches
-    patch1_content = _filter_test_files(patch1_content)
-    patch2_content = _filter_test_files(patch2_content)
-
-    tests1_content = tests1_path.read_text()
-    tests2_content = tests2_path.read_text()
+    # Filter test files from patches -- agents must not grade themselves.
+    patch_contents = [_filter_test_files(_load_patch(pc) or "") for pc in patches]
+    tests_contents = [tp.read_text() for tp in tests_paths]
 
     image = get_image_name(repo_name, task_id)
     eval_backend = get_backend(backend)
     sb = eval_backend.create_sandbox(image, timeout)
 
     try:
-        # Write all patches
-        _write_patch(sb, "patch1.patch", patch1_content)
-        _write_patch(sb, "patch2.patch", patch2_content)
-        _write_patch(sb, "tests1.patch", tests1_content)
-        _write_patch(sb, "tests2.patch", tests2_content)
+        for i, content in enumerate(patch_contents, 1):
+            _write_patch(sb, f"patch{i}.patch", content)
+        for i, content in enumerate(tests_contents, 1):
+            _write_patch(sb, f"tests{i}.patch", content)
 
         # Step 1: Apply patches to branches
-        setup_result = _setup_branches(sb)
+        setup_result = _setup_branches(sb, n)
         if setup_result.get("error"):
             return _merged_error_result(setup_result["error"])
 
@@ -162,16 +187,16 @@ def test_merged(
         if not base_sha:
             return _merged_error_result("Failed to get base commit SHA")
 
-        apply_status = setup_result.get("apply_status", {"agent1": "unknown", "agent2": "unknown"})
+        apply_status = setup_result.get("apply_status", {f"agent{i}": "unknown" for i in range(1, n + 1)})
         any_apply_failed = "failed" in apply_status.values()
 
-        # Short-circuit: if both agents submitted byte-identical patches
+        # Short-circuit: if every agent submitted byte-identical patches
         # (e.g. team mode where they fully merged each other's work and
         # ended up with the exact same tree), there's nothing to merge.
-        # Skip the naive/union dance, which would try to apply patch B on
-        # top of patch A's hunks and reject them as already-applied — that
+        # Skip the naive merge, which would try to apply patch B on
+        # top of patch A's hunks and reject them as already-applied -- that
         # produces an empty merged.patch and a downstream "No valid patches
-        # in input" failure even though both submissions are identical and
+        # in input" failure even though the submissions are identical and
         # individually fine.
         #
         # We also normalize the patch here: agents (notably codex) can emit
@@ -179,7 +204,7 @@ def test_merged(
         # ("corrupt patch at line N").  ``git apply --recount`` ignores
         # the header and rebuilds from content; we then re-emit the diff
         # so runner.sh's plain ``git apply`` accepts it.
-        if patch1_content and patch2_content and patch1_content == patch2_content:
+        if all(patch_contents) and len(set(patch_contents)) == 1:
             normalize = """
 cd /workspace/repo
 git checkout $BASE_SHA 2>&1 >/dev/null
@@ -197,32 +222,36 @@ else
 fi
 """
             sb.exec("bash", "-c", f"export BASE_SHA={base_sha}\n{normalize}")
-            test1_result = _run_tests(sb, "tests1.patch", "merged.patch", base_sha)
-            test2_result = _run_tests(sb, "tests2.patch", "merged.patch", base_sha)
-            return {
-                "repo": repo_name,
-                "task_id": task_id,
-                "features": [feature1_id, feature2_id],
-                "setting": "coop",
-                "apply_status": {"agent1": "applied", "agent2": "applied"},
-                "merge": {
+            results = [_run_tests(sb, f"tests{i}.patch", "merged.patch", base_sha) for i in range(1, n + 1)]
+            return _merged_payload(
+                feature_ids,
+                results,
+                repo=repo_name,
+                task_id=task_id,
+                features_ids=list(feature_ids),
+                setting="coop",
+                apply_status={f"agent{i}": "applied" for i in range(1, n + 1)},
+                merge={
                     "status": "identical",
                     "strategy": "skip-merge-identical",
-                    "diff": patch1_content[:5000],
+                    "diff": patch_contents[0][:5000],
                 },
-                "feature1": test1_result,
-                "feature2": test2_result,
-                "both_passed": test1_result.get("passed", False) and test2_result.get("passed", False),
-                "error": None,
-                "evaluated_at": __import__("datetime").datetime.now().isoformat(),
-            }
+                evaluated_at=__import__("datetime").datetime.now().isoformat(),
+            )
 
-        # Step 2: Try naive merge.  No union fallback — union resolves
+        # Step 2: Try naive merge.  No union fallback -- union resolves
         # conflicts by concatenating both sides, which usually produces
         # syntactically broken code and rewards lucky non-overlap rather
         # than real coordination.  Instead, when naive conflicts the eval
         # falls through to "lead's patch alone" below.
-        naive_result = _merge_naive(sb, base_sha)
+        # agent1's tip *before* the merge -- naive commits onto that branch, so
+        # the union diagnostic below needs the pre-merge SHA to start clean.
+        agent1_sha: str | None = None
+        if os.environ.get("COOPERBENCH_UNION_DIAGNOSTIC") == "1":
+            rev = sb.exec("bash", "-c", "cd /workspace/repo && git rev-parse agent1")
+            agent1_sha = (rev.stdout_read().strip().splitlines() or [""])[-1] or None
+
+        naive_result = _merge_naive(sb, base_sha, n)
 
         if any_apply_failed:
             merge_status = "missing_input"
@@ -236,70 +265,56 @@ fi
         # Step 3: Compute the merged-tree test result.
         #
         # - status="clean": naive merge worked, copy that tree, run tests.
-        #   The merged-tree tests are AUTHORITATIVE for clean merges — no
+        #   The merged-tree tests are AUTHORITATIVE for clean merges -- no
         #   fallback.  If the team's joint patch fails tests, the team failed.
         # - status in {"conflicts", "missing_input"}: no useful merged tree.
         #   Skip the merged-tree tests and go straight to the lead-alone
         #   fallback below.
+        empty = {"passed": False, "exit_code": None, "tests_passed": 0, "tests_failed": 0, "output": ""}
         if merge_status == "clean":
             sb.exec("cp", "/patches/naive_diff.patch", "/patches/merged.patch")
             verify = sb.exec("test", "-f", "/patches/merged.patch")
             if verify.returncode != 0:
                 return _merged_error_result(f"Failed to create merged.patch (strategy: {strategy_used})")
-            test1_result = _run_tests(sb, "tests1.patch", "merged.patch", base_sha)
-            test2_result = _run_tests(sb, "tests2.patch", "merged.patch", base_sha)
+            results = [_run_tests(sb, f"tests{i}.patch", "merged.patch", base_sha) for i in range(1, n + 1)]
             winning_solo: str | None = None
         else:
-            # No merged-tree test path; surface failure for both features and
+            # No merged-tree test path; surface failure for every feature and
             # let the lead-only fallback decide.
-            test1_result = {"passed": False, "exit_code": None, "tests_passed": 0, "tests_failed": 0, "output": ""}
-            test2_result = {"passed": False, "exit_code": None, "tests_passed": 0, "tests_failed": 0, "output": ""}
+            results = [dict(empty) for _ in range(n)]
             winning_solo = None
             # Step 4 (fallback): only when naive failed.  Test the LEAD's
-            # patch alone against both feature suites — the lead is the
+            # patch alone against every feature suite -- the lead is the
             # team's integrator and their patch.txt is the "shipped artifact".
-            # No member fallback — if the member integrated but the lead
+            # No member fallback -- if the members integrated but the lead
             # didn't, the team coordination failed.
             if apply_status.get("agent1") == "applied":
-                solo_t1 = _run_tests(sb, "tests1.patch", "patch1.patch", base_sha)
-                if solo_t1["passed"]:
-                    solo_t2 = _run_tests(sb, "tests2.patch", "patch1.patch", base_sha)
-                    if solo_t2["passed"]:
-                        test1_result, test2_result = solo_t1, solo_t2
-                        winning_solo = "agent1"
+                solo = [_run_tests(sb, f"tests{i}.patch", "patch1.patch", base_sha) for i in range(1, n + 1)]
+                if all(r["passed"] for r in solo):
+                    results = solo
+                    winning_solo = "agent1"
 
         merge_payload = {
             "status": merge_status,
             "strategy": strategy_used if winning_solo is None else f"solo-{winning_solo}",
             "diff": merged_diff[:5000] if merged_diff else "",  # Truncate for storage
         }
+        if naive_result.get("conflict_at"):
+            merge_payload["conflict_at"] = naive_result["conflict_at"]
 
-        return {
-            "apply_status": apply_status,
-            "merge": merge_payload,
-            "feature1": {
-                "feature_id": feature1_id,
-                "passed": test1_result["passed"],
-                "exit_code": test1_result.get("exit_code"),
-                "tests_passed": test1_result.get("tests_passed", 0),
-                "tests_failed": test1_result.get("tests_failed", 0),
-                "test_output": test1_result["output"],
-            },
-            "feature2": {
-                "feature_id": feature2_id,
-                "passed": test2_result["passed"],
-                "exit_code": test2_result.get("exit_code"),
-                "tests_passed": test2_result.get("tests_passed", 0),
-                "tests_failed": test2_result.get("tests_failed", 0),
-                "test_output": test2_result["output"],
-            },
-            "both_passed": test1_result["passed"] and test2_result["passed"],
-            "error": None,
-        }
+        # Diagnostic only -- deliberately computed AFTER results/merge_status are
+        # final, so it cannot influence the score.
+        if merge_status == "conflicts" and os.environ.get("COOPERBENCH_UNION_DIAGNOSTIC") == "1":
+            merge_payload["union_diagnostic"] = _union_diagnostic(sb, base_sha, n, agent1_sha)
+
+        return _merged_payload(
+            feature_ids,
+            results,
+            apply_status=apply_status,
+            merge=merge_payload,
+        )
     except Exception as e:
         return _merged_error_result(str(e))
-    finally:
-        sb.terminate()
 
 
 def test_solo(
@@ -436,8 +451,8 @@ def _write_patch(sb: Sandbox, filename: str, content: str) -> None:
         raise RuntimeError(f"Failed to write {filename}: {result.stderr_read()}")
 
 
-def _setup_branches(sb: Sandbox) -> dict:
-    """Set up git branches for merge testing.
+def _setup_branches(sb: Sandbox, n_agents: int = 2) -> dict:
+    """Set up one git branch per agent, each off the base commit.
 
     Returns ``apply_status`` per agent: ``"applied"`` / ``"skipped"`` (empty
     patch) / ``"failed"`` (git apply rejected the patch).  Callers must check
@@ -445,7 +460,16 @@ def _setup_branches(sb: Sandbox) -> dict:
     silently failed to apply is not actually a clean merge of the agents'
     work, just a clean merge of nothing into the other.
     """
-    commands = """
+    branches = "\n".join(
+        f"""
+git checkout $BASE_SHA 2>&1
+git checkout -b agent{i} 2>&1
+apply_patch {i}
+git add -A
+git commit -m "Agent {i} changes" --allow-empty 2>&1"""
+        for i in range(1, n_agents + 1)
+    )
+    commands = f"""
 cd /workspace/repo
 git config user.email "eval@cooperbench.local"
 git config user.name "CooperBench Eval"
@@ -454,33 +478,21 @@ git config user.name "CooperBench Eval"
 BASE_SHA=$(git rev-parse HEAD)
 echo "BASE_SHA=$BASE_SHA"
 
-apply_patch() {
+apply_patch() {{
     local n=$1
-    if [ -s /patches/patch${n}.patch ]; then
-        if git apply /patches/patch${n}.patch 2>&1; then
-            echo "PATCH${n}_APPLIED"
-        elif git apply --3way /patches/patch${n}.patch 2>&1; then
-            echo "PATCH${n}_APPLIED"
+    if [ -s /patches/patch${{n}}.patch ]; then
+        if git apply /patches/patch${{n}}.patch 2>&1; then
+            echo "PATCH${{n}}_APPLIED"
+        elif git apply --3way /patches/patch${{n}}.patch 2>&1; then
+            echo "PATCH${{n}}_APPLIED"
         else
-            echo "PATCH${n}_FAILED"
+            echo "PATCH${{n}}_FAILED"
         fi
     else
-        echo "PATCH${n}_SKIPPED"
+        echo "PATCH${{n}}_SKIPPED"
     fi
-}
-
-# Create agent1 branch and apply patch1
-git checkout -b agent1 2>&1
-apply_patch 1
-git add -A
-git commit -m "Agent 1 changes" --allow-empty 2>&1
-
-# Create agent2 branch from base and apply patch2
-git checkout $BASE_SHA 2>&1
-git checkout -b agent2 2>&1
-apply_patch 2
-git add -A
-git commit -m "Agent 2 changes" --allow-empty 2>&1
+}}
+{branches}
 
 echo "SETUP_COMPLETE"
 """
@@ -508,26 +520,42 @@ echo "SETUP_COMPLETE"
         "output": output,
         "error": None,
         "base_sha": base_sha,
-        "apply_status": {"agent1": _status(1), "agent2": _status(2)},
+        "apply_status": {f"agent{i}": _status(i) for i in range(1, n_agents + 1)},
     }
 
 
-def _merge_naive(sb: Sandbox, base_sha: str) -> dict:
-    """Try naive git merge."""
+def _merge_naive(sb: Sandbox, base_sha: str, n_agents: int = 2) -> dict:
+    """Merge every agent branch into agent1, sequentially.
+
+    Order is agent1 <- agent2 <- ... <- agentN, i.e. sorted feature id, so the
+    result is deterministic.  Order matters once N > 2: a conflict between
+    agent2 and agent3 surfaces at a different step than one between agent1 and
+    agent3, and `conflict_at` records which step first failed.
+    """
+    steps = "\n".join(
+        f"""
+if [ "$FAILED" = "" ]; then
+    if git merge agent{i} --no-commit --no-ff 2>&1; then
+        git commit -m "Temp merge agent{i}" 2>&1 || true
+    else
+        echo "MERGE_STATUS=conflicts"
+        echo "CONFLICT_AT=agent{i}"
+        git merge --abort 2>/dev/null || true
+        FAILED=agent{i}
+    fi
+fi"""
+        for i in range(2, n_agents + 1)
+    )
     commands = f"""
 cd /workspace/repo
-git checkout agent2 2>&1
+git checkout agent1 2>&1
+FAILED=""
+{steps}
 
-# Try naive merge
-if git merge agent1 --no-commit --no-ff 2>&1; then
+if [ "$FAILED" = "" ]; then
     echo "MERGE_STATUS=clean"
-    # Commit the merge temporarily to get proper diff
-    git commit -m "Temp merge" 2>&1
-    # Diff against BASE commit (not against agent2)
+    # Diff against BASE commit, not against the branch tip
     git diff {base_sha} HEAD > /patches/naive_diff.patch
-else
-    echo "MERGE_STATUS=conflicts"
-    git merge --abort 2>/dev/null || true
 fi
 """
     result = sb.exec("bash", "-c", commands)
@@ -541,33 +569,61 @@ fi
         diff_result = sb.exec("cat", "/patches/naive_diff.patch")
         diff = diff_result.stdout_read()
 
-    return {"conflict": conflict, "diff": diff, "output": output}
+    conflict_at = None
+    for line in output.split("\n"):
+        if line.startswith("CONFLICT_AT="):
+            conflict_at = line.split("=", 1)[1].strip()
+            break
+
+    return {"conflict": conflict, "diff": diff, "output": output, "conflict_at": conflict_at}
 
 
-def _merge_union(sb: Sandbox, base_sha: str) -> dict:
-    """Try union merge strategy."""
+def _merge_union(sb: Sandbox, base_sha: str, n_agents: int = 2, start_sha: str | None = None) -> dict:
+    """Merge every agent branch with a repo-wide ``merge=union`` driver.
+
+    Union never reports a conflict -- it keeps *both* sides of every clashing
+    hunk -- so this is a diagnostic, never a score.  See ``_union_diagnostic``.
+
+    ``start_sha`` must be agent1's tip as it was *before* ``_merge_naive`` ran:
+    naive commits its successful merge steps onto the agent1 branch itself, so
+    after a partial merge that branch is no longer a clean starting point.
+    """
+    start = start_sha or "agent1"
+    steps = "\n".join(
+        f"""
+if [ "$FAILED" = "" ]; then
+    if git merge agent{i} --no-commit --no-ff >/dev/null 2>&1; then
+        git commit -m "Temp union merge agent{i}" >/dev/null 2>&1 || true
+    else
+        echo "UNION_STATUS=conflicts"
+        echo "UNION_CONFLICT_AT=agent{i}"
+        git merge --abort 2>/dev/null || true
+        FAILED=agent{i}
+    fi
+fi"""
+        for i in range(2, n_agents + 1)
+    )
     commands = f"""
 cd /workspace/repo
-git checkout agent2 2>&1
-git reset --hard HEAD 2>&1
+git merge --abort >/dev/null 2>&1 || true
+git reset --hard >/dev/null 2>&1
+git clean -fdq >/dev/null 2>&1
+git checkout -f -B union-trial {start} >/dev/null 2>&1
 
-# Set up union merge strategy
 echo "* merge=union" >> .gitattributes
+git add .gitattributes && git commit -m "union attrs" >/dev/null 2>&1
 
-# Try union merge
-if git merge agent1 --no-commit --no-ff 2>&1; then
+FAILED=""
+{steps}
+
+# Drop the driver again so it never shows up in the emitted diff.
+rm -f .gitattributes
+git add -A && git commit -m "drop union attrs" >/dev/null 2>&1 || true
+
+if [ "$FAILED" = "" ]; then
     echo "UNION_STATUS=clean"
-    # Commit the merge temporarily to get proper diff
-    git commit -m "Temp union merge" 2>&1
-    # Diff against BASE commit
     git diff {base_sha} HEAD > /patches/union_diff.patch
-else
-    echo "UNION_STATUS=conflicts"
-    git merge --abort 2>/dev/null || true
 fi
-
-# Restore gitattributes
-git checkout .gitattributes 2>/dev/null || rm -f .gitattributes
 """
     result = sb.exec("bash", "-c", commands)
     output = result.stdout_read() + result.stderr_read()
@@ -575,11 +631,34 @@ git checkout .gitattributes 2>/dev/null || rm -f .gitattributes
     if "UNION_STATUS=conflicts" in output:
         return {"error": "Union merge still has conflicts", "diff": "", "output": output}
 
-    # Read diff from file
     diff_result = sb.exec("cat", "/patches/union_diff.patch")
-    diff = diff_result.stdout_read()
+    return {"diff": diff_result.stdout_read(), "output": output, "error": None}
 
-    return {"diff": diff, "output": output, "error": None}
+
+def _union_diagnostic(sb: Sandbox, base_sha: str, n: int, start_sha: str | None) -> dict:
+    """Would a union merge have produced a tree that passes every suite?
+
+    Purely diagnostic -- it does **not** feed the score.  The P2.5 audit
+    (docs/analysis/2026-08-17-ownership-arbitration) measured this over 108
+    conflicting gold subsets: union yields a fully passing tree for only 31% of
+    them, and the other 69% need semantic reconciliation no deterministic
+    strategy can do.  Scoring on union would therefore reward lucky non-overlap,
+    which is why the naive result stays authoritative.  Recording it separately
+    tells us how much of a run's conflict rate is mechanical.
+
+    Off by default (it costs an extra merge plus N test runs on every
+    conflicted evaluation); enable with ``COOPERBENCH_UNION_DIAGNOSTIC=1``.
+    """
+    union = _merge_union(sb, base_sha, n, start_sha)
+    if union.get("error"):
+        return {"clean": False, "all_passed": False, "reason": union["error"]}
+    sb.exec("cp", "/patches/union_diff.patch", "/patches/union_merged.patch")
+    results = [_run_tests(sb, f"tests{i}.patch", "union_merged.patch", base_sha) for i in range(1, n + 1)]
+    return {
+        "clean": True,
+        "all_passed": all(r["passed"] for r in results),
+        "per_feature": [r["passed"] for r in results],
+    }
 
 
 def _run_tests(sb: Sandbox, tests_patch: str, feature_patch: str, base_sha: str) -> dict:

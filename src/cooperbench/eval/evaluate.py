@@ -355,20 +355,15 @@ def _evaluate_single(
             "evaluated_at": datetime.now().isoformat(),
         }
     else:
-        # Coop evaluation - merge two agent patches
-        patch1_file = log_dir / f"agent{f1}.patch"
-        patch2_file = log_dir / f"agent{f2}.patch"
-
-        patch1 = patch1_file.read_text() if patch1_file.exists() else ""
-        patch2 = patch2_file.read_text() if patch2_file.exists() else ""
+        # Coop evaluation - merge N agent patches (one branch per feature)
+        patch_files = [log_dir / f"agent{f}.patch" for f in features]
+        patches = [pf.read_text() if pf.exists() else "" for pf in patch_files]
 
         result = test_merged(
             repo_name=repo,
             task_id=task_id,
-            feature1_id=f1,
-            feature2_id=f2,
-            patch1=patch1,
-            patch2=patch2,
+            feature_ids=list(features),
+            patches=patches,
             backend=backend,
             dataset_dir=dataset_dir,
         )
@@ -386,6 +381,13 @@ def _evaluate_single(
             "error": result.get("error"),
             "evaluated_at": datetime.now().isoformat(),
         }
+        if len(features) != 2:
+            # N != 2: the legacy pair keys are meaningless, drop them and
+            # report per-feature results instead.
+            for legacy in ("feature1", "feature2", "both_passed"):
+                eval_result.pop(legacy, None)
+        eval_result["feature_results"] = result.get("features", [])
+        eval_result["all_passed"] = result.get("all_passed", False)
 
     # Save result
     with open(eval_file, "w") as f:

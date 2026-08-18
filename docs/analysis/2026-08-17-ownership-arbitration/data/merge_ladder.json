@@ -1,0 +1,1721 @@
+[
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "features": [
+   5,
+   9
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch1"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "features": [
+   4,
+   7
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch1"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "features": [
+   3,
+   6
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "naive"
+  ],
+  "category": "clean-already"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "features": [
+   3,
+   10
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "naive"
+  ],
+  "category": "clean-already"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "features": [
+   3,
+   5
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "naive"
+  ],
+  "category": "clean-already"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "features": [
+   1,
+   5,
+   7
+  ],
+  "n": 3,
+  "contested": [
+   "uptodate"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch1"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "features": [
+   4,
+   8,
+   10
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch3"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch3"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "features": [
+   4,
+   6,
+   7
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch3"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch1"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "features": [
+   3,
+   4,
+   10
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "naive"
+  ],
+  "category": "clean-already"
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1621,
+  "features": [
+   3,
+   9,
+   10
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "src/jinja2/loaders.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch3"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch3"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "features": [
+   4,
+   10
+  ],
+  "n": 2,
+  "contested": [
+   "shell"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch1"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "features": [
+   2,
+   6
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch1"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "features": [
+   1,
+   5
+  ],
+  "n": 2,
+  "contested": [
+   "shell"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch1"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "features": [
+   4,
+   6
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch1"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "features": [
+   6,
+   11
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch1"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "features": [
+   7,
+   10,
+   12
+  ],
+  "n": 3,
+  "contested": [
+   "shell"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "features": [
+   6,
+   8,
+   10
+  ],
+  "n": 3,
+  "contested": [
+   "shell"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "features": [
+   3,
+   4,
+   12
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "features": [
+   2,
+   4,
+   5
+  ],
+  "n": 3,
+  "contested": [
+   "shell"
+  ],
+  "n_contested": 1,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/_termui_impl.py",
+     "src/click/termui.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "features": [
+   3,
+   8,
+   11
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/termui.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/termui.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "src/click/termui.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": false,
+    "per_feature": [
+     false,
+     false,
+     false
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [],
+  "category": "B-shared-symbol"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "features": [
+   3,
+   7
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "naive"
+  ],
+  "category": "clean-already"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "features": [
+   7,
+   9
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch1"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "features": [
+   8,
+   10
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch1"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "features": [
+   4,
+   6
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch1"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "features": [
+   1,
+   10
+  ],
+  "n": 2,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "naive"
+  ],
+  "category": "clean-already"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "features": [
+   3,
+   5,
+   6
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch3"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch3"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "features": [
+   1,
+   2,
+   10
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch3"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch3"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "features": [
+   1,
+   4,
+   7
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch3"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch3"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "features": [
+   5,
+   7,
+   8
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1655,
+  "features": [
+   5,
+   6,
+   8
+  ],
+  "n": 3,
+  "contested": [],
+  "n_contested": 0,
+  "strategies": {
+   "naive": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "patience": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "histogram": {
+    "clean": false,
+    "conflict_files": [
+     "outlines/types/__init__.py"
+    ]
+   },
+   "apply-plain": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-3way": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "apply-rev": {
+    "clean": false,
+    "conflict_files": [
+     "patch2"
+    ]
+   },
+   "union": {
+    "clean": true,
+    "conflict_files": [],
+    "all_pass": true,
+    "per_feature": [
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  "applied": true,
+  "fixed_by": [
+   "union"
+  ],
+  "category": "A-mechanical"
+ }
+]

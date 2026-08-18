@@ -13,6 +13,7 @@ import yaml
 from cooperbench.agents import get_runner
 from cooperbench.agents.mini_swe_agent_v2.connectors import create_git_server
 from cooperbench.config import ConfigManager
+from cooperbench.runner.ownership import maybe_apply
 from cooperbench.runner.tasks import DEFAULT_DATASET_DIR, DEFAULT_LOGS_DIR
 from cooperbench.utils import console, get_image_name
 
@@ -290,6 +291,9 @@ def _spawn_agent(
         raise FileNotFoundError(f"Feature file not found: {feature_file}")
 
     task = feature_file.read_text()
+    # P3 arbitration arm.  Injected here rather than in build_instruction so it
+    # reaches every framework -- mini_swe_agent_v2 does not use build_instruction.
+    task = maybe_apply(task, task_dir, features, feature_id, agents)
     image = get_image_name(repo_name, task_id)
 
     # Compute log directory path

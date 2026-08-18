@@ -1,0 +1,286 @@
+[
+ {
+  "repo": "go_chi_task",
+  "task": 26,
+  "features": [
+   1,
+   3
+  ],
+  "n": 2,
+  "contested": [
+   "routeHTTP"
+  ],
+  "n_contested": 1
+ },
+ {
+  "repo": "samuelcolvin_dirty_equals_task",
+  "task": 43,
+  "features": [
+   3,
+   8
+  ],
+  "n": 2,
+  "contested": [
+   "IsJson",
+   "equals",
+   "that"
+  ],
+  "n_contested": 3
+ },
+ {
+  "repo": "pillow_task",
+  "task": 290,
+  "features": [
+   3,
+   4
+  ],
+  "n": 2,
+  "contested": [
+   "Image",
+   "quantize"
+  ],
+  "n_contested": 2
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "features": [
+   7,
+   8
+  ],
+  "n": 2,
+  "contested": [
+   "Editor",
+   "edit"
+  ],
+  "n_contested": 2
+ },
+ {
+  "repo": "huggingface_datasets_task",
+  "task": 3997,
+  "features": [
+   2,
+   3
+  ],
+  "n": 2,
+  "contested": [
+   "Features",
+   "custom_require_decoding",
+   "require_decoding",
+   "set_custom_decoding_criteria"
+  ],
+  "n_contested": 4
+ },
+ {
+  "repo": "pillow_task",
+  "task": 25,
+  "features": [
+   2,
+   3
+  ],
+  "n": 2,
+  "contested": [
+   "Image"
+  ],
+  "n_contested": 1
+ },
+ {
+  "repo": "dspy_task",
+  "task": 8394,
+  "features": [
+   3,
+   4
+  ],
+  "n": 2,
+  "contested": [
+   "Cache"
+  ],
+  "n_contested": 1
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2800,
+  "features": [
+   3,
+   6
+  ],
+  "n": 2,
+  "contested": [
+   "Context",
+   "Group"
+  ],
+  "n_contested": 2
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2956,
+  "features": [
+   4,
+   8
+  ],
+  "n": 2,
+  "contested": [
+   "Command"
+  ],
+  "n_contested": 1
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1559,
+  "features": [
+   3,
+   6
+  ],
+  "n": 2,
+  "contested": [
+   "InternationalizationExtension"
+  ],
+  "n_contested": 1
+ },
+ {
+  "repo": "llama_index_task",
+  "task": 18813,
+  "features": [
+   3,
+   5,
+   6
+  ],
+  "n": 3,
+  "contested": [
+   "AudioBlock"
+  ],
+  "n_contested": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 290,
+  "features": [
+   3,
+   4,
+   5
+  ],
+  "n": 3,
+  "contested": [
+   "Image",
+   "quantize"
+  ],
+  "n_contested": 2
+ },
+ {
+  "repo": "pallets_jinja_task",
+  "task": 1559,
+  "features": [
+   1,
+   7,
+   8
+  ],
+  "n": 3,
+  "contested": [
+   "parse"
+  ],
+  "n_contested": 1
+ },
+ {
+  "repo": "dspy_task",
+  "task": 8394,
+  "features": [
+   1,
+   3,
+   4
+  ],
+  "n": 3,
+  "contested": [
+   "Cache"
+  ],
+  "n_contested": 1
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2068,
+  "features": [
+   2,
+   8,
+   9
+  ],
+  "n": 3,
+  "contested": [
+   "Editor",
+   "edit"
+  ],
+  "n_contested": 2
+ },
+ {
+  "repo": "dottxt_ai_outlines_task",
+  "task": 1706,
+  "features": [
+   2,
+   3,
+   6
+  ],
+  "n": 3,
+  "contested": [
+   "XGrammarBackend",
+   "XGrammarLogitsProcessor",
+   "get_cfg_logits_processor",
+   "get_regex_logits_processor"
+  ],
+  "n_contested": 4
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2956,
+  "features": [
+   5,
+   6,
+   7
+  ],
+  "n": 3,
+  "contested": [
+   "Option"
+  ],
+  "n_contested": 1
+ },
+ {
+  "repo": "go_chi_task",
+  "task": 26,
+  "features": [
+   1,
+   2,
+   3
+  ],
+  "n": 3,
+  "contested": [
+   "routeHTTP"
+  ],
+  "n_contested": 1
+ },
+ {
+  "repo": "pillow_task",
+  "task": 25,
+  "features": [
+   1,
+   2,
+   3
+  ],
+  "n": 3,
+  "contested": [
+   "Image"
+  ],
+  "n_contested": 1
+ },
+ {
+  "repo": "pallets_click_task",
+  "task": 2800,
+  "features": [
+   4,
+   6,
+   7
+  ],
+  "n": 3,
+  "contested": [
+   "Context",
+   "Group"
+  ],
+  "n_contested": 2
+ }
+]
