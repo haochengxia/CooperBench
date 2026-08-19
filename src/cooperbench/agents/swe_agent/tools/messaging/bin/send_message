@@ -1,5 +1,0 @@
-#!/bin/bash
-# This command is intercepted by the agent framework before reaching bash.
-# If you see this message, something went wrong with command interception.
-echo "Error: send_message should be handled by the agent framework"
-exit 1

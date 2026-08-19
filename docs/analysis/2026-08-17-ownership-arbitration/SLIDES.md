@@ -11,9 +11,6 @@ paginate: true
 
 > One result, one cost, and a list of things we did **not** show.
 
-*All figures regenerate from the data:*
-*`uv run --with matplotlib python scripts/figures.py`*
-
 ---
 
 ## The setup

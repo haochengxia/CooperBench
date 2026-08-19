@@ -290,18 +290,7 @@ corrections:
    own 0/16 ladder result. Two agents colliding on one call site is a genuine
    coordination failure.
 
-## Reproducing
-
-```bash
-docker run -d --name cb-redis -p 127.0.0.1:6379:6379 -p 172.31.255.1:6379:6379 redis:7
-bash scripts/sweep_settings.sh
-uv run python scripts/check_redis.py                        # MUST show 0 refused
-uv run python scripts/remerge.py                            # ladder      -> 0/16
-uv run python scripts/conflicts.py                          # 35 hunks, median 3 lines
-uv run python scripts/reconcile.py                          # conflicts   -> 10/16
-uv run python scripts/integrate.py --cohort coop-clean-failed   #          -> 6/18
-uv run python scripts/integrate.py --cohort solo-failed         # control  -> 6/26
-```
+## Known defect in the analysis code
 
 Known script defect: `integrate.py` uses `grep --exclude-dir`, which busybox rejects
 in the `go_chi` image — 1/18 clean-cohort items falsely reported "markers remain."

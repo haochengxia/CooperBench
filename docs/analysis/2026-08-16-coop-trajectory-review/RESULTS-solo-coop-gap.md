@@ -154,11 +154,3 @@ Ordered by expected value:
 - This measures the *evaluator's* merge. Some of the effect is a property of how
   CooperBench grades coop, not of cooperation itself — which is precisely why fixing it
   is cheap, and also why an ideal fix belongs partly in the harness rather than the agents.
-
-## Reproducing
-
-```bash
-docker run -d --name cb-redis -p 127.0.0.1:6379:6379 -p 172.31.255.1:6379:6379 redis:7
-bash scripts/sweep_settings.sh
-uv run python scripts/check_redis.py    # MUST show 0 refused before trusting anything
-```

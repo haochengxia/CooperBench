@@ -1,1 +1,0 @@
-"""CooperBench test suite."""

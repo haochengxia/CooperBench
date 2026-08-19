@@ -201,11 +201,7 @@ Recorded because both would have made it into a writeup:
   lower pass rates. Distinguishing these needs the coupled/separable split
   CooperAgents' Round 6 proposes.
 
-## Reproducing
-
-```bash
-python3 scripts/analyze.py        # writes data/results.json
-```
+## Inputs
 
 Inputs are fetched from `cooperbench/website` under
 `public/static/data/coop/` (`index.json` + `trajectories/<model>/*.json.gz`).

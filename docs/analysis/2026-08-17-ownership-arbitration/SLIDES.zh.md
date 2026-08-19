@@ -11,9 +11,6 @@ paginate: true
 
 > 一个正面结果，一个代价，以及一串我们**没有**证明的东西。
 
-*所有图都由数据自动生成：*
-*`ZH=1 uv run --with matplotlib python scripts/figures.py`*
-
 ---
 
 ## 场景是什么

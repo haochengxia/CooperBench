@@ -96,13 +96,3 @@ independently-written replacement prompts.
 **Power:** n = 50 resolves the ~28 pp task-list effect comfortably and would have
 resolved a ~30 pp scratchpad effect had one existed. It cannot resolve anything under
 roughly 15 pp, so every "ns" above means *undetected*, not *absent*.
-
-## Reproducing
-
-```bash
-bash scripts/sweep.sh            # 5 arms x 50 pairs, ~25 min/arm sequential
-uv run python scripts/score.py   # table above
-```
-
-Requires `AZURE_OPENAI_API_KEY` / `AZURE_OPENAI_ENDPOINT`, Docker, and Redis on
-loopback. `--team-legacy-prompt` reproduces the pre-fix prompt for the legacy arms.

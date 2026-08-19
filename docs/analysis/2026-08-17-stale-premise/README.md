@@ -166,13 +166,3 @@ Recorded because both would have inflated the result:
   signatures; a same-arity rename would be scored breaking, a reordering not.
 - Coop only — no solo arm is published, so the difficulty control is built from
   the other 7 models' outcomes rather than from a true single-agent baseline.
-
-## Reproducing
-
-```bash
-python3 scripts/fetch_pop.py        # 1,108 trajectories -> /tmp/cb/pop
-python3 scripts/staleness.py        # -> data/staleness_pop.json
-python3 scripts/controls.py         # edit-volume confound
-python3 scripts/identify.py         # difficulty strata, variance split, sign test
-python3 scripts/conditional.py      # matched pairs vs empirical null  <- the result
-```

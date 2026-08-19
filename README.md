@@ -1,327 +1,117 @@
-# CooperBench
+# CooperBench — dataset and reports
 
 [![arXiv](https://img.shields.io/badge/arXiv-2601.13295-b31b1b.svg)](https://arxiv.org/abs/2601.13295)
 [![Website](https://img.shields.io/badge/Website-cooperbench.com-blue.svg)](https://cooperbench.com)
 [![Dataset](https://img.shields.io/badge/HuggingFace-Dataset-yellow.svg)](https://huggingface.co/datasets/CodeConflict/cooperbench-dataset)
-[![PyPI](https://img.shields.io/pypi/v/cooperbench.svg)](https://pypi.org/project/cooperbench/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-**Can AI agents work together as teammates?** CooperBench is the first benchmark designed to measure how well AI agents can cooperate when handling individual tasks with potential conflicts.
-
-We find that **coordinating agents perform much worse than a single agent** given the same total workload. This coordination deficit presents a fundamental barrier to deploying AI systems that can work alongside humans or other agents.
-
-## Installation
-
-```bash
-pip install cooperbench
-```
-
-For development:
-
-```bash
-git clone https://github.com/cooperbench/CooperBench.git
-cd CooperBench
-pip install -e ".[dev]"
-```
-
-### Requirements
-
-- Python 3.12+
-- **Execution Backend** (choose one):
-  - [Modal](https://modal.com) (default, cloud-based)
-  - [GCP](https://cloud.google.com) (Google Cloud Platform)
-  - Docker (local execution)
-- Redis (for inter-agent communication in coop mode)
-
-### Setup
-
-#### Option 1: Modal (Default)
-
-1. **Modal**: Sign up at [modal.com](https://modal.com) and run `modal setup`
-2. **Redis**: Run locally with `docker run -p 6379:6379 redis:7` or use a cloud provider
-3. **LLM API keys**: Set in `.env` file:
-
-```bash
-ANTHROPIC_API_KEY=your_key
-OPENAI_API_KEY=your_key
-GEMINI_API_KEY=your_key
-```
-
-#### Option 2: GCP (Recommended for Scale)
-
-**Prerequisites**: Install [gcloud CLI](https://cloud.google.com/sdk/docs/install) first
-- macOS: `brew install google-cloud-sdk`
-- Linux: `curl https://sdk.cloud.google.com | bash`
-
-**Setup**:
-```bash
-# 1. Install GCP dependencies
-pip install 'cooperbench[gcp]'
-
-# 2. Run configuration wizard (handles authentication, project setup, validation)
-cooperbench config gcp
-
-# 3. You're ready to run experiments!
-cooperbench run --backend gcp -s lite
-```
-
-**Also needed**: Redis and LLM API keys (same as Option 1)
-
-See [GCP Setup Guide](docs/GCP_SETUP.md) for detailed instructions.
-
-### Dataset
-
-Download the benchmark dataset from HuggingFace into `./dataset`:
-
-```bash
-cooperbench prepare
-```
-
-## Quick Start
-
-### CLI
-
-Run agents on a task:
-
-```bash
-# Run cooperative agents (N peers, shared Redis messaging)
-cooperbench run -n my-experiment -r llama_index_task -m gpt-4o
-
-# Run solo agent (1 agent handling both features)
-cooperbench run -n my-experiment -r llama_index_task -m gpt-4o --setting solo
-
-# Run team mode (lead + members, shared task list + scratchpad)
-cooperbench run -n my-experiment -r llama_index_task -m gpt-4o --setting team
-
-# Evaluate results
-cooperbench eval -n my-experiment
-```
-
-### Python API
-
-```python
-from cooperbench import run, evaluate
-
-# Run agents
-run(
-    run_name="my-experiment",
-    repo="llama_index_task",
-    model_name="gpt-4o",
-    setting="coop",  # or "solo", "team"
-)
-
-# Evaluate patches
-evaluate(run_name="my-experiment")
-```
-
-## Settings: solo / coop / team
-
-CooperBench supports three settings, selected via `--setting`:
-
-- **`solo`** — one agent implements every feature in the task.  The
-  agent works alone in a single container; no Redis, no git server.
-- **`coop`** — N peer agents, each assigned one feature.  Containers
-  talk via Redis (`coop-send` / `coop-recv` shell commands inside the
-  container, auto-injected as user messages in the Python-loop
-  adapters).  Optional `--git` enables a shared `team` git remote so
-  agents can fetch/merge each other's branches.
-- **`team`** — N agents organized as one **lead** + N-1 **members**,
-  with a Redis-backed shared **task list** (atomic claim via
-  `coop-task-claim`), a shared **scratchpad** volume mounted at
-  `/workspace/shared` in every container, and role-specific system
-  prompts.  The lead's prompt directs them to organize work via
-  `coop-task-create` / `coop-task-list` before coding; members claim
-  open tasks and report progress via `coop-task-update`.
-
-Team-mode result.json includes a `metrics` block with coordination
-indicators computed from the task-list audit log: `tasks_total`,
-`tasks_done`, `unowned_at_end`, `time_to_first_claim_seconds`,
-`claims_per_agent`, `updates_per_agent`.
-
-All three settings are evaluated the same way (`cooperbench eval`):
-per-feature tests against either the single agent's patch (solo) or
-each agent's individual patch (coop / team).
-
-## Running with Harbor
-
-CooperBench is also available as a [Harbor](https://github.com/harbor-framework/harbor) adapter, which provides parallelized cloud execution on [Modal](https://modal.com) via Docker-in-Docker sandboxes, built-in oracle validation, and standardized result collection.
-
-Requires Modal authentication (run `modal setup`) and an LLM API key.
-
-### Install and Prepare Tasks
-
-```bash
-# Install Harbor
-uv tool install harbor
-
-# Clone Harbor and prepare the adapter
-git clone https://github.com/harbor-framework/harbor.git
-cd harbor/adapters/cooperbench
-uv sync
-
-# Generate flash subset (50 pairs) with openhands-sdk harness
-uv run python -m cooperbench.main \
-  --subset flash \
-  --agent-harness openhands-sdk \
-  --output-dir ../../datasets/cooperbench
-```
-
-### Run on Modal
-
-```bash
-cd ../..  # back to harbor root
-
-# Set up .env with your API key
-echo "GEMINI_API_KEY=your_key" > .env
-
-# Run the flash subset (50 tasks, concurrency 10)
-uv run harbor run -p datasets/cooperbench --agent nop -e modal \
-  --env-file .env --n-concurrent 10 \
-  --ae COOPERBENCH_MODEL=gemini/gemini-3-flash-preview
-
-# Run oracle (validates infrastructure, expects 100% pass)
-uv run harbor run -p datasets/cooperbench --agent oracle -e modal \
-  --env-file .env --n-concurrent 28
-```
-
-See the [Harbor CooperBench adapter](https://github.com/harbor-framework/harbor/tree/main/adapters/cooperbench) for full documentation.
-
-## CLI Reference
-
-### `cooperbench config`
-
-Configure execution backends (GCP, Modal, etc.).
-
-```bash
-# Configure GCP backend
-cooperbench config gcp
-
-# Skip validation tests for faster setup
-cooperbench config gcp --skip-tests
-```
-
-See [GCP Setup Guide](docs/GCP_SETUP.md) for details.
-
-### `cooperbench run`
-
-Run agents on benchmark tasks.
-
-```bash
-cooperbench run -n NAME [OPTIONS]
-```
-
-| Option | Description | Default |
-|--------|-------------|---------|
-| `-n, --name` | Experiment name (required) | - |
-| `-r, --repo` | Filter by repository | all |
-| `-t, --task` | Filter by task ID | all |
-| `-f, --features` | Feature pair (e.g., `1,2`) | all pairs |
-| `-m, --model` | LLM model | `gemini/gemini-3-flash-preview` |
-| `-a, --agent` | Agent framework | `mini_swe_agent` |
-| `-c, --concurrency` | Parallel tasks | `20` |
-| `--setting` | `coop` or `solo` | `coop` |
-| `--backend` | `modal`, `docker`, or `gcp` | `modal` |
-| `--redis` | Redis URL | `redis://localhost:6379` |
-| `--git` | Enable git collaboration | disabled |
-| `--no-messaging` | Disable agent messaging | enabled |
-| `--force` | Rerun existing results | skip |
-| `--agent-config` | Path to agent config file | none |
-
-**Agent Configuration**: Pass agent-specific parameters via a config file. CooperBench forwards the file path to your agent without parsing it.
-
-### `cooperbench eval`
-
-Evaluate completed runs.
-
-```bash
-cooperbench eval -n NAME [OPTIONS]
-```
-
-| Option | Description | Default |
-|--------|-------------|---------|
-| `-n, --name` | Experiment name (required) | - |
-| `-r, --repo` | Filter by repository | all |
-| `-t, --task` | Filter by task ID | all |
-| `-f, --features` | Feature pair (e.g., `1,2`) | all pairs |
-| `-c, --concurrency` | Parallel evaluations | `10` |
-| `--backend` | `modal`, `docker`, or `gcp` | `modal` |
-| `--force` | Re-evaluate existing | skip |
-
-## Experiment Settings
-
-| Setting | Agents | Description |
-|---------|--------|-------------|
-| `coop` | 2 | Two agents with Redis messaging, each handles one feature |
-| `solo` | 1 | Single agent handles both features sequentially |
-
-## Dataset Structure
+**Can AI agents work together as teammates?** CooperBench measures how well AI
+agents cooperate on tasks that can conflict with each other. The headline result
+is that **agents coordinating on a split task do worse than one agent doing the
+whole thing**.
+
+> ## What is in this branch
+>
+> **Only the dataset and the written reports.** All harness code — the runner,
+> the evaluator, the agent adapters, the tests, and the analysis scripts that
+> produced the numbers — has been removed.
+>
+> Reports still cite source locations (`eval/sandbox.py:530`, `runner/ownership.py`,
+> `scripts/p3_measure.py`, …) as **evidence for where a finding came from**.
+> Those paths refer to the code branch, not to anything in this tree.
+>
+> The `.sh` files under `dataset/` are **not** harness code — they are part of
+> each task (environment build and test invocation) and are required for the
+> dataset to be usable.
+
+## Dataset
+
+| | |
+|---|---|
+| repositories | 12 |
+| tasks | 30 |
+| features | 199 |
+| evaluable feature pairs | 652 |
+| languages | Python, TypeScript, Go, Rust |
+
+Each task is one real code change from an open-source repository, split into
+features that a team of agents is meant to implement in parallel.
 
 ```
 dataset/
   <repo_name>/
     task<id>/
-      setup.sh          # Repository setup script
-      run_tests.sh      # Test runner script
-      feature1/
-        feature.md      # Feature description
-        feature.patch   # Golden implementation
-        tests.patch     # Test cases
-      feature2/
-        ...
+      setup.sh          # build the task environment
+      runner.sh         # apply patches and run a feature's tests
+      run_tests.sh      # test runner
+      combined.patch    # human-authored union of ALL features
+      feature<n>/
+        feature.md      # the task text handed to an agent
+        feature.patch   # gold implementation
+        tests.patch     # the feature's test suite
+  subsets/              # named evaluation subsets: core, lite, flash, flash_10
 ```
 
-## Output Structure
+Per repository: outlines 3/22, dspy 4/23, go-chi 3/13, huggingface-datasets 3/13,
+llama-index 3/16, tiktoken 1/10, click 3/27, jinja 3/30, pillow 3/15,
+react-hook-form 2/11, dirty-equals 1/9, typst 1/10 *(tasks/features)*.
 
-Results are saved to `logs/`:
+## Reports
 
-```
-logs/<run_name>/<repo>/task<id>/features_<i>_<j>/
-  agent1/
-    trajectory.json     # Full agent trajectory
-    patch.diff          # Generated patch
-  agent2/
-    ...
-  eval.json             # Evaluation results
-```
+### [Ownership arbitration](docs/analysis/2026-08-17-ownership-arbitration/) — 2026-08-17→18
 
-## Benchmark Statistics
+Can you cut down the work of merging by telling agents **who owns what** before
+they start? 100 agent-runs, two arms paired on task and model.
 
-| Metric | Value |
-|--------|-------|
-| Tasks | 652 |
-| Repositories | 12 |
-| Languages | Python, TypeScript, Go, Rust |
+Slides, written for a general audience:
+**[English](docs/analysis/2026-08-17-ownership-arbitration/SLIDES.md)** ·
+**[中文](docs/analysis/2026-08-17-ownership-arbitration/SLIDES.zh.md)**
 
-## Key Findings
+- Detection-as-gating is **structurally unmeasurable** here: all 652 gold feature
+  pairs edit the same file (100.0%), so there is nothing to discriminate.
+- What survives is detection as *aggregation*: at 8 agents, 28 colliding pairs
+  but only **3.23 contested resources** — an 8.7× compression that grows with N.
+- Ownership works at generation time: compliance 41% → 94%, co-touched resources
+  1.15 → 0.30 (p = 0.013), and the effect is larger at 3 agents than at 2.
+- It does **not** improve correctness (pass rate flat at 25%), and it has a cost:
+  agents abandoned their own feature (empty submissions 6% → 14%) and never used
+  the "ask the owner" escape hatch.
 
-1. **Agents perform worse together than alone** — GPT-5 and Claude Sonnet 4.5 achieve only 25% success with two-agent cooperation, roughly 50% lower than when a single agent handles both tasks.
+### [Merge policy and the evaluation ceiling](docs/analysis/2026-08-17-ownership-arbitration/README.md#p25--what-kind-of-failure-is-a-gold-conflict-) — 2026-08-18
 
-2. **Communication reduces conflicts but not failures** — Agents spend up to 20% of their budget on communication, reducing merge conflicts but not improving overall success.
+Gold patches conflict at 61% / 89% / 100% for N = 2 / 3 / ≥4, and a conflicted
+merge scores zero without running any test. Of the conflicts that occur, only
+**31% are mechanically fixable**; the other 69% need semantic reconciliation that
+no deterministic merge performs.
 
-3. **Three capability gaps underlie coordination failures**:
-   - **Expectation failures (42%)** — agents fail to integrate partner state information
-   - **Communication failures (26%)** — questions go unanswered, breaking decision loops
-   - **Commitment failures (32%)** — agents break promises or make unverifiable claims
+### [Stale premises](docs/analysis/2026-08-17-stale-premise/) — 2026-08-17
 
-## Development
+Tests, and kills, the "code view / stale premise" direction: 96.8% of a partner's
+contract changes are additive keyword arguments, so nothing actually goes stale.
+What survives identification is **absorption** — both agents defining the same
+symbol — at +21 pp over the model baseline with the task held fixed (p = 0.016).
 
-```bash
-# Install dev dependencies
-pip install -e ".[dev]"
+### [Coop trajectory review](docs/analysis/2026-08-16-coop-trajectory-review/) — 2026-08-16
 
-# Run tests
-pytest tests/ -v
+Reproduces the solo→coop gap on an independent stack and locates the mechanism.
+Includes a [draft writeup](docs/analysis/2026-08-16-coop-trajectory-review/DRAFT-writeup.md),
+[slides](docs/analysis/2026-08-16-coop-trajectory-review/SLIDES-internal.md), and a
+[defect found in the scratchpad ablation](docs/analysis/2026-08-16-coop-trajectory-review/FINDINGS-scratchpad-ablation.md).
 
-# Run integration tests (requires Modal)
-pytest tests/ -v --run-modal
+### [Benchmark results](docs/BENCHMARK_RESULTS.md)
 
-# Lint
-ruff check src/
-ruff format src/
+Headline numbers, and the chronology of reruns and re-evaluations behind them.
 
-# Type check
-mypy src/cooperbench/
-```
+## Key findings from the paper
+
+1. **Agents perform worse together than alone** — GPT-5 and Claude Sonnet 4.5
+   reach only 25% success with two-agent cooperation, roughly 50% below a single
+   agent handling both features.
+2. **Communication reduces conflicts but not failures** — agents spend up to 20%
+   of their budget communicating, which lowers merge conflicts without improving
+   success.
+3. **Three capability gaps underlie the failures** — expectation failures (42%),
+   communication failures (26%), commitment failures (32%).
 
 ## Citation
 

@@ -1,6 +1,8 @@
 # Ownership arbitration — detection that scales
 
-**Date:** 2026-08-17 · **Status:** in progress (P0 done, P1–P3 pending)
+**Date:** 2026-08-17 → 2026-08-18 · **Status:** complete (P0, P1, P2, P2.5, P2.75, P3)
+
+Slides: [SLIDES.md](SLIDES.md) (English) · [SLIDES.zh.md](SLIDES.zh.md) (中文)
 
 Follows `../2026-08-17-stale-premise/`, which killed the code-view / stale-premise
 direction (96.8% of partner contract changes are additive kwargs, so nothing goes
@@ -78,10 +80,6 @@ Gold patches are test-free (verified 0/199 touch a test path). Note
 `feature.filtered.patch` exists for only **2 of 199** features, so
 `feature.patch` is the real input.
 
-```bash
-python3 scripts/saturation.py     # -> data/saturation.json
-```
-
 ---
 
 ## P1 — Claim index on plan messages ⚠️ (the trigger framing fails)
@@ -146,11 +144,6 @@ all-mentions already reaches 67.5% recall with no cleverness at all.
 Which makes P3 the load-bearing experiment: the oracle has ~100% recall by
 construction, so if ownership assignment does not help there, no spec-based
 approximation of it will.
-
-```bash
-python3 scripts/claims.py       # -> data/claims.json      (messages, ceilings)
-python3 scripts/spec_detect.py  # -> data/spec_detect.json (spec extractors)
-```
 
 ## P2 — Generalize eval from 2 agents to N ✅ (and it found something)
 
@@ -221,10 +214,6 @@ Two consequences:
    doesn't run" is literally true — but because nobody owns the merge, not
    because coordination degrades. That lands exactly on the prior finding that
    team mode's advantage is *someone owning the merge*.
-
-```bash
-python3 scripts/gold_merge_scaling.py   # -> data/gold_merge_scaling.json
-```
 
 ## P2.5 — What *kind* of failure is a gold conflict? ✅
 
@@ -305,13 +294,6 @@ For P3 this reinforces the existing design rather than changing it: the primary
 outcome stays the mediator (co-defined symbol count), which is computed from
 patches and is therefore untouched by merge policy. Pass rate stays dropped.
 
-```bash
-python3 scripts/composability.py                                    # -> data/composability.json
-python3 scripts/merge_ladder.py 2 3                                 # 7 rungs, pilot -> data/merge_ladder.json
-ALL=1 FAST=1 PER_N=3 OUTFILE=merge_ladder_broad.json \
-    python3 scripts/merge_ladder.py 2 3                             # 20 tasks -> data/merge_ladder_broad.json
-```
-
 ## P2.75 — Does detection have any value? ✅ (it changes meaning)
 
 P2.5 left one detector alive — contested definitions, 81% precision but 47%
@@ -375,10 +357,6 @@ coordination. All of them do. It rests on **changing the unit of coordination
 from the pair to the resource**, because only the latter stays bounded. That is
 a stronger and more honest claim than the one we started with.
 
-```bash
-python3 scripts/detect.py    # -> data/detect.json
-```
-
 ## P3 — Oracle-ownership gate ⏳
 
 ### Pre-registered interpretation
@@ -405,7 +383,10 @@ The failure signatures that would actually count against the direction are:
 compliance unchanged (the prompt did not take — experiment void), or compliance
 up with co-definition unchanged (ownership is the wrong resource abstraction).
 
-### Built and verified (runs still pending)
+### Implementation
+
+Not in this branch — see the note in the repository README. Paths below are on
+the code branch.
 
 | piece | where |
 |---|---|
@@ -446,13 +427,6 @@ pattern from P2.
 **Credentials:** the gitignored `./.env` holds Azure OpenAI keys and the
 deployment is `gpt-5.6-luna` — the same model `logs/net-coop` used. `cli.py`
 loads it via `dotenv`, so it is invisible to a plain shell env check.
-
-```bash
-python3 scripts/p3_select.py                       # -> data/p3_subsets.json
-python3 scripts/p3_run.py <model> --dry-run        # inspect the 40 subset-runs
-python3 scripts/p3_run.py <model>                  # both arms, resumable
-python3 scripts/p3_measure.py p3-base p3-own       # -> data/p3_measure.json
-```
 
 ### Result ✅ (100 agent-runs, `gpt-5.6-luna`, Azure, docker)
 

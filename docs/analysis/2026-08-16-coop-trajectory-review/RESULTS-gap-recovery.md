@@ -321,16 +321,3 @@ coupling plus a missing integration step — not cooperative ability.**
 - "Coupled" in Step 4 is defined post-hoc by the run conflicting; Step 5 exists to
   replace it with an a priori measure, and does, but at n = 50 with 45/50 pairs
   overlapping at all, the a priori split is coarse.
-
-## Reproducing
-
-```bash
-docker run -d --name cb-redis -p 127.0.0.1:6379:6379 -p 172.31.255.1:6379:6379 redis:7
-bash scripts/sweep_settings.sh
-uv run python scripts/check_redis.py          # MUST show 0 refused
-uv run python scripts/remerge.py              # deterministic ladder  -> 0/16
-uv run python scripts/conflicts.py            # hunk sizes            -> 35 hunks, median 3 lines
-set -a && . .env && set +a
-uv run python scripts/repair.py               # blind merge repair    -> 4/16 both pass
-uv run python scripts/reconcile.py            # agentic round        -> 10/16 both pass
-```
